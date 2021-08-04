@@ -22,7 +22,7 @@ In principle, the programming language in which we implement any given model is 
 
 ## Organization
 
-You will work in groups with 4–6 members. One person in each group will be randomly selected as group leader. We thus adopt a leadership model that is referred to as hierarchical but with a limited authority given to the project leader in the sense that decisions are made at group meetings (see page 64 in {cite}`Andersen2013`).
+You will work in groups with 4–5 members. One person in each group will be randomly selected as group leader. We thus adopt a leadership model that is referred to as hierarchical but with a limited authority given to the project leader in the sense that decisions are made at group meetings (see page 64 in {cite}`Andersen2013`).
 
 ## Communication
 
