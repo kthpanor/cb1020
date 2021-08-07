@@ -397,7 +397,7 @@
 </div>
 </div>
 </div>
-<p>Plot the final state, <span class="math notranslate nohighlight">\(u(T, x)\)</span>.</p>
+<p>Plot the final state, <span class="math notranslate nohighlight">\(u(x, T)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -416,10 +416,10 @@
 <img alt="../_images/ode_8_0.png" src="../_images/ode_8_0.png" />
 </div>
 </div>
-<p>In this implementation, we did not save the intermediate states, <span class="math notranslate nohighlight">\(u(t,x)\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq T\)</span>, but it is of course straighforward to do so.</p>
+<p>In this implementation, we did not save the intermediate states, <span class="math notranslate nohighlight">\(u(x,t)\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq T\)</span>, but it is of course straighforward to do so.</p>
 <div class="admonition-bonus-material-plot-animation admonition">
 <p class="admonition-title">Bonus material: Plot animation</p>
-<p>Alternatively, the time ovolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (ii) write a function <code class="docutils literal notranslate"><span class="pre">animate</span></code> that updates the line object in every frame of the animation.</p>
+<p>Alternatively, the time evolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (ii) write a function <code class="docutils literal notranslate"><span class="pre">animate</span></code> that updates the line object in every frame of the animation.</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># enable an interactive plot</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
