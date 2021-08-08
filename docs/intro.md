@@ -30,7 +30,7 @@ Guidelines for communication:
 
 - All documents communicated outside the group (to the mentor or peer students) should be marked with date and the names of all contributing team members and shared in the [portable document format (PDF)](https://en.wikipedia.org/wiki/PDF)
 
-- All deliverables are to uploaded to the [Canvas area](https://canvas.kth.se/courses/21301/pages/valkommen-till-bb1220-projekt-i-bioteknik) of the course
+- All deliverables are to be uploaded to the [Canvas area](https://canvas.kth.se/courses/21301/pages/valkommen-till-bb1220-projekt-i-bioteknik) of the course
 
 - All group members should have access to all group documents. Make use of one of the several available technical solutions:
 	- [KTH OneDrive](https://intra.kth.se/en/it/dokument/spara-filer-i-molnet/kth-onedrive)
