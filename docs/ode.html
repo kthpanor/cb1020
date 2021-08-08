@@ -420,7 +420,7 @@
 <p>In this implementation, we did not save the intermediate states, <span class="math notranslate nohighlight">\(u(x,t)\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq T\)</span>, but it is of course straighforward to do so.</p>
 <div class="admonition-bonus-material-plot-animation admonition">
 <p class="admonition-title">Bonus material: Plot animation</p>
-<p>Alternatively, the time evolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (ii) write a function <code class="docutils literal notranslate"><span class="pre">animate</span></code> that updates the line object in every frame of the animation.</p>
+<p>Alternatively, the time evolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (ii) write a function <code class="docutils literal notranslate"><span class="pre">plot_update</span></code> that updates the line object in every frame of the animation.</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># enable an interactive plot</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
@@ -442,19 +442,17 @@
 <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wall</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">wall</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">time_text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;Time: 0 (sec)&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame_number</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">wall</span>
+<span class="k">def</span> <span class="nf">plot_update</span><span class="p">(</span><span class="n">frame_number</span><span class="p">,</span> <span class="n">wall</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">time_text</span><span class="p">):</span>
 
     <span class="c1"># perform a time step</span>
     <span class="n">wall</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
     
     <span class="c1"># update properties of line and text objects</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">wall</span><span class="o">.</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">wall</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">wall</span><span class="o">.</span><span class="n">u</span><span class="p">)</span>
     <span class="n">time_text</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time: </span><span class="si">{</span><span class="n">frame_number</span><span class="si">}</span><span class="s1"> (sec)&#39;</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">line</span><span class="p">,</span> <span class="n">time_text</span>
-
-<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># run the animation</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">plot_update</span><span class="p">,</span> <span class="n">fargs</span> <span class="o">=</span> <span class="p">[</span><span class="n">wall</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">time_text</span><span class="p">],</span> <span class="n">frames</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span> <span class="n">interval</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">repeat</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
