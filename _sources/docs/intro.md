@@ -58,5 +58,5 @@ Guidelines for communication:
 | D.5  | Program code |
 | D.6  | Peer review on D.4 (group A &#8594; B &#8594; C &#8594; …)|
 | D.7  | Slides from presentation |
-| D.8  | Individual self-reflections (collected group-wise)|
+| D.8  | Individual self-reflections |
 
