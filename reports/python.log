@@ -17,30 +17,40 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-i = 10     # integer
-x = 3.1415 # float
+import time
 
-a_list = [3.1, 'text', [1,2,3]] # list
-b_dict = {'first': 'hello', 'second': x, 'third': a} # dictonary
+# Fixing random state for reproducibility
+np.random.seed(20210802)
 
-print('Elements in list:')
-for i, a in enumerate(a_list):
-    print(i, a, a_list[i])
+N = 100
 
-print('Elements in dictionary:')
-for key in b_dict.keys():
-    print('Key, value:', key, b_dict[key])
+a = np.random.rand(N*N).reshape((N,N))
+b = np.random.rand(N*N).reshape((N,N))
+
+ti = time.time()
+
+c = np.matmul(a,b)
+
+tf = time.time()
+
+print(f'  matmul: {(tf - ti) * 1000:10.4f} (ms)')
+
+ti = time.time()
+
+for i in range(N):
+    for j in range(N):
+        for k in range(N):
+            c[i,j] = a[i,k] * b[k,j]
+
+tf = time.time()
+
+print(f'for loop: {(tf - ti) * 1000:10.4f} (ms)')v
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/xp/xqxvp53d2831kfb6dsx_zg5w0000gp/T/ipykernel_33233/2481259854.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0ma_list[0m [0;34m=[0m [0;34m[[0m[0;36m3.1[0m[0;34m,[0m [0;34m'text'[0m[0;34m,[0m [0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m[0;36m3[0m[0;34m][0m[0;34m][0m [0;31m# list[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 5[0;31m [0mb_dict[0m [0;34m=[0m [0;34m{[0m[0;34m'first'[0m[0;34m:[0m [0;34m'hello'[0m[0;34m,[0m [0;34m'second'[0m[0;34m:[0m [0mx[0m[0;34m,[0m [0;34m'third'[0m[0;34m:[0m [0ma[0m[0;34m}[0m [0;31m# dictonary[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      6[0m [0;34m[0m[0m
-[1;32m      7[0m [0mprint[0m[0;34m([0m[0;34m'Elements in list:'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;36m  File [0;32m"<ipython-input-6-37aea01b0d9e>"[0;36m, line [0;32m28[0m
+[0;31m    print(f'for loop: {(tf - ti) * 1000:10.4f} (ms)')v[0m
+[0m                                                     ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mNameError[0m: name 'a' is not defined
-NameError: name 'a' is not defined
+SyntaxError: invalid syntax (<ipython-input-6-37aea01b0d9e>, line 28)
 

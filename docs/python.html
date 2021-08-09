@@ -290,6 +290,11 @@
      Array operations
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes-and-object-oriented-programming">
+     Classes and object-oriented programming
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -523,10 +528,63 @@ Identity matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.2748 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.3618 (ms)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   679.4620 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   688.1442 (ms)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="classes-and-object-oriented-programming">
+<h3>Classes and object-oriented programming<a class="headerlink" href="#classes-and-object-oriented-programming" title="Permalink to this headline">¶</a></h3>
+<p>Python naturally invites to good software engineering practices in terms of <a class="reference external" href="https://www.w3schools.com/python/python_classes.asp">object-oriented programming</a>. Almost everything in Python is an <code class="docutils literal notranslate"><span class="pre">object</span></code>, with its properties and methods and a <code class="docutils literal notranslate"><span class="pre">class</span></code> is like an object constructor, or a “blueprint” for creating objects.</p>
+<p>It cannot be overemphasized that the use of object-oriented programming is highly enabling for code sharing and team development, and it is strongly recommended to adopt these practices.</p>
+<p>As an example, we implement a <em>class</em> <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> with a <em>method</em> <code class="docutils literal notranslate"><span class="pre">area</span></code> and <em>properties</em> <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">h</span>
+        
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is a common practice to store the code of classes in separate library files (or modules) with the file extension <code class="docutils literal notranslate"><span class="pre">*.py</span></code>. In this case, we could imagine the we store the <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class together with several other geometric objects into a module named <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code> after which these would be readily from other modeuls by means of an <code class="docutils literal notranslate"><span class="pre">import</span></code>statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geometry</span> <span class="k">as</span> <span class="nn">gm</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">gm</span></code> is an optional shorter name reference of your choice.</p>
+<p>The user of such an encapsulated module need not to be concerned about the details of the code which is the key enabling factor for code-sharing. We would define an object of this class according to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">gm</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and would execute the function that calculates the area and print out the result as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If the class object is kept in the notebook the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is obviously not needed and we instead access the object properties and methods as follows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Base:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">base</span><span class="p">)</span>     <span class="c1"># property</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Height:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="c1"># property</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Area:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>   <span class="c1"># method</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Base: 3
+Height: 5
+Area: 7.5
 </pre></div>
 </div>
 </div>
@@ -594,7 +652,7 @@ Standard deviation:  0.0996
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_20_0.png" src="../_images/python_20_0.png" />
+<img alt="../_images/python_24_0.png" src="../_images/python_24_0.png" />
 </div>
 </div>
 </div>
