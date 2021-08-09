@@ -16,7 +16,7 @@ align: center
 Focal points in the course *Project in Mathematical Modeling (CB1020)*.
 ```
 
-Mathematical models are used to rationalize and better understand a wide range of phenomena in biology and biotechnology. We refer to the rich yet far from exhaustive list of examples presented in the book titled *"Mathematical biology: An introduction with Maple and Matlab"* by Shonkwiler and Herod {cite}`Shonkwiler2009`, and we will focus on two very different approaches to conduct mathematical modeling namely by means of (i) *ordinary differential equations (ODEs)* and *agent-based modeling (ABM)*.
+Mathematical models are used to rationalize and better understand a wide range of phenomena in biology and biotechnology. We refer to the rich yet far from exhaustive list of examples presented in the book titled *"Mathematical biology: An introduction with Maple and Matlab"* by Shonkwiler and Herod {cite}`Shonkwiler2009`, and we will focus on two very different approaches to conduct mathematical modeling namely by means of (i) *ordinary differential equations (ODEs)* and (ii) *agent-based models (ABMs)*.
 
 In principle, the programming language in which we implement any given model is of minor importance *per se*. However, it makes good sense for every engineer to be well trained in using at least one versatile and generic programming language. Arguably, Python is a good choice to fill this role and it will therefore be the language of choice in this course.
 
