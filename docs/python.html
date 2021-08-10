@@ -528,10 +528,10 @@ Identity matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.4520 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.5378 (ms)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   860.3909 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   871.2282 (ms)
 </pre></div>
 </div>
 </div>
@@ -556,7 +556,7 @@ Identity matrix:
 </div>
 </div>
 </div>
-<p>It is a common practice to store the code of classes in separate library files (or modules) with the file extension <code class="docutils literal notranslate"><span class="pre">*.py</span></code>. In this case, we could imagine the we store the <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class together with several other geometric objects into a module named <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code> after which these would be readily available from other modeuls by means of an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
+<p>It is a common practice to store the code of classes in separate library files (or modules) with the file extension <code class="docutils literal notranslate"><span class="pre">*.py</span></code>. In this case, we could imagine the we store the <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class together with several other geometric objects into a module named <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code> after which these would be readily available from other modules by means of an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geometry</span> <span class="k">as</span> <span class="nn">gm</span>
 </pre></div>
 </div>
@@ -566,13 +566,13 @@ Identity matrix:
 </pre></div>
 </div>
 <p>and would execute the function that calculates the area and print out the result as follows</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>If the class object is kept in the notebook the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is obviously not needed and we instead access the object properties and methods as follows</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Base:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">base</span><span class="p">)</span>     <span class="c1"># property</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Height:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="c1"># property</span>
@@ -630,12 +630,11 @@ Standard deviation:  0.0996
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">counts</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">counts</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">gaussian</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> \
-            <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="p">(</span><span class="n">bins</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">gaussian</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">4.5</span><span class="p">))</span>
