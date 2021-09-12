@@ -6,6 +6,7 @@ sections:
   sections:
   - file: docs/installation.md
   - file: docs/jupyter.ipynb
+  - file: docs/pandas.ipynb
 - file: docs/math
   sections:
   - file: docs/ode.md
