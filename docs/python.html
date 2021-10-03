@@ -333,7 +333,7 @@
 <h1>Python for this course<a class="headerlink" href="#python-for-this-course" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id2">Per18</a>]</span>.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id3">Per15</a>, <a class="reference internal" href="references.html#id2">Per18</a>]</span>.</p>
 <p>Python offers an intuitive syntax with a high degree of code readability and it is used for everything from simple scripting and fast prototyping to large-scale projects.</p>
 <p>Python is open source and free for use and distribution. It is available for all relevant platforms, including</p>
 <ul class="simple">
@@ -358,16 +358,23 @@
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p>The amount of Python documentation is vast and so is the community of module contributers. If you are in search of the solution to an isolated task or  problem, there is a great chance that someone has contributed an efficient and stable implementation on the web.</p>
 <ul class="simple">
-<li><p>If you are new to Python, it can be a good idea to first read one of the several books available to get a coherent introduction. A recommended choice is the book titled <em>A Whirlwind Tour of Python</em> authored by Jake VanderPlas as it provides a short, clear, and to-the-point presentation <span id="id2">[<a class="reference internal" href="references.html#id5">Van16</a>]</span>.</p></li>
+<li><p>If you are new to Python, it can be a good idea to first read one of the several books available to get a coherent introduction. A recommended choice is the book titled <em>A Whirlwind Tour of Python</em> authored by Jake VanderPlas as it provides a short, clear, and to-the-point presentation <span id="id2">[<a class="reference internal" href="references.html#id6">Van16</a>]</span>.</p></li>
 <li><p>If you have some experience and rather benefit from a more reference-oriented documentation, a recommended source is <a class="reference external" href="https://www.w3schools.com/python/python_intro.asp">W3Schools</a>.</p></li>
+<li><p>If you find watching tutorial videos useful, the series made by Corey Schafer is recommended. Below is one example from this series.</p></li>
 </ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/HW29067qVWk" frameborder="0" allowfullscreen>
+</iframe>'
+</div></div>
+</div>
 </div>
 <div class="section" id="some-necessities">
 <h2>Some necessities<a class="headerlink" href="#some-necessities" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="iterations">
 <h3>Iterations<a class="headerlink" href="#iterations" title="Permalink to this headline">¶</a></h3>
-<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).</p>
-<p>A “standard” loop is accomplished with the <code class="docutils literal notranslate"><span class="pre">range</span></code> function. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used for iterating over an iterable object (such as a list, dictionary, or string).</p>
+<p>A “standard” loop is accomplished with the <code class="docutils literal notranslate"><span class="pre">range</span></code> function. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function returns an iterable sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -587,10 +594,10 @@ Identity matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.4760 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     1.3540 (ms)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   733.1331 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   675.0960 (ms)
 </pre></div>
 </div>
 </div>
@@ -715,7 +722,7 @@ Standard deviation:  0.0996
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_26_0.png" src="../_images/python_26_0.png" />
+<img alt="../_images/python_27_0.png" src="../_images/python_27_0.png" />
 </div>
 </div>
 </div>
