@@ -39,7 +39,7 @@ Guidelines for communication:
 
 - Choose document tools that are well suited to your needs:
 	- [Microsoft Office](https://www.office.com/): the most widespread set of tools 
-	- [Google Docs, Sheets and Slides](https://www.google.com/docs/about/): intuitative tools allowing for multi-user editing
+	- [Google Docs, Sheets and Slides](https://www.google.com/docs/about/): intuitive tools allowing for multi-user editing
 	- [Overleaf](https://www.overleaf.com/): the best choice for equation-loaded documents
 
 - Take [minutes](https://en.wikipedia.org/wiki/Minutes) from every group meeting and keep them in a separate folder. Minutes should have a record of meeting participants, date, discussions, and every made decision
