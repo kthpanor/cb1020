@@ -426,7 +426,7 @@
 <p>In this implementation, we did not save the intermediate states, <span class="math notranslate nohighlight">\(u(x,t)\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq T\)</span>, but it is of course straighforward to do so.</p>
 <div class="admonition-bonus-material-plot-animation admonition">
 <p class="admonition-title">Bonus material: Plot animation</p>
-<p>Alternatively, the time evolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (ii) write a function <code class="docutils literal notranslate"><span class="pre">plot_update</span></code> that updates the line object in every frame of the animation.</p>
+<p>Alternatively, the time evolution of the state can be illustrated by means of an animation. Plot animations are available with use of <code class="docutils literal notranslate"><span class="pre">animation.FuncAnimation</span></code>. The key steps are to (i) enable an interactive plot, (ii) create a <code class="docutils literal notranslate"><span class="pre">Line2D</span></code> line object and (iii) write a function <code class="docutils literal notranslate"><span class="pre">plot_update</span></code> that updates the line object in every frame of the animation.</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># enable an interactive plot</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
