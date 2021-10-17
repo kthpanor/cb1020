@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model assessment &#8212; Project in Mathematical Modeling (CB1020)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="references.html" />
+    <link rel="prev" title="Agent-based modeling" href="agent.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Project in Mathematical Modeling (CB1020)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project.html">
+   Project work
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python.html">
+   Python for this course
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="installation.html">
+     Software installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jupyter.html">
+     Jupyter notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pandas.html">
+     Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="math.html">
+   Mathematical modeling
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ode.html">
+     Differential equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="agent.html">
+     Agent-based modeling
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Model assessment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/data_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kthpanor/cb1020"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/data_analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kthpanor/cb1020/master?urlpath=tree/docs/docs/data_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-analysis-and-open-data">
+   Data analysis and open data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unicef-malaria-datasets">
+   UNICEF malaria datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diarrhoea-care-dataset">
+     Diarrhoea care dataset
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#getting-to-know-your-dataset">
+       Getting to know your dataset
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-of-insecticide-treated-mosquito-nets">
+     Use of insecticide-treated mosquito nets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Getting to know your dataset
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-correlation-analysis">
+   Dataset correlation analysis
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="model-assessment">
+<h1>Model assessment<a class="headerlink" href="#model-assessment" title="Permalink to this headline">¶</a></h1>
+<p>Models introduce state variables and parameters to describe real systems and through parameter variations we learn about system responses, stability, etc. To assess the relevance of a model, it is important to compare it to made observations and gathered experimental data. It is typically necessary to modify the model to more closely describe the known facts about the system and only thereafter use the model to make further predictions.</p>
+<div class="section" id="data-analysis-and-open-data">
+<h2>Data analysis and open data<a class="headerlink" href="#data-analysis-and-open-data" title="Permalink to this headline">¶</a></h2>
+<p>The choosing of model parameter settings can involve <a class="reference external" href="https://en.wikipedia.org/wiki/Data_analysis">data analysis</a>, which is the process of inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information. As part of the field of <a class="reference external" href="https://en.wikipedia.org/wiki/Data_science">data sceince</a>, data analysis is today of paramount importance in life sciences as can be no better exemplified than by the scientific discoeries enabled by the <a class="reference external" href="https://www.genome.gov/human-genome-project">Human Genome Project</a> and the <a class="reference external" href="https://www.proteinatlas.org/">Human Protein Atlas</a>.</p>
+<p>Alongside this <em>data revolution</em>, there is the growing idea of <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">open data</a>, which is the dea that some data should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control. Today, it is a common practice to make data from government-funded research available in this way and the number of open and curated datasets is growing at a fast and accelerated rate. Perform a search for “open datasets” on the internet and the response is overwhelming, which can make navigation difficult.</p>
+</div>
+<div class="section" id="unicef-malaria-datasets">
+<h2>UNICEF malaria datasets<a class="headerlink" href="#unicef-malaria-datasets" title="Permalink to this headline">¶</a></h2>
+<p>As a simple illustration of data analysis, we will study the <a class="reference external" href="https://data.unicef.org/resources/dataset/malaria/">UNICEF datasets on malaria</a> with use of the <a class="reference internal" href="pandas.html#sec-pandas"><span class="std std-ref">pandas</span></a> module in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These particular datasets can be freely downloaded in the form of a single Excel file with multpile spreadsheets, and we will look at two of these sheets.</p>
+<div class="section" id="diarrhoea-care-dataset">
+<h3>Diarrhoea care dataset<a class="headerlink" href="#diarrhoea-care-dataset" title="Permalink to this headline">¶</a></h3>
+<p>The first sheet collects the percentages of children under the age of five years who have had diarrhoea in the two weeks preceding the survey for whom advice or treatment was sought from a health facility or provider.</p>
+<p>We load this sheet into a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, leaving out the first five rows of description that precede the actual data. Column “A” is empty in the spreadsheet and is therefore also left out in the import process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data_input/Child-Health-Coverage-Database-July-2021.xlsx&#39;</span><span class="p">,</span>
+                    <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;DiarCare&#39;</span><span class="p">,</span>
+                    <span class="n">skiprows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                    <span class="n">usecols</span> <span class="o">=</span> <span class="s1">&#39;B:V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-to-know-your-dataset">
+<h4>Getting to know your dataset<a class="headerlink" href="#getting-to-know-your-dataset" title="Permalink to this headline">¶</a></h4>
+<p>At this point, you should start by getting to know your dataset. In a Jupyter notebook environment, a nice printout of the dataframe is provided by just typing its name and running the code cell. Some datasets can be very large and you may first wish to print out the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute of the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dc</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(354, 21)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that this dataframe contains 354 surveys collecting information and data in 21 colunms. Nest, let us print out the column headers and the first five rows of the dataframe with use of the <code class="docutils literal notranslate"><span class="pre">head</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dc</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ISO</th>
+      <th>Countries and areas</th>
+      <th>UNICEF Reporting Region</th>
+      <th>UNICEF Programme Region</th>
+      <th>World Bank Income Group (2020)</th>
+      <th>Year</th>
+      <th>Short Source</th>
+      <th>Long Source</th>
+      <th>National</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Rural</th>
+      <th>Urban</th>
+      <th>Poorest</th>
+      <th>Second</th>
+      <th>Middle</th>
+      <th>Fourth</th>
+      <th>Richest</th>
+      <th>None</th>
+      <th>Primary</th>
+      <th>Sec &amp; \nHigher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AFG</td>
+      <td>Afghanistan</td>
+      <td>South Asia</td>
+      <td>ROSA</td>
+      <td>Low income</td>
+      <td>2011</td>
+      <td>MICS 2010-2011</td>
+      <td>Multiple Indicator Cluster Survey 2010-2011</td>
+      <td>18.1</td>
+      <td>17.5</td>
+      <td>18.8</td>
+      <td>17.6</td>
+      <td>21.4</td>
+      <td>13.8</td>
+      <td>17.3</td>
+      <td>20.6</td>
+      <td>18.8</td>
+      <td>20.3</td>
+      <td>17.8</td>
+      <td>21.8</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AFG</td>
+      <td>Afghanistan</td>
+      <td>South Asia</td>
+      <td>ROSA</td>
+      <td>Low income</td>
+      <td>2015</td>
+      <td>DHS 2015</td>
+      <td>Demographic and Health Survey 2015</td>
+      <td>54.2</td>
+      <td>55.1</td>
+      <td>53.0</td>
+      <td>53.7</td>
+      <td>55.1</td>
+      <td>49.9</td>
+      <td>55.0</td>
+      <td>50.5</td>
+      <td>56.7</td>
+      <td>58.3</td>
+      <td>53.5</td>
+      <td>56.2</td>
+      <td>68.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AFG</td>
+      <td>Afghanistan</td>
+      <td>South Asia</td>
+      <td>ROSA</td>
+      <td>Low income</td>
+      <td>2018</td>
+      <td>Afghanistan Health Survey 2018</td>
+      <td>Afghanistan Health Survey 2018. Amsterdam: KIT...</td>
+      <td>60.3</td>
+      <td>58.7</td>
+      <td>62.0</td>
+      <td>61.7</td>
+      <td>55.6</td>
+      <td>57.8</td>
+      <td>69.1</td>
+      <td>64.0</td>
+      <td>59.0</td>
+      <td>53.2</td>
+      <td>60.9</td>
+      <td>57.8</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AGO</td>
+      <td>Angola</td>
+      <td>Eastern and Southern Africa</td>
+      <td>ESARO</td>
+      <td>Lower middle income</td>
+      <td>2016</td>
+      <td>DHS 2015-2016</td>
+      <td>Demographic and Health Survey 2015-2016</td>
+      <td>44.6</td>
+      <td>45.1</td>
+      <td>44.1</td>
+      <td>39.2</td>
+      <td>47.8</td>
+      <td>34.7</td>
+      <td>41.6</td>
+      <td>54.0</td>
+      <td>39.1</td>
+      <td>55.0</td>
+      <td>37.1</td>
+      <td>42.8</td>
+      <td>53.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ALB</td>
+      <td>Albania</td>
+      <td>Eastern Europe and Central Asia</td>
+      <td>ECARO</td>
+      <td>Upper middle income</td>
+      <td>2000</td>
+      <td>MICS 2000</td>
+      <td>Multiple Indicator Cluster Survey 2000</td>
+      <td>6.4</td>
+      <td>3.4</td>
+      <td>11.2</td>
+      <td>7.1</td>
+      <td>5.0</td>
+      <td>10.3</td>
+      <td>NaN</td>
+      <td>1.8</td>
+      <td>9.3</td>
+      <td>7.5</td>
+      <td>NaN</td>
+      <td>7.6</td>
+      <td>3.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Afghanistan is the first listed country and we can see that three surveys have been performed during the years of 2011, 2015, and 2018. An overviewing statistics of the dataset is provided with the <code class="docutils literal notranslate"><span class="pre">describe</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dc</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>National</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Rural</th>
+      <th>Urban</th>
+      <th>Poorest</th>
+      <th>Second</th>
+      <th>Middle</th>
+      <th>Fourth</th>
+      <th>Richest</th>
+      <th>None</th>
+      <th>Primary</th>
+      <th>Sec &amp; \nHigher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>354.000000</td>
+      <td>354.000000</td>
+      <td>341.000000</td>
+      <td>336.000000</td>
+      <td>338.000000</td>
+      <td>333.000000</td>
+      <td>298.000000</td>
+      <td>299.000000</td>
+      <td>293.000000</td>
+      <td>287.000000</td>
+      <td>278.000000</td>
+      <td>250.000000</td>
+      <td>279.000000</td>
+      <td>289.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2009.788136</td>
+      <td>36.088701</td>
+      <td>35.546921</td>
+      <td>34.898512</td>
+      <td>35.133728</td>
+      <td>36.796997</td>
+      <td>32.441611</td>
+      <td>33.257525</td>
+      <td>35.767577</td>
+      <td>36.373171</td>
+      <td>39.347122</td>
+      <td>31.271600</td>
+      <td>34.540502</td>
+      <td>36.797924</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>6.004038</td>
+      <td>22.038643</td>
+      <td>21.717297</td>
+      <td>21.156618</td>
+      <td>21.935561</td>
+      <td>21.280747</td>
+      <td>21.370426</td>
+      <td>21.340200</td>
+      <td>22.720759</td>
+      <td>22.033651</td>
+      <td>22.959443</td>
+      <td>20.530978</td>
+      <td>21.455102</td>
+      <td>22.130360</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1990.000000</td>
+      <td>0.400000</td>
+      <td>0.800000</td>
+      <td>0.300000</td>
+      <td>0.600000</td>
+      <td>0.800000</td>
+      <td>1.100000</td>
+      <td>0.000000</td>
+      <td>0.600000</td>
+      <td>1.100000</td>
+      <td>1.400000</td>
+      <td>1.300000</td>
+      <td>0.500000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2006.000000</td>
+      <td>14.200000</td>
+      <td>14.100000</td>
+      <td>14.350000</td>
+      <td>14.000000</td>
+      <td>16.300000</td>
+      <td>13.050000</td>
+      <td>12.900000</td>
+      <td>14.200000</td>
+      <td>14.950000</td>
+      <td>15.250000</td>
+      <td>14.100000</td>
+      <td>13.750000</td>
+      <td>12.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2010.000000</td>
+      <td>37.200000</td>
+      <td>36.400000</td>
+      <td>35.300000</td>
+      <td>35.850000</td>
+      <td>39.100000</td>
+      <td>30.800000</td>
+      <td>33.000000</td>
+      <td>35.300000</td>
+      <td>38.400000</td>
+      <td>42.200000</td>
+      <td>29.850000</td>
+      <td>33.500000</td>
+      <td>39.100000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2014.000000</td>
+      <td>52.575000</td>
+      <td>52.700000</td>
+      <td>51.325000</td>
+      <td>52.975000</td>
+      <td>52.400000</td>
+      <td>48.025000</td>
+      <td>49.350000</td>
+      <td>53.600000</td>
+      <td>53.400000</td>
+      <td>56.950000</td>
+      <td>46.600000</td>
+      <td>52.150000</td>
+      <td>54.400000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2020.000000</td>
+      <td>99.600000</td>
+      <td>89.500000</td>
+      <td>91.900000</td>
+      <td>92.000000</td>
+      <td>93.900000</td>
+      <td>86.000000</td>
+      <td>88.800000</td>
+      <td>90.100000</td>
+      <td>95.400000</td>
+      <td>96.100000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>84.300000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It becomes immediately clear that, among other noticeable things, the illness affects equally children of different gender.</p>
+<p>A histogram plot more clearly shows the dire severity of the situation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dc</span><span class="p">[</span><span class="s1">&#39;National&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of country surveys&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Percentages of children seeking diarrhoea care&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/data_analysis_12_0.png" src="../_images/data_analysis_12_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-of-insecticide-treated-mosquito-nets">
+<h3>Use of insecticide-treated mosquito nets<a class="headerlink" href="#use-of-insecticide-treated-mosquito-nets" title="Permalink to this headline">¶</a></h3>
+<p>The second dataset that we will investigate collects information about the use of insecticide-treated mosquito nets (ITNs). The percentages of children under the age of five years who slept under a ITNs the night prior to the survey are given.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_itn</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data_input/Child-Health-Coverage-Database-July-2021.xlsx&#39;</span><span class="p">,</span>
+                    <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;ITN&#39;</span><span class="p">,</span>
+                    <span class="n">skiprows</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                    <span class="n">usecols</span> <span class="o">=</span> <span class="s1">&#39;B:V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4>Getting to know your dataset<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>We perform the same overview also of this second dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_itn</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ISO</th>
+      <th>Countries and areas</th>
+      <th>UNICEF Reporting Region</th>
+      <th>UNICEF Programme Region</th>
+      <th>World Bank Income Group (2020)</th>
+      <th>Year</th>
+      <th>Short Source</th>
+      <th>Long Source</th>
+      <th>National</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Rural</th>
+      <th>Urban</th>
+      <th>Poorest</th>
+      <th>Second</th>
+      <th>Middle</th>
+      <th>Fourth</th>
+      <th>Richest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AFG</td>
+      <td>Afghanistan</td>
+      <td>South Asia</td>
+      <td>ROSA</td>
+      <td>Low income</td>
+      <td>2015</td>
+      <td>DHS 2015</td>
+      <td>Demographic and Health Survey 2015</td>
+      <td>4.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.2</td>
+      <td>6.1</td>
+      <td>1.1</td>
+      <td>3.3</td>
+      <td>5.5</td>
+      <td>6.8</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AGO</td>
+      <td>Angola</td>
+      <td>Eastern and Southern Africa</td>
+      <td>ESARO</td>
+      <td>Lower middle income</td>
+      <td>2007</td>
+      <td>Other NS 2006-2007</td>
+      <td>Other NS 2006-2007</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>19.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>16.0</td>
+      <td>22.0</td>
+      <td>17.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AGO</td>
+      <td>Angola</td>
+      <td>Eastern and Southern Africa</td>
+      <td>ESARO</td>
+      <td>Lower middle income</td>
+      <td>2011</td>
+      <td>MIS 2011</td>
+      <td>Malaria Indicator Survey 2011</td>
+      <td>25.9</td>
+      <td>25.4</td>
+      <td>26.4</td>
+      <td>24.4</td>
+      <td>28.9</td>
+      <td>11.7</td>
+      <td>17.9</td>
+      <td>23.4</td>
+      <td>31.0</td>
+      <td>34.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AGO</td>
+      <td>Angola</td>
+      <td>Eastern and Southern Africa</td>
+      <td>ESARO</td>
+      <td>Lower middle income</td>
+      <td>2016</td>
+      <td>DHS 2015-2016</td>
+      <td>Demographic and Health Survey 2015-2016</td>
+      <td>21.7</td>
+      <td>21.1</td>
+      <td>22.2</td>
+      <td>19.7</td>
+      <td>23.0</td>
+      <td>16.8</td>
+      <td>23.1</td>
+      <td>23.9</td>
+      <td>23.0</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AZE</td>
+      <td>Azerbaijan</td>
+      <td>Eastern Europe and Central Asia</td>
+      <td>ECARO</td>
+      <td>Upper middle income</td>
+      <td>2000</td>
+      <td>MICS 2000</td>
+      <td>Multiple Indicator Cluster Survey 2000</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_itn</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>National</th>
+      <th>Male</th>
+      <th>Female</th>
+      <th>Rural</th>
+      <th>Urban</th>
+      <th>Poorest</th>
+      <th>Second</th>
+      <th>Middle</th>
+      <th>Fourth</th>
+      <th>Richest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>253.000000</td>
+      <td>253.000000</td>
+      <td>223.000000</td>
+      <td>223.000000</td>
+      <td>237.000000</td>
+      <td>241.000000</td>
+      <td>215.000000</td>
+      <td>215.000000</td>
+      <td>217.000000</td>
+      <td>219.000000</td>
+      <td>223.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2010.324111</td>
+      <td>33.616996</td>
+      <td>33.630942</td>
+      <td>33.756951</td>
+      <td>34.623207</td>
+      <td>34.157676</td>
+      <td>34.399070</td>
+      <td>36.841860</td>
+      <td>36.610599</td>
+      <td>35.426484</td>
+      <td>34.509417</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.647525</td>
+      <td>23.950246</td>
+      <td>23.785886</td>
+      <td>23.871770</td>
+      <td>24.701427</td>
+      <td>23.412109</td>
+      <td>23.815979</td>
+      <td>24.464575</td>
+      <td>24.251366</td>
+      <td>23.539135</td>
+      <td>23.092252</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1999.000000</td>
+      <td>0.200000</td>
+      <td>0.200000</td>
+      <td>0.200000</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>0.100000</td>
+      <td>0.100000</td>
+      <td>0.200000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2006.000000</td>
+      <td>9.800000</td>
+      <td>10.100000</td>
+      <td>10.000000</td>
+      <td>9.500000</td>
+      <td>12.600000</td>
+      <td>12.200000</td>
+      <td>15.000000</td>
+      <td>13.300000</td>
+      <td>14.800000</td>
+      <td>14.450000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2011.000000</td>
+      <td>34.500000</td>
+      <td>35.900000</td>
+      <td>34.900000</td>
+      <td>36.200000</td>
+      <td>34.000000</td>
+      <td>34.900000</td>
+      <td>38.000000</td>
+      <td>38.000000</td>
+      <td>35.200000</td>
+      <td>32.900000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2015.000000</td>
+      <td>54.100000</td>
+      <td>54.300000</td>
+      <td>53.750000</td>
+      <td>55.000000</td>
+      <td>53.300000</td>
+      <td>53.050000</td>
+      <td>57.400000</td>
+      <td>57.000000</td>
+      <td>55.400000</td>
+      <td>52.900000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>2020.000000</td>
+      <td>95.500000</td>
+      <td>93.100000</td>
+      <td>94.200000</td>
+      <td>94.000000</td>
+      <td>92.500000</td>
+      <td>95.000000</td>
+      <td>94.200000</td>
+      <td>94.000000</td>
+      <td>91.800000</td>
+      <td>92.100000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_itn</span><span class="p">[</span><span class="s1">&#39;National&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number country surveys&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Percentage children sleeping under ITN&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/data_analysis_18_0.png" src="../_images/data_analysis_18_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dataset-correlation-analysis">
+<h2>Dataset correlation analysis<a class="headerlink" href="#dataset-correlation-analysis" title="Permalink to this headline">¶</a></h2>
+<p>If we were to set up a model for the spread of malaria, it would be reasonable to introduce the percentage use of ITNs among the population as a parameter. Our intuition tells us that the use of ITNs lowers the spread of malaria such that it consequently reduces the cases of children seeking help for diarrhoea. But it would be valuable to put this hypothesis to test against real data and also to get an idea about the strength of this coupling and thereby set a value on the corresponding parameter.</p>
+<p>From a technical point of view, it can be less than straightforward to interrelate informaion from different datasets. For example, in this particular case, we must consider the fact that the two datasets contain different surveys that only partly overlap and it becomes necessary to perform a data matching to extract any useful information. This represents a situation where pandas shows it strength compared to a conventional spreadsheet data analysis.</p>
+<p>Let us do the following:</p>
+<ol class="simple">
+<li><p>Iterate over all surveys in the <em>diarrhoea case</em> (DC) dataset and extract information about the <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">source</span></code> (unique identifier of the survey).</p></li>
+<li><p>Iterate over all <code class="docutils literal notranslate"><span class="pre">country</span></code> surveys in the <em>insecticide-treated mosquito net</em> (ITN) dataset.</p></li>
+<li><p>If there is a match for <code class="docutils literal notranslate"><span class="pre">source</span></code>, then save the pair of DC and ITN data points for national averages.</p></li>
+<li><p>Pllot the data points to see if a correlation is visible.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># collect comparable data into lists</span>
+<span class="n">data_dc</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data_itn</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">idx_dc</span><span class="p">,</span> <span class="n">row_dc</span> <span class="ow">in</span> <span class="n">df_dc</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    
+    <span class="n">country</span> <span class="o">=</span> <span class="n">row_dc</span><span class="p">[</span><span class="s1">&#39;ISO&#39;</span><span class="p">]</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">row_dc</span><span class="p">[</span><span class="s1">&#39;Short Source&#39;</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">idx_itn</span><span class="p">,</span> <span class="n">row_itn</span> <span class="ow">in</span> <span class="n">df_itn</span><span class="p">[</span><span class="n">df_itn</span><span class="p">[</span><span class="s1">&#39;ISO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+
+        <span class="k">if</span> <span class="n">row_itn</span><span class="p">[</span><span class="s1">&#39;Short Source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">source</span><span class="p">:</span>
+            
+            <span class="n">data_dc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_dc</span><span class="p">[</span><span class="s1">&#39;National&#39;</span><span class="p">])</span>
+            <span class="n">data_itn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_itn</span><span class="p">[</span><span class="s1">&#39;National&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dc</span><span class="p">,</span> <span class="n">data_itn</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage children sleeping under ITN&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Percentage children seeking diarrhoea care&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/data_analysis_21_0.png" src="../_images/data_analysis_21_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="agent.html" title="previous page">Agent-based modeling</a>
+    <a class='right-next' id="next-link" href="references.html" title="next page">References</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Patrick Norman<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
