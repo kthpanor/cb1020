@@ -11,4 +11,5 @@ sections:
   sections:
   - file: docs/ode.md
   - file: docs/agent.md
+  - file: docs/data_analysis
 - file: docs/references

@@ -1,0 +1,13 @@
+name: cb1020
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - jupyter-book
+  - jupyterlab
+  - ghp-import
+  - numpy
+  - scipy
+  - matplotlib
+  - mesa
+  - pandas
