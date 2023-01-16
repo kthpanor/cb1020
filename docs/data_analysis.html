@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Model assessment &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Data analysis &#8212; Project in Mathematical Modeling (CB1020)</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -72,6 +72,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -81,7 +85,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -145,7 +149,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Model assessment
+     Data analysis
     </a>
    </li>
   </ul>
@@ -257,7 +261,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-analysis-and-open-data">
@@ -311,12 +315,11 @@
         
               <div>
                 
-  <div class="section" id="model-assessment">
-<h1>Model assessment<a class="headerlink" href="#model-assessment" title="Permalink to this headline">¶</a></h1>
-<p>Models introduce state variables and parameters to describe real systems and through parameter variations we learn about system responses, stability, etc. To assess the relevance of a model, it is important to compare it to made observations and gathered experimental data. It is typically necessary to modify the model to more closely describe the known facts about the system and only thereafter use the model to make further predictions.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-analysis">
+<h1>Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="data-analysis-and-open-data">
 <h2>Data analysis and open data<a class="headerlink" href="#data-analysis-and-open-data" title="Permalink to this headline">¶</a></h2>
-<p>The choosing of model parameter settings can involve <a class="reference external" href="https://en.wikipedia.org/wiki/Data_analysis">data analysis</a>, which is the process of inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information. As part of the field of <a class="reference external" href="https://en.wikipedia.org/wiki/Data_science">data sceince</a>, data analysis is today of paramount importance in life sciences as can be no better exemplified than by the scientific discoeries enabled by the <a class="reference external" href="https://www.genome.gov/human-genome-project">Human Genome Project</a> and the <a class="reference external" href="https://www.proteinatlas.org/">Human Protein Atlas</a>.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Data_analysis">Data analysis</a> is the process of inspecting, cleansing, transforming, and modelling data with the goal of discovering useful information. As part of the field of <a class="reference external" href="https://en.wikipedia.org/wiki/Data_science">data sceince</a>, data analysis is today of paramount importance in life sciences as can be no better exemplified than by the scientific discoeries enabled by the <a class="reference external" href="https://www.genome.gov/human-genome-project">Human Genome Project</a> and the <a class="reference external" href="https://www.proteinatlas.org/">Human Protein Atlas</a>.</p>
 <p>Alongside this <em>data revolution</em>, there is the growing idea of <a class="reference external" href="https://en.wikipedia.org/wiki/Open_data">open data</a>, which is the idea that some data should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control. Today, it is a common practice to make data from government-funded research available in this way and the number of open and curated datasets is growing at a fast and accelerated rate. Perform a search for “open datasets” on the internet and the response is overwhelming, which can make navigation difficult.</p>
 </div>
 <div class="section" id="unicef-malaria-datasets">
@@ -750,6 +753,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/cb1020/lib/python3.9/site-packages/pandas/io/excel/_base.py:1272: FutureWarning: Defining usecols with out of bounds indices is deprecated and will raise a ParserError in a future version.
+  return self._reader.parse(
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="id1">
 <h4>Getting to know your dataset<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
@@ -1161,16 +1170,36 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="agent.html" title="previous page">Agent-based modeling</a>
-    <a class='right-next' id="next-link" href="references.html" title="next page">References</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="agent.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Agent-based modeling</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="references.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">References</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

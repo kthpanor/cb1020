@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -71,6 +71,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -80,7 +84,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
@@ -144,7 +148,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="data_analysis.html">
-     Model assessment
+     Data analysis
     </a>
    </li>
   </ul>
@@ -195,9 +199,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -231,6 +235,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kthpanor/cb1020/master?urlpath=tree/docs/docs/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -239,7 +260,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#content">
@@ -272,9 +293,9 @@
         
               <div>
                 
-  <div class="section" id="introduction">
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to part 2 of the course <em><a class="reference external" href="https://www.kth.se/student/kurser/kurs/BB1220">Project in Biotechnology (BB1220)</a></em>. As from year 2022, the two parts of BB1220 will become separate courses and this second part will be named <em><a class="reference external" href="https://www.kth.se/student/kurser/kurs/CB1020">Project in Mathematical Modeling (CB1020)</a></em>. In the present course material, we will be using the future course reference.</p>
+<p>Welcome to the course <em><a class="reference external" href="https://www.kth.se/student/kurser/kurs/CB1020">Project in Mathematical Modeling (CB1020)</a></em>.</p>
 <div class="section" id="content">
 <h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
 <p>The are three focal points in this course namely to obtain (i) a practical experience with the project work form, (ii) a deepened understanding of mathematical methods in biotechnology, and (iii) basic programming skills targeted toward mathematical modeling.</p>
@@ -282,7 +303,7 @@
 <a class="reference internal image-reference" href="../_images/course-overview.png"><img alt="../_images/course-overview.png" src="../_images/course-overview.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Focal points in the course <em>Project in Mathematical Modeling (CB1020)</em>.</span><a class="headerlink" href="#overview-fig" title="Permalink to this image">¶</a></p>
 </div>
-<p>Mathematical models are used to rationalize and better understand a wide range of phenomena in biology and biotechnology. We refer to the rich yet far from exhaustive list of examples presented in the book titled <em>“Mathematical biology: An introduction with Maple and Matlab”</em> by Shonkwiler and Herod <span id="id1">[<a class="reference internal" href="references.html#id4">SH09</a>]</span>, and we will focus on two very different approaches to conduct mathematical modeling namely by means of (i) <em>ordinary differential equations (ODEs)</em> and (ii) <em>agent-based models (ABMs)</em>.</p>
+<p>Mathematical models are used to rationalize and better understand a wide range of phenomena in biology and biotechnology. We refer to the rich yet far from exhaustive list of examples presented in the book titled <em>“Mathematical biology: An introduction with Maple and Matlab”</em> by Shonkwiler and Herod <span id="id1">[<a class="reference internal" href="references.html#id4">SH09</a>]</span>, and we will focus on three very different approaches to conduct mathematical modeling namely by means of (i) <em>ordinary differential equations (ODEs)</em>, (ii) <em>agent-based models (ABMs)</em>, and (iii) <em>data analysis</em>.</p>
 <p>In principle, the programming language in which we implement any given model is of minor importance <em>per se</em>. However, it makes good sense for every engineer to be well trained in using at least one versatile and generic programming language. Arguably, Python is a good choice to fill this role and it will therefore be the language of choice in this course.</p>
 </div>
 <div class="section" id="organization">
@@ -376,15 +397,27 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="project.html" title="next page">Project work</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="project.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Project work</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
