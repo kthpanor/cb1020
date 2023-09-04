@@ -1,348 +1,402 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Python for this course &#8212; Project in Mathematical Modeling (CB1020)</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/python';</script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Software installation" href="installation.html" />
     <link rel="prev" title="Project work" href="project.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Project in Mathematical Modeling (CB1020)</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project work</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Python for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="project.html">
-   Project work
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Python for this course
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="installation.html">
-     Software installation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jupyter.html">
-     Jupyter notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pandas.html">
-     Pandas
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="math.html">
-   Mathematical modeling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ode.html">
-     Differential equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="agent.html">
-     Agent-based modeling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_analysis.html">
-     Data analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   References
-  </a>
- </li>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ode.html">Differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/kthpanor/cb1020"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/python.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kthpanor/cb1020" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/kthpanor/cb1020/master?urlpath=tree/docs/docs/python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python for this course</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivation">
-   Motivation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#important-modules">
-   Important modules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation">
-   Documentation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-necessities">
-   Some necessities
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterations">
-     Iterations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-types">
-     Data types
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conditions">
-     Conditions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arrays">
-     Arrays
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-operations">
-     Array operations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes-and-object-oriented-programming">
-     Classes and object-oriented programming
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#figure-plotting">
-   Figure plotting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-help-function">
-   Python help function
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-modules">Important modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-necessities">Some necessities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-plotting">Figure plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-help-function">Python help function</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-for-this-course">
-<h1>Python for this course<a class="headerlink" href="#python-for-this-course" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id3">Per15</a>, <a class="reference internal" href="references.html#id2">Per18</a>]</span>.</p>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-for-this-course">
+<h1>Python for this course<a class="headerlink" href="#python-for-this-course" title="Permalink to this heading">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id3" title="Jeffrey M. Perkel. Programming: Pick up Python. Nature, 518:125, 2015. doi:10.1038/518125a.">Per15</a>, <a class="reference internal" href="references.html#id2" title="Jeffrey M. Perkel. Why Jupyter is data scientists' computational notebook of choice. Nature, 563:145, 2018. doi:10.1038/d41586-018-07196-1.">Per18</a>]</span>.</p>
 <p>Python offers an intuitive syntax with a high degree of code readability and it is used for everything from simple scripting and fast prototyping to large-scale projects.</p>
 <p>Python is open source and free for use and distribution. It is available for all relevant platforms, including</p>
 <ul class="simple">
@@ -350,9 +404,9 @@
 <li><p>MacOS</p></li>
 <li><p>Windows</p></li>
 </ul>
-</div>
-<div class="section" id="important-modules">
-<h2>Important modules<a class="headerlink" href="#important-modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="important-modules">
+<h2>Important modules<a class="headerlink" href="#important-modules" title="Permalink to this heading">#</a></h2>
 <p>Python code is typically written in the form of functions that are stored in libraries (or <em>modules</em>) and made available with the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <p>Modules of specific concern in this course include</p>
 <ul class="simple">
@@ -362,12 +416,12 @@
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/overview.html">Pandas</a> is a flexible data analysis/manipulation tool</p></li>
 <li><p><a class="reference external" href="https://mesa.readthedocs.io/en/stable/">Mesa</a> enables agent-based modeling in Python</p></li>
 </ul>
-</div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
 <p>The amount of Python documentation is vast and so is the community of module contributers. If you are in search of the solution to an isolated task or  problem, there is a great chance that someone has contributed an efficient and stable implementation on the web.</p>
 <ul class="simple">
-<li><p>If you are new to Python, it can be a good idea to first read one of the several books available to get a coherent introduction. A recommended choice is the book titled <em>A Whirlwind Tour of Python</em> authored by Jake VanderPlas as it provides a short, clear, and to-the-point presentation <span id="id2">[<a class="reference internal" href="references.html#id6">Van16</a>]</span>.</p></li>
+<li><p>If you are new to Python, it can be a good idea to first read one of the several books available to get a coherent introduction. A recommended choice is the book titled <em>A Whirlwind Tour of Python</em> authored by Jake VanderPlas as it provides a short, clear, and to-the-point presentation <span id="id2">[<a class="reference internal" href="references.html#id6" title="Jake VanderPlas. A Whirlwind Tour of Python. O'Reilly, 2016. URL: https://jakevdp.github.io/WhirlwindTourOfPython/.">Van16</a>]</span>.</p></li>
 <li><p>If you have some experience and rather benefit from a more reference-oriented documentation, a recommended source is <a class="reference external" href="https://www.w3schools.com/python/python_intro.asp">W3Schools</a>.</p></li>
 <li><p>If you find watching tutorial videos useful, the series made by Corey Schafer is recommended. Below is one example from this series.</p></li>
 </ul>
@@ -377,11 +431,11 @@
 </iframe>'
 </div></div>
 </div>
-</div>
-<div class="section" id="some-necessities">
-<h2>Some necessities<a class="headerlink" href="#some-necessities" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="iterations">
-<h3>Iterations<a class="headerlink" href="#iterations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="some-necessities">
+<h2>Some necessities<a class="headerlink" href="#some-necessities" title="Permalink to this heading">#</a></h2>
+<section id="iterations">
+<h3>Iterations<a class="headerlink" href="#iterations" title="Permalink to this heading">#</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used for iterating over an iterable object (such as a list, dictionary, or string).</p>
 <p>A “standard” loop is accomplished with the <code class="docutils literal notranslate"><span class="pre">range</span></code> function. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function returns an iterable sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.</p>
 <div class="cell docutils container">
@@ -401,9 +455,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="data-types">
-<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-types">
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h3>
 <p>Basic Python data types include <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, and <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,9 +506,9 @@ Key, value: second [3.1415, [1, 2, 3]]
 <p class="admonition-title">Note</p>
 <p>A Python <code class="docutils literal notranslate"><span class="pre">list</span></code> with <span class="math notranslate nohighlight">\(N\)</span> elements is indexed from 0 to <span class="math notranslate nohighlight">\((N-1)\)</span>.</p>
 </div>
-</div>
-<div class="section" id="conditions">
-<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="conditions">
+<h3>Conditions<a class="headerlink" href="#conditions" title="Permalink to this heading">#</a></h3>
 <p>Python supports the usual logical conditions:</p>
 <ul class="simple">
 <li><p>Equal: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code></p></li>
@@ -500,9 +554,9 @@ It has a boiling point of 65 degrees Celsius.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="arrays">
-<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="arrays">
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h3>
 <p>Arrays (such as vectors and matrices) should be represented as objects of the NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> class. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.creation.html">Array creation</a> can be performed in numerous ways. Two ways to create a NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code> from a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> are given below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -560,9 +614,9 @@ Identity matrix:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="array-operations">
-<h3>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="array-operations">
+<h3>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h3>
 <p>Array operations should be performed with NumPy routines. The NumPy array operation routines are based on optimized libraries that enable multi-thread execution with use of <a class="reference external" href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a>. On a computer equipped with an Intel processor, the underlying library for NumPy is normally chosen as the <a class="reference external" href="https://en.wikipedia.org/wiki/Math_Kernel_Library">Math Kernel Library (MKL)</a>. Never feel tempted to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops as the performance is tyically orders of magnitude slower. The two most important Numpy array operations are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dot(a,b)</span></code>: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">vector dot product</a></p></li>
@@ -587,7 +641,7 @@ Identity matrix:
 
 <span class="n">tf</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  matmul: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="n">ti</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="si">:</span><span class="s1">10.4f</span><span class="si">}</span><span class="s1"> (ms)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  matmul: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ti</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s1">10.4f</span><span class="si">}</span><span class="s1"> (ms)&#39;</span><span class="p">)</span>
 
 <span class="n">ti</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
@@ -598,22 +652,22 @@ Identity matrix:
 
 <span class="n">tf</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for loop: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span> <span class="o">-</span> <span class="n">ti</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="si">:</span><span class="s1">10.4f</span><span class="si">}</span><span class="s1"> (ms)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for loop: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ti</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s1">10.4f</span><span class="si">}</span><span class="s1"> (ms)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     0.3603 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     0.3650 (ms)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   539.1839 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   275.2192 (ms)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="classes-and-object-oriented-programming">
-<h3>Classes and object-oriented programming<a class="headerlink" href="#classes-and-object-oriented-programming" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="classes-and-object-oriented-programming">
+<h3>Classes and object-oriented programming<a class="headerlink" href="#classes-and-object-oriented-programming" title="Permalink to this heading">#</a></h3>
 <p>Python naturally invites to good software engineering practices in terms of <a class="reference external" href="https://www.w3schools.com/python/python_classes.asp">object-oriented programming</a>. Almost everything in Python is an <code class="docutils literal notranslate"><span class="pre">object</span></code>, with its properties and methods and a <code class="docutils literal notranslate"><span class="pre">class</span></code> is like an object constructor, or a “blueprint” for creating objects known as <em>instances</em> of the class.</p>
 <p>It cannot be overemphasized that the use of object-oriented programming is highly enabling for code sharing and team development, and it is strongly recommended to adopt these practices.</p>
 <p>As an example, we implement a <em>class</em> <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> with a <em>method</em> <code class="docutils literal notranslate"><span class="pre">area</span></code> and <em>attributes</em> <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>.</p>
@@ -669,10 +723,10 @@ Area: 7.5
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="figure-plotting">
-<h2>Figure plotting<a class="headerlink" href="#figure-plotting" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="figure-plotting">
+<h2>Figure plotting<a class="headerlink" href="#figure-plotting" title="Permalink to this heading">#</a></h2>
 <p>Let us use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> to generate an array of random numbers distributed according to the Gaussian distribution</p>
 <div class="math notranslate nohighlight">
 \[
@@ -691,8 +745,8 @@ e^{-(x-\mu)^2 / (2\sigma^2)}
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Object type:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of values:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean value: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="si">:</span><span class="s1"> .4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Standard deviation: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="si">:</span><span class="s1"> .4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean value: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s1"> .4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Standard deviation: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s1"> .4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,12 +785,12 @@ Standard deviation:  0.0996
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/python_27_0.png" src="../_images/python_27_0.png" />
+<img alt="../_images/544ce6b45f025c8194b1f4a434331d33ce185d7952b979e4f01d101b2c760642.png" src="../_images/544ce6b45f025c8194b1f4a434331d33ce185d7952b979e4f01d101b2c760642.png" />
 </div>
 </div>
-</div>
-<div class="section" id="python-help-function">
-<h2>Python help function<a class="headerlink" href="#python-help-function" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python-help-function">
+<h2>Python help function<a class="headerlink" href="#python-help-function" title="Permalink to this heading">#</a></h2>
 <p>The Python <code class="docutils literal notranslate"><span class="pre">help</span></code> function is used to display the documentation of modules, functions, classes, keywords etc.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -748,23 +802,33 @@ Standard deviation:  0.0996
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function hist in module matplotlib.pyplot:
 
 hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bottom=None, histtype=&#39;bar&#39;, align=&#39;mid&#39;, orientation=&#39;vertical&#39;, rwidth=None, log=False, color=None, label=None, stacked=False, *, data=None, **kwargs)
-    Plot a histogram.
+    Compute and plot a histogram.
     
-    Compute and draw the histogram of *x*.  The return value is a tuple
-    (*n*, *bins*, *patches*) or ([*n0*, *n1*, ...], *bins*, [*patches0*,
-    *patches1*, ...]) if the input contains multiple data.  See the
-    documentation of the *weights* parameter to draw a histogram of
-    already-binned data.
+    This method uses `numpy.histogram` to bin the data in *x* and count the
+    number of values in each bin, then draws the distribution either as a
+    `.BarContainer` or `.Polygon`. The *bins*, *range*, *density*, and
+    *weights* parameters are forwarded to `numpy.histogram`.
     
-    Multiple data can be provided via *x* as a list of datasets
-    of potentially different length ([*x0*, *x1*, ...]), or as
-    a 2D ndarray in which each column is a dataset.  Note that
-    the ndarray form is transposed relative to the list form.
+    If the data has already been binned and counted, use `~.bar` or
+    `~.stairs` to plot the distribution::
+    
+        counts, bins = np.histogram(x)
+        plt.stairs(counts, bins)
+    
+    Alternatively, plot pre-computed bins and counts using ``hist()`` by
+    treating each bin as a single point with a weight equal to its count::
+    
+        plt.hist(bins[:-1], bins, weights=counts)
+    
+    The data input *x* can be a singular array, a list of datasets of
+    potentially different lengths ([*x0*, *x1*, ...]), or a 2D ndarray in
+    which each column is a dataset. Note that the ndarray form is
+    transposed relative to the list form. If the input is an array, then
+    the return value is a tuple (*n*, *bins*, *patches*); if the input is a
+    sequence of arrays, then the return value is a tuple
+    ([*n0*, *n1*, ...], *bins*, [*patches0*, *patches1*, ...]).
     
     Masked arrays are not supported.
-    
-    The *bins*, *range*, *weights*, and *density* parameters behave as in
-    `numpy.histogram`.
     
     Parameters
     ----------
@@ -818,15 +882,6 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
         normalized, so that the integral of the density over the range
         remains 1.
     
-        This parameter can be used to draw a histogram of data that has
-        already been binned, e.g. using `numpy.histogram` (by treating each
-        bin as a single point with a weight equal to its count) ::
-    
-            counts, bins = np.histogram(data)
-            plt.hist(bins[:-1], bins, weights=counts)
-    
-        (or you may alternatively use `~.bar()`).
-    
     cumulative : bool or -1, default: False
         If ``True``, then a histogram is computed where each bin gives the
         counts in that bin plus all bins for smaller values. The last bin
@@ -841,7 +896,7 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
         equals 1.
     
     bottom : array-like, scalar, or None, default: None
-        Location of the bottom of each bin, ie. bins are drawn from
+        Location of the bottom of each bin, i.e. bins are drawn from
         ``bottom`` to ``bottom + hist(x, bins)`` If a scalar, the bottom
         of each bin is shifted by the same amount. If an array, each bin
         is shifted independently and the length of bottom must match the
@@ -913,35 +968,36 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
     
     Other Parameters
     ----------------
+    data : indexable object, optional
+        If given, the following parameters also accept a string ``s``, which is
+        interpreted as ``data[s]`` (unless this raises an exception):
+    
+        *x*, *weights*
+    
     **kwargs
         `~matplotlib.patches.Patch` properties
     
     See Also
     --------
-    hist2d : 2D histograms
+    hist2d : 2D histogram with rectangular bins
+    hexbin : 2D histogram with hexagonal bins
+    stairs : Plot a pre-computed histogram
+    bar : Plot a pre-computed histogram
     
     Notes
     -----
-    For large numbers of bins (&gt;1000), &#39;step&#39; and &#39;stepfilled&#39; can be
-    significantly faster than &#39;bar&#39; and &#39;barstacked&#39;.
-    
-    .. note::
-        In addition to the above described arguments, this function can take
-        a *data* keyword argument. If such a *data* argument is given,
-        the following arguments can also be string ``s``, which is
-        interpreted as ``data[s]`` (unless this raises an exception):
-        *x*, *weights*.
-    
-        Objects passed as **data** must support item access (``data[s]``) and
-        membership test (``s in data``).
+    For large numbers of bins (&gt;1000), plotting can be significantly
+    accelerated by using `~.Axes.stairs` to plot a pre-computed histogram
+    (``plt.stairs(*np.histogram(data))``), or by setting *histtype* to
+    &#39;step&#39; or &#39;stepfilled&#39; rather than &#39;bar&#39; or &#39;barstacked&#39;.
 </pre></div>
 </div>
 </div>
 </div>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -955,7 +1011,7 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./docs"
         },
         predefinedOutput: true
@@ -963,56 +1019,118 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="project.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Project work</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="installation.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Software installation</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Patrick Norman<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project work</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Software installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#important-modules">Important modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-necessities">Some necessities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-plotting">Figure plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-help-function">Python help function</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Patrick Norman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

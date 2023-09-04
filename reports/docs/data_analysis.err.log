@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/panor/miniconda3/envs/cb1020/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df_dc = pd.read_excel('../data_input/Child-Health-Coverage-Database-July-2021.xlsx',
+                    sheet_name = 'DiarCare',
+                    skiprows = [0, 1, 2, 3, 4],
+                    usecols = 'B:V')
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m df_dc [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_excel[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data_input/Child-Health-Coverage-Database-July-2021.xlsx[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m      2[0m [43m                    [49m[43msheet_name[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mDiarCare[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m      3[0m [43m                    [49m[43mskiprows[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m[[49m[38;5;241;43m0[39;49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[38;5;241;43m2[39;49m[43m,[49m[43m [49m[38;5;241;43m3[39;49m[43m,[49m[43m [49m[38;5;241;43m4[39;49m[43m][49m[43m,[49m
+[1;32m      4[0m [43m                    [49m[43musecols[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mB:V[39;49m[38;5;124;43m'[39;49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:504[0m, in [0;36mread_excel[0;34m(io, sheet_name, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, storage_options, dtype_backend, engine_kwargs)[0m
+[1;32m    502[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(io, ExcelFile):
+[1;32m    503[0m     should_close [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[0;32m--> 504[0m     io [38;5;241m=[39m [43mExcelFile[49m[43m([49m
+[1;32m    505[0m [43m        [49m[43mio[49m[43m,[49m
+[1;32m    506[0m [43m        [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m    507[0m [43m        [49m[43mengine[49m[38;5;241;43m=[39;49m[43mengine[49m[43m,[49m
+[1;32m    508[0m [43m        [49m[43mengine_kwargs[49m[38;5;241;43m=[39;49m[43mengine_kwargs[49m[43m,[49m
+[1;32m    509[0m [43m    [49m[43m)[49m
+[1;32m    510[0m [38;5;28;01melif[39;00m engine [38;5;129;01mand[39;00m engine [38;5;241m!=[39m io[38;5;241m.[39mengine:
+[1;32m    511[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    512[0m         [38;5;124m"[39m[38;5;124mEngine should not be specified when passing [39m[38;5;124m"[39m
+[1;32m    513[0m         [38;5;124m"[39m[38;5;124man ExcelFile - ExcelFile already has the engine set[39m[38;5;124m"[39m
+[1;32m    514[0m     )
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:1567[0m, in [0;36mExcelFile.__init__[0;34m(self, path_or_buffer, engine, storage_options, engine_kwargs)[0m
+[1;32m   1563[0m     ext [38;5;241m=[39m inspect_excel_format(
+[1;32m   1564[0m         content_or_path[38;5;241m=[39mpath_or_buffer, storage_options[38;5;241m=[39mstorage_options
+[1;32m   1565[0m     )
+[1;32m   1566[0m     [38;5;28;01mif[39;00m ext [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m-> 1567[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   1568[0m             [38;5;124m"[39m[38;5;124mExcel file format cannot be determined, you must specify [39m[38;5;124m"[39m
+[1;32m   1569[0m             [38;5;124m"[39m[38;5;124man engine manually.[39m[38;5;124m"[39m
+[1;32m   1570[0m         )
+[1;32m   1572[0m engine [38;5;241m=[39m config[38;5;241m.[39mget_option([38;5;124mf[39m[38;5;124m"[39m[38;5;124mio.excel.[39m[38;5;132;01m{[39;00mext[38;5;132;01m}[39;00m[38;5;124m.reader[39m[38;5;124m"[39m, silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[1;32m   1573[0m [38;5;28;01mif[39;00m engine [38;5;241m==[39m [38;5;124m"[39m[38;5;124mauto[39m[38;5;124m"[39m:
+
+[0;31mValueError[0m: Excel file format cannot be determined, you must specify an engine manually.
+
