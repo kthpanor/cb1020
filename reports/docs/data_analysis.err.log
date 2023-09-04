@@ -18,47 +18,191 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df_dc = pd.read_excel('../data_input/Child-Health-Coverage-Database-July-2021.xlsx',
-                    sheet_name = 'DiarCare',
+df_itn = pd.read_excel('../data_input/Child-Health-Coverage-Database-July-2021.xlsx',
+                    sheet_name = 'ITN',
                     skiprows = [0, 1, 2, 3, 4],
                     usecols = 'B:V')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[2], line 1[0m
-[0;32m----> 1[0m df_dc [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_excel[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data_input/Child-Health-Coverage-Database-July-2021.xlsx[39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m      2[0m [43m                    [49m[43msheet_name[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mDiarCare[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[0;31mParserError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[7], line 1[0m
+[0;32m----> 1[0m df_itn [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_excel[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data_input/Child-Health-Coverage-Database-July-2021.xlsx[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m      2[0m [43m                    [49m[43msheet_name[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mITN[39;49m[38;5;124;43m'[39;49m[43m,[49m
 [1;32m      3[0m [43m                    [49m[43mskiprows[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m[[49m[38;5;241;43m0[39;49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[38;5;241;43m2[39;49m[43m,[49m[43m [49m[38;5;241;43m3[39;49m[43m,[49m[43m [49m[38;5;241;43m4[39;49m[43m][49m[43m,[49m
 [1;32m      4[0m [43m                    [49m[43musecols[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mB:V[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:504[0m, in [0;36mread_excel[0;34m(io, sheet_name, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, storage_options, dtype_backend, engine_kwargs)[0m
-[1;32m    502[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(io, ExcelFile):
-[1;32m    503[0m     should_close [38;5;241m=[39m [38;5;28;01mTrue[39;00m
-[0;32m--> 504[0m     io [38;5;241m=[39m [43mExcelFile[49m[43m([49m
-[1;32m    505[0m [43m        [49m[43mio[49m[43m,[49m
-[1;32m    506[0m [43m        [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
-[1;32m    507[0m [43m        [49m[43mengine[49m[38;5;241;43m=[39;49m[43mengine[49m[43m,[49m
-[1;32m    508[0m [43m        [49m[43mengine_kwargs[49m[38;5;241;43m=[39;49m[43mengine_kwargs[49m[43m,[49m
-[1;32m    509[0m [43m    [49m[43m)[49m
-[1;32m    510[0m [38;5;28;01melif[39;00m engine [38;5;129;01mand[39;00m engine [38;5;241m!=[39m io[38;5;241m.[39mengine:
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:517[0m, in [0;36mread_excel[0;34m(io, sheet_name, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, storage_options, dtype_backend, engine_kwargs)[0m
 [1;32m    511[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
 [1;32m    512[0m         [38;5;124m"[39m[38;5;124mEngine should not be specified when passing [39m[38;5;124m"[39m
 [1;32m    513[0m         [38;5;124m"[39m[38;5;124man ExcelFile - ExcelFile already has the engine set[39m[38;5;124m"[39m
 [1;32m    514[0m     )
+[1;32m    516[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 517[0m     data [38;5;241m=[39m [43mio[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m
+[1;32m    518[0m [43m        [49m[43msheet_name[49m[38;5;241;43m=[39;49m[43msheet_name[49m[43m,[49m
+[1;32m    519[0m [43m        [49m[43mheader[49m[38;5;241;43m=[39;49m[43mheader[49m[43m,[49m
+[1;32m    520[0m [43m        [49m[43mnames[49m[38;5;241;43m=[39;49m[43mnames[49m[43m,[49m
+[1;32m    521[0m [43m        [49m[43mindex_col[49m[38;5;241;43m=[39;49m[43mindex_col[49m[43m,[49m
+[1;32m    522[0m [43m        [49m[43musecols[49m[38;5;241;43m=[39;49m[43musecols[49m[43m,[49m
+[1;32m    523[0m [43m        [49m[43mdtype[49m[38;5;241;43m=[39;49m[43mdtype[49m[43m,[49m
+[1;32m    524[0m [43m        [49m[43mconverters[49m[38;5;241;43m=[39;49m[43mconverters[49m[43m,[49m
+[1;32m    525[0m [43m        [49m[43mtrue_values[49m[38;5;241;43m=[39;49m[43mtrue_values[49m[43m,[49m
+[1;32m    526[0m [43m        [49m[43mfalse_values[49m[38;5;241;43m=[39;49m[43mfalse_values[49m[43m,[49m
+[1;32m    527[0m [43m        [49m[43mskiprows[49m[38;5;241;43m=[39;49m[43mskiprows[49m[43m,[49m
+[1;32m    528[0m [43m        [49m[43mnrows[49m[38;5;241;43m=[39;49m[43mnrows[49m[43m,[49m
+[1;32m    529[0m [43m        [49m[43mna_values[49m[38;5;241;43m=[39;49m[43mna_values[49m[43m,[49m
+[1;32m    530[0m [43m        [49m[43mkeep_default_na[49m[38;5;241;43m=[39;49m[43mkeep_default_na[49m[43m,[49m
+[1;32m    531[0m [43m        [49m[43mna_filter[49m[38;5;241;43m=[39;49m[43mna_filter[49m[43m,[49m
+[1;32m    532[0m [43m        [49m[43mverbose[49m[38;5;241;43m=[39;49m[43mverbose[49m[43m,[49m
+[1;32m    533[0m [43m        [49m[43mparse_dates[49m[38;5;241;43m=[39;49m[43mparse_dates[49m[43m,[49m
+[1;32m    534[0m [43m        [49m[43mdate_parser[49m[38;5;241;43m=[39;49m[43mdate_parser[49m[43m,[49m
+[1;32m    535[0m [43m        [49m[43mdate_format[49m[38;5;241;43m=[39;49m[43mdate_format[49m[43m,[49m
+[1;32m    536[0m [43m        [49m[43mthousands[49m[38;5;241;43m=[39;49m[43mthousands[49m[43m,[49m
+[1;32m    537[0m [43m        [49m[43mdecimal[49m[38;5;241;43m=[39;49m[43mdecimal[49m[43m,[49m
+[1;32m    538[0m [43m        [49m[43mcomment[49m[38;5;241;43m=[39;49m[43mcomment[49m[43m,[49m
+[1;32m    539[0m [43m        [49m[43mskipfooter[49m[38;5;241;43m=[39;49m[43mskipfooter[49m[43m,[49m
+[1;32m    540[0m [43m        [49m[43mdtype_backend[49m[38;5;241;43m=[39;49m[43mdtype_backend[49m[43m,[49m
+[1;32m    541[0m [43m    [49m[43m)[49m
+[1;32m    542[0m [38;5;28;01mfinally[39;00m:
+[1;32m    543[0m     [38;5;66;03m# make sure to close opened file handles[39;00m
+[1;32m    544[0m     [38;5;28;01mif[39;00m should_close:
 
-File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:1567[0m, in [0;36mExcelFile.__init__[0;34m(self, path_or_buffer, engine, storage_options, engine_kwargs)[0m
-[1;32m   1563[0m     ext [38;5;241m=[39m inspect_excel_format(
-[1;32m   1564[0m         content_or_path[38;5;241m=[39mpath_or_buffer, storage_options[38;5;241m=[39mstorage_options
-[1;32m   1565[0m     )
-[1;32m   1566[0m     [38;5;28;01mif[39;00m ext [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[0;32m-> 1567[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
-[1;32m   1568[0m             [38;5;124m"[39m[38;5;124mExcel file format cannot be determined, you must specify [39m[38;5;124m"[39m
-[1;32m   1569[0m             [38;5;124m"[39m[38;5;124man engine manually.[39m[38;5;124m"[39m
-[1;32m   1570[0m         )
-[1;32m   1572[0m engine [38;5;241m=[39m config[38;5;241m.[39mget_option([38;5;124mf[39m[38;5;124m"[39m[38;5;124mio.excel.[39m[38;5;132;01m{[39;00mext[38;5;132;01m}[39;00m[38;5;124m.reader[39m[38;5;124m"[39m, silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m   1573[0m [38;5;28;01mif[39;00m engine [38;5;241m==[39m [38;5;124m"[39m[38;5;124mauto[39m[38;5;124m"[39m:
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:1629[0m, in [0;36mExcelFile.parse[0;34m(self, sheet_name, header, names, index_col, usecols, converters, true_values, false_values, skiprows, nrows, na_values, parse_dates, date_parser, date_format, thousands, comment, skipfooter, dtype_backend, **kwds)[0m
+[1;32m   1589[0m [38;5;28;01mdef[39;00m [38;5;21mparse[39m(
+[1;32m   1590[0m     [38;5;28mself[39m,
+[1;32m   1591[0m     sheet_name: [38;5;28mstr[39m [38;5;241m|[39m [38;5;28mint[39m [38;5;241m|[39m [38;5;28mlist[39m[[38;5;28mint[39m] [38;5;241m|[39m [38;5;28mlist[39m[[38;5;28mstr[39m] [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;241m0[39m,
+[0;32m   (...)[0m
+[1;32m   1609[0m     [38;5;241m*[39m[38;5;241m*[39mkwds,
+[1;32m   1610[0m ) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m [38;5;28mdict[39m[[38;5;28mstr[39m, DataFrame] [38;5;241m|[39m [38;5;28mdict[39m[[38;5;28mint[39m, DataFrame]:
+[1;32m   1611[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   1612[0m [38;5;124;03m    Parse specified sheet(s) into a DataFrame.[39;00m
+[1;32m   1613[0m 
+[0;32m   (...)[0m
+[1;32m   1627[0m [38;5;124;03m    >>> file.parse()  # doctest: +SKIP[39;00m
+[1;32m   1628[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1629[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_reader[49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m
+[1;32m   1630[0m [43m        [49m[43msheet_name[49m[38;5;241;43m=[39;49m[43msheet_name[49m[43m,[49m
+[1;32m   1631[0m [43m        [49m[43mheader[49m[38;5;241;43m=[39;49m[43mheader[49m[43m,[49m
+[1;32m   1632[0m [43m        [49m[43mnames[49m[38;5;241;43m=[39;49m[43mnames[49m[43m,[49m
+[1;32m   1633[0m [43m        [49m[43mindex_col[49m[38;5;241;43m=[39;49m[43mindex_col[49m[43m,[49m
+[1;32m   1634[0m [43m        [49m[43musecols[49m[38;5;241;43m=[39;49m[43musecols[49m[43m,[49m
+[1;32m   1635[0m [43m        [49m[43mconverters[49m[38;5;241;43m=[39;49m[43mconverters[49m[43m,[49m
+[1;32m   1636[0m [43m        [49m[43mtrue_values[49m[38;5;241;43m=[39;49m[43mtrue_values[49m[43m,[49m
+[1;32m   1637[0m [43m        [49m[43mfalse_values[49m[38;5;241;43m=[39;49m[43mfalse_values[49m[43m,[49m
+[1;32m   1638[0m [43m        [49m[43mskiprows[49m[38;5;241;43m=[39;49m[43mskiprows[49m[43m,[49m
+[1;32m   1639[0m [43m        [49m[43mnrows[49m[38;5;241;43m=[39;49m[43mnrows[49m[43m,[49m
+[1;32m   1640[0m [43m        [49m[43mna_values[49m[38;5;241;43m=[39;49m[43mna_values[49m[43m,[49m
+[1;32m   1641[0m [43m        [49m[43mparse_dates[49m[38;5;241;43m=[39;49m[43mparse_dates[49m[43m,[49m
+[1;32m   1642[0m [43m        [49m[43mdate_parser[49m[38;5;241;43m=[39;49m[43mdate_parser[49m[43m,[49m
+[1;32m   1643[0m [43m        [49m[43mdate_format[49m[38;5;241;43m=[39;49m[43mdate_format[49m[43m,[49m
+[1;32m   1644[0m [43m        [49m[43mthousands[49m[38;5;241;43m=[39;49m[43mthousands[49m[43m,[49m
+[1;32m   1645[0m [43m        [49m[43mcomment[49m[38;5;241;43m=[39;49m[43mcomment[49m[43m,[49m
+[1;32m   1646[0m [43m        [49m[43mskipfooter[49m[38;5;241;43m=[39;49m[43mskipfooter[49m[43m,[49m
+[1;32m   1647[0m [43m        [49m[43mdtype_backend[49m[38;5;241;43m=[39;49m[43mdtype_backend[49m[43m,[49m
+[1;32m   1648[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m,[49m
+[1;32m   1649[0m [43m    [49m[43m)[49m
 
-[0;31mValueError[0m: Excel file format cannot be determined, you must specify an engine manually.
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:931[0m, in [0;36mBaseExcelReader.parse[0;34m(self, sheet_name, header, names, index_col, usecols, dtype, true_values, false_values, skiprows, nrows, na_values, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, dtype_backend, **kwds)[0m
+[1;32m    929[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m err:
+[1;32m    930[0m         err[38;5;241m.[39margs [38;5;241m=[39m ([38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00merr[38;5;241m.[39margs[[38;5;241m0[39m][38;5;132;01m}[39;00m[38;5;124m (sheet: [39m[38;5;132;01m{[39;00masheetname[38;5;132;01m}[39;00m[38;5;124m)[39m[38;5;124m"[39m, [38;5;241m*[39merr[38;5;241m.[39margs[[38;5;241m1[39m:])
+[0;32m--> 931[0m         [38;5;28;01mraise[39;00m err
+[1;32m    933[0m [38;5;28;01mif[39;00m last_sheetname [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    934[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mSheet name is an empty list[39m[38;5;124m"[39m)
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/excel/_base.py:893[0m, in [0;36mBaseExcelReader.parse[0;34m(self, sheet_name, header, names, index_col, usecols, dtype, true_values, false_values, skiprows, nrows, na_values, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, dtype_backend, **kwds)[0m
+[1;32m    891[0m [38;5;66;03m# GH 12292 : error when read one empty column from excel file[39;00m
+[1;32m    892[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 893[0m     parser [38;5;241m=[39m [43mTextParser[49m[43m([49m
+[1;32m    894[0m [43m        [49m[43mdata[49m[43m,[49m
+[1;32m    895[0m [43m        [49m[43mnames[49m[38;5;241;43m=[39;49m[43mnames[49m[43m,[49m
+[1;32m    896[0m [43m        [49m[43mheader[49m[38;5;241;43m=[39;49m[43mheader[49m[43m,[49m
+[1;32m    897[0m [43m        [49m[43mindex_col[49m[38;5;241;43m=[39;49m[43mindex_col[49m[43m,[49m
+[1;32m    898[0m [43m        [49m[43mhas_index_names[49m[38;5;241;43m=[39;49m[43mhas_index_names[49m[43m,[49m
+[1;32m    899[0m [43m        [49m[43mdtype[49m[38;5;241;43m=[39;49m[43mdtype[49m[43m,[49m
+[1;32m    900[0m [43m        [49m[43mtrue_values[49m[38;5;241;43m=[39;49m[43mtrue_values[49m[43m,[49m
+[1;32m    901[0m [43m        [49m[43mfalse_values[49m[38;5;241;43m=[39;49m[43mfalse_values[49m[43m,[49m
+[1;32m    902[0m [43m        [49m[43mskiprows[49m[38;5;241;43m=[39;49m[43mskiprows[49m[43m,[49m
+[1;32m    903[0m [43m        [49m[43mnrows[49m[38;5;241;43m=[39;49m[43mnrows[49m[43m,[49m
+[1;32m    904[0m [43m        [49m[43mna_values[49m[38;5;241;43m=[39;49m[43mna_values[49m[43m,[49m
+[1;32m    905[0m [43m        [49m[43mskip_blank_lines[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m[43m  [49m[38;5;66;43;03m# GH 39808[39;49;00m
+[1;32m    906[0m [43m        [49m[43mparse_dates[49m[38;5;241;43m=[39;49m[43mparse_dates[49m[43m,[49m
+[1;32m    907[0m [43m        [49m[43mdate_parser[49m[38;5;241;43m=[39;49m[43mdate_parser[49m[43m,[49m
+[1;32m    908[0m [43m        [49m[43mdate_format[49m[38;5;241;43m=[39;49m[43mdate_format[49m[43m,[49m
+[1;32m    909[0m [43m        [49m[43mthousands[49m[38;5;241;43m=[39;49m[43mthousands[49m[43m,[49m
+[1;32m    910[0m [43m        [49m[43mdecimal[49m[38;5;241;43m=[39;49m[43mdecimal[49m[43m,[49m
+[1;32m    911[0m [43m        [49m[43mcomment[49m[38;5;241;43m=[39;49m[43mcomment[49m[43m,[49m
+[1;32m    912[0m [43m        [49m[43mskipfooter[49m[38;5;241;43m=[39;49m[43mskipfooter[49m[43m,[49m
+[1;32m    913[0m [43m        [49m[43musecols[49m[38;5;241;43m=[39;49m[43musecols[49m[43m,[49m
+[1;32m    914[0m [43m        [49m[43mdtype_backend[49m[38;5;241;43m=[39;49m[43mdtype_backend[49m[43m,[49m
+[1;32m    915[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m,[49m
+[1;32m    916[0m [43m    [49m[43m)[49m
+[1;32m    918[0m     output[asheetname] [38;5;241m=[39m parser[38;5;241m.[39mread(nrows[38;5;241m=[39mnrows)
+[1;32m    920[0m     [38;5;28;01mif[39;00m header_names:
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1847[0m, in [0;36mTextParser[0;34m(*args, **kwds)[0m
+[1;32m   1792[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m   1793[0m [38;5;124;03mConverts lists of lists/tuples into DataFrames with proper type inference[39;00m
+[1;32m   1794[0m [38;5;124;03mand optional (e.g. string to datetime) conversion. Also enables iterating[39;00m
+[0;32m   (...)[0m
+[1;32m   1844[0m [38;5;124;03m    .. versionchanged:: 1.2[39;00m
+[1;32m   1845[0m [38;5;124;03m"""[39;00m
+[1;32m   1846[0m kwds[[38;5;124m"[39m[38;5;124mengine[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;124m"[39m[38;5;124mpython[39m[38;5;124m"[39m
+[0;32m-> 1847[0m [38;5;28;01mreturn[39;00m [43mTextFileReader[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1448[0m, in [0;36mTextFileReader.__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m   1445[0m     [38;5;28mself[39m[38;5;241m.[39moptions[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m] [38;5;241m=[39m kwds[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m]
+[1;32m   1447[0m [38;5;28mself[39m[38;5;241m.[39mhandles: IOHandles [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[0;32m-> 1448[0m [38;5;28mself[39m[38;5;241m.[39m_engine [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_engine[49m[43m([49m[43mf[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mengine[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1723[0m, in [0;36mTextFileReader._make_engine[0;34m(self, f, engine)[0m
+[1;32m   1720[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(msg)
+[1;32m   1722[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1723[0m     [38;5;28;01mreturn[39;00m [43mmapping[49m[43m[[49m[43mengine[49m[43m][49m[43m([49m[43mf[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[43m)[49m
+[1;32m   1724[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:
+[1;32m   1725[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/python_parser.py:131[0m, in [0;36mPythonParser.__init__[0;34m(self, f, **kwds)[0m
+[1;32m    125[0m [38;5;28mself[39m[38;5;241m.[39m_col_indices: [38;5;28mlist[39m[[38;5;28mint[39m] [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[1;32m    126[0m columns: [38;5;28mlist[39m[[38;5;28mlist[39m[Scalar [38;5;241m|[39m [38;5;28;01mNone[39;00m]]
+[1;32m    127[0m (
+[1;32m    128[0m     columns,
+[1;32m    129[0m     [38;5;28mself[39m[38;5;241m.[39mnum_original_columns,
+[1;32m    130[0m     [38;5;28mself[39m[38;5;241m.[39munnamed_cols,
+[0;32m--> 131[0m ) [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_infer_columns[49m[43m([49m[43m)[49m
+[1;32m    133[0m [38;5;66;03m# Now self.columns has the set of columns that we will process.[39;00m
+[1;32m    134[0m [38;5;66;03m# The original set is stored in self.original_columns.[39;00m
+[1;32m    135[0m [38;5;66;03m# error: Cannot determine type of 'index_names'[39;00m
+[1;32m    136[0m (
+[1;32m    137[0m     [38;5;28mself[39m[38;5;241m.[39mcolumns,
+[1;32m    138[0m     [38;5;28mself[39m[38;5;241m.[39mindex_names,
+[0;32m   (...)[0m
+[1;32m    143[0m     [38;5;28mself[39m[38;5;241m.[39mindex_names,  [38;5;66;03m# type: ignore[has-type][39;00m
+[1;32m    144[0m )
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/python_parser.py:540[0m, in [0;36mPythonParser._infer_columns[0;34m(self)[0m
+[1;32m    538[0m             columns [38;5;241m=[39m [names]
+[1;32m    539[0m     [38;5;28;01melse[39;00m:
+[0;32m--> 540[0m         columns [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_handle_usecols[49m[43m([49m
+[1;32m    541[0m [43m            [49m[43mcolumns[49m[43m,[49m[43m [49m[43mcolumns[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[43mnum_original_columns[49m
+[1;32m    542[0m [43m        [49m[43m)[49m
+[1;32m    543[0m [38;5;28;01melse[39;00m:
+[1;32m    544[0m     ncols [38;5;241m=[39m [38;5;28mlen[39m([38;5;28mself[39m[38;5;241m.[39m_header_line)
+
+File [0;32m~/miniconda3/envs/cb1020/lib/python3.11/site-packages/pandas/io/parsers/python_parser.py:615[0m, in [0;36mPythonParser._handle_usecols[0;34m(self, columns, usecols_key, num_original_columns)[0m
+[1;32m    611[0m     missing_usecols [38;5;241m=[39m [
+[1;32m    612[0m         col [38;5;28;01mfor[39;00m col [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39musecols [38;5;28;01mif[39;00m col [38;5;241m>[39m[38;5;241m=[39m num_original_columns
+[1;32m    613[0m     ]
+[1;32m    614[0m     [38;5;28;01mif[39;00m missing_usecols:
+[0;32m--> 615[0m         [38;5;28;01mraise[39;00m ParserError(
+[1;32m    616[0m             [38;5;124m"[39m[38;5;124mDefining usecols without of bounds indices is not allowed. [39m[38;5;124m"[39m
+[1;32m    617[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mmissing_usecols[38;5;132;01m}[39;00m[38;5;124m are out of bounds.[39m[38;5;124m"[39m,
+[1;32m    618[0m         )
+[1;32m    619[0m     col_indices [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39musecols
+[1;32m    621[0m columns [38;5;241m=[39m [
+[1;32m    622[0m     [n [38;5;28;01mfor[39;00m i, n [38;5;129;01min[39;00m [38;5;28menumerate[39m(column) [38;5;28;01mif[39;00m i [38;5;129;01min[39;00m col_indices]
+[1;32m    623[0m     [38;5;28;01mfor[39;00m column [38;5;129;01min[39;00m columns
+[1;32m    624[0m ]
+
+[0;31mParserError[0m: Defining usecols without of bounds indices is not allowed. [19, 20, 21] are out of bounds. (sheet: ITN)
 
