@@ -42,7 +42,7 @@ conda install numpy scipy matplotlib jupyterlab mesa -c conda-forge
 
 ### All in one step
 
-Get all packages needed for course in one step with use of a YML file.
+Get all packages needed for course in one step with use of a YML file
 
 ```
 conda env create -f cb1020.yml
