@@ -8,7 +8,7 @@ Retrieve miniconda from the following website
 
 > <https://docs.conda.io/en/latest/miniconda.html>
 
-Install the version for 64 bit computers that comes with Python 3.9.
+Install the version for 64 bit computers.
 
 ## Create conda environment and install packages
 
