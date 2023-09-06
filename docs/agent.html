@@ -161,10 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="project.html">Project work</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">Python for this course</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="software.html">Software for this course</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -402,10 +402,11 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modeling</span>
 <span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
-<span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">MultiGrid</span>
+
 <span class="c1"># Analysis</span>
 <span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
+<span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">MultiGrid</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
 </pre></div>
 </div>
 </div>
@@ -416,20 +417,22 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoneyModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-   
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">num_agents</span> <span class="o">=</span> <span class="n">N</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">MultiGrid</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
-            <span class="n">model_reporters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Gini coefficient&quot;</span><span class="p">:</span> <span class="n">compute_gini</span><span class="p">},</span> <span class="c1"># function defined below</span>
-            <span class="n">agent_reporters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Wealth&quot;</span><span class="p">:</span> <span class="s2">&quot;wealth&quot;</span><span class="p">})</span>
+            <span class="n">model_reporters</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;Gini coefficient&quot;</span><span class="p">:</span> <span class="n">compute_gini</span>
+            <span class="p">},</span>  <span class="c1"># function defined below</span>
+            <span class="n">agent_reporters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Wealth&quot;</span><span class="p">:</span> <span class="s2">&quot;wealth&quot;</span><span class="p">},</span>
+        <span class="p">)</span>
 
         <span class="c1"># Create agents</span>
         <span class="k">for</span> <span class="n">unique_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_agents</span><span class="p">):</span>
             <span class="n">agent</span> <span class="o">=</span> <span class="n">MoneyAgent</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
-            
+
             <span class="c1"># Add the agent to a random grid cell</span>
             <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
             <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
@@ -449,16 +452,16 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoneyAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">possible_steps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">get_neighborhood</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span>             <span class="c1"># current position</span>
-            <span class="n">moore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>           <span class="c1"># including step on the diagonal</span>
-            <span class="n">include_center</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># a step to remain at current position is not allowed</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span>  <span class="c1"># current position</span>
+            <span class="n">moore</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># including step on the diagonal</span>
+            <span class="n">include_center</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>  <span class="c1"># a step to remain at current position is not allowed</span>
         <span class="n">new_position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">possible_steps</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">move_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_position</span><span class="p">)</span>
 
@@ -489,7 +492,6 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_gini</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
-
     <span class="n">N</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">num_agents</span>
 
     <span class="c1"># collect wealth of agent into a list and sort it in increasing order</span>
@@ -497,8 +499,8 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <span class="n">x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agent_wealths</span><span class="p">)</span>
 
     <span class="c1"># calculate the Gini coefficient</span>
-    <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">xi</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="p">(</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">B</span> <span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">xi</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
 
     <span class="k">return</span> <span class="n">G</span>
 </pre></div>
@@ -567,19 +569,19 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     </tr>
     <tr>
       <th>1</th>
-      <td>0.1128</td>
+      <td>0.3072</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.3512</td>
+      <td>0.4416</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.4824</td>
+      <td>0.4848</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.5432</td>
+      <td>0.4776</td>
     </tr>
   </tbody>
 </table>
@@ -623,7 +625,7 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <tr>
       <th rowspan="4" valign="top">99</th>
       <th>46</th>
-      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>47</th>
@@ -635,7 +637,7 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     </tr>
     <tr>
       <th>49</th>
-      <td>3</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -656,11 +658,11 @@ Step AgentID
      3             1
      4             1
 ...              ...
-99   45            0
-     46            0
+99   45            1
+     46            3
      47            0
      48            0
-     49            3
+     49            2
 
 [5000 rows x 1 columns]
 </pre></div>
@@ -674,64 +676,55 @@ Step AgentID
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">model_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">model_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Gini coefficient&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time step&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gini coefficient&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time step&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;on&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/df2314b03b6bb7664402fb90d715795429ca66ada1f5809fb16aaba917da2161.png" src="../_images/df2314b03b6bb7664402fb90d715795429ca66ada1f5809fb16aaba917da2161.png" />
+<img alt="../_images/b5d2ff2527dd1f06bea8087f5ac2883d730a40fdf1a8cc88e662c03a340f3d42.png" src="../_images/b5d2ff2527dd1f06bea8087f5ac2883d730a40fdf1a8cc88e662c03a340f3d42.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract a cross section of the dataframe for the final time step</span>
-<span class="n">final_wealth_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;Step&#39;</span><span class="p">)</span>
-<span class="c1"># find the maximum value and convert to integer</span>
-<span class="n">max_wealth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">final_wealth_df</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">final_wealth_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;Step&quot;</span><span class="p">)</span>
 
-<span class="n">final_wealth_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">max_wealth</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+<span class="c1"># plot a histogram</span>
+<span class="n">final_wealth_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wealth distribution&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number agents&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wealth&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Wealth distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Number agents&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Wealth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/41/7lp0k23110d4qkdhrj63x1xh0000gn/T/ipykernel_49434/3253810986.py:4: FutureWarning: Calling int on a single element Series is deprecated and will raise a TypeError in the future. Use int(ser.iloc[0]) instead
-  max_wealth = int(final_wealth_df.max())
-</pre></div>
-</div>
-<img alt="../_images/31f77abc6bfa29b9877997d789bc05847242a8bda59033563b51b5b63feaf780.png" src="../_images/31f77abc6bfa29b9877997d789bc05847242a8bda59033563b51b5b63feaf780.png" />
+<img alt="../_images/11e7a93bb2213f9da88906dd4735646598d42dfea6541687455239bf84c58776.png" src="../_images/11e7a93bb2213f9da88906dd4735646598d42dfea6541687455239bf84c58776.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">step_idx</span><span class="p">,</span> <span class="n">agent_idx</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">step_idx</span><span class="p">,</span> <span class="n">agent_idx</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Agent:&#39;</span><span class="p">,</span> <span class="n">agent_idx</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step:&#39;</span><span class="p">,</span> <span class="n">step_idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Agent:&quot;</span><span class="p">,</span> <span class="n">agent_idx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Step:&quot;</span><span class="p">,</span> <span class="n">step_idx</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 7
-Step: 18
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/41/7lp0k23110d4qkdhrj63x1xh0000gn/T/ipykernel_49434/4107798549.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  step_idx, agent_idx = agent_df.idxmax()[0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 6
+Step: 66
 </pre></div>
 </div>
 </div>
@@ -739,28 +732,28 @@ Step: 18
 <p>Let us plot the time series of wealth for this agent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one_agent_wealth_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="n">agent_idx</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;AgentID&#39;</span><span class="p">)</span>
-<span class="n">max_wealth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">one_agent_wealth_df</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one_agent_wealth_df</span> <span class="o">=</span> <span class="n">agent_df</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="n">agent_idx</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;AgentID&quot;</span><span class="p">)</span>
 
-<span class="n">one_agent_wealth_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">one_agent_wealth_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wealth of Agent </span><span class="si">{</span><span class="n">agent_idx</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time step&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wealth of Agent </span><span class="si">{</span><span class="n">agent_idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time step&quot;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> 
-         <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_wealth</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">max_wealth</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s2">&quot;on&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
+    <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/41/7lp0k23110d4qkdhrj63x1xh0000gn/T/ipykernel_49434/2968636811.py:2: FutureWarning: Calling int on a single element Series is deprecated and will raise a TypeError in the future. Use int(ser.iloc[0]) instead
-  max_wealth = int(one_agent_wealth_df.max())
-</pre></div>
-</div>
-<img alt="../_images/d493661d21c32d1a1b55ca8c684abb513e9b9991956d1dadf32e356ca1896ee4.png" src="../_images/d493661d21c32d1a1b55ca8c684abb513e9b9991956d1dadf32e356ca1896ee4.png" />
+<img alt="../_images/3792cf0e2b4e136c297df0170f213baa5e39dd76c8258276dfe4f156596f3bdb.png" src="../_images/3792cf0e2b4e136c297df0170f213baa5e39dd76c8258276dfe4f156596f3bdb.png" />
 </div>
 </div>
 </section>

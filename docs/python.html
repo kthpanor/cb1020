@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python for this course &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Python &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Software installation" href="installation.html" />
-    <link rel="prev" title="Project work" href="project.html" />
+    <link rel="next" title="Jupyter notebooks" href="jupyter.html" />
+    <link rel="prev" title="Software for this course" href="software.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,10 +161,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="project.html">Project work</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Python for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="software.html">Software for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -357,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python for this course</h1>
+    <h1>Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,12 +374,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-with-numpy">Arrays with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-plotting">Figure plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-matplotlib">Plotting with Matplotlib</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-with-pandas">Dataframes with Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-help-function">Python help function</a></li>
 </ul>
             </nav>
@@ -392,8 +402,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-for-this-course">
-<h1>Python for this course<a class="headerlink" href="#python-for-this-course" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id3" title="Jeffrey M. Perkel. Programming: Pick up Python. Nature, 518:125, 2015. doi:10.1038/518125a.">Per15</a>, <a class="reference internal" href="references.html#id2" title="Jeffrey M. Perkel. Why Jupyter is data scientists' computational notebook of choice. Nature, 563:145, 2018. doi:10.1038/d41586-018-07196-1.">Per18</a>]</span>.</p>
@@ -555,8 +565,8 @@ It has a boiling point of 65 degrees Celsius.
 </div>
 </div>
 </section>
-<section id="arrays">
-<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h3>
+<section id="arrays-with-numpy">
+<h3>Arrays with NumPy<a class="headerlink" href="#arrays-with-numpy" title="Permalink to this heading">#</a></h3>
 <p>Arrays (such as vectors and matrices) should be represented as objects of the NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> class. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.creation.html">Array creation</a> can be performed in numerous ways. Two ways to create a NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code> from a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> are given below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,9 +624,8 @@ Identity matrix:
 </div>
 </div>
 </div>
-</section>
 <section id="array-operations">
-<h3>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h3>
+<h4>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h4>
 <p>Array operations should be performed with NumPy routines. The NumPy array operation routines are based on optimized libraries that enable multi-thread execution with use of <a class="reference external" href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a>. On a computer equipped with an Intel processor, the underlying library for NumPy is normally chosen as the <a class="reference external" href="https://en.wikipedia.org/wiki/Math_Kernel_Library">Math Kernel Library (MKL)</a>. Never feel tempted to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops as the performance is tyically orders of magnitude slower. The two most important Numpy array operations are</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dot(a,b)</span></code>: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">vector dot product</a></p></li>
@@ -657,14 +666,15 @@ Identity matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     0.3650 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     0.3169 (ms)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   275.2192 (ms)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   484.2231 (ms)
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="classes-and-object-oriented-programming">
 <h3>Classes and object-oriented programming<a class="headerlink" href="#classes-and-object-oriented-programming" title="Permalink to this heading">#</a></h3>
@@ -724,9 +734,8 @@ Area: 7.5
 </div>
 </div>
 </section>
-</section>
-<section id="figure-plotting">
-<h2>Figure plotting<a class="headerlink" href="#figure-plotting" title="Permalink to this heading">#</a></h2>
+<section id="plotting-with-matplotlib">
+<h3>Plotting with Matplotlib<a class="headerlink" href="#plotting-with-matplotlib" title="Permalink to this heading">#</a></h3>
 <p>Let us use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> to generate an array of random numbers distributed according to the Gaussian distribution</p>
 <div class="math notranslate nohighlight">
 \[
@@ -788,6 +797,256 @@ Standard deviation:  0.0996
 <img alt="../_images/544ce6b45f025c8194b1f4a434331d33ce185d7952b979e4f01d101b2c760642.png" src="../_images/544ce6b45f025c8194b1f4a434331d33ce185d7952b979e4f01d101b2c760642.png" />
 </div>
 </div>
+</section>
+</section>
+<section id="dataframes-with-pandas">
+<span id="sec-pandas"></span><h2>Dataframes with Pandas<a class="headerlink" href="#dataframes-with-pandas" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#getting-started">pandas</a> module is a powerful tool for data manipulation and analysis. Pandas allows for the import and export of data in several standard formats such as <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">comma-separatped values</a> (.csv) and <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Excel">Microsoft Excel</a> (.xls). If you are working with spreadsheets for data handling and would benefit from automatized ways to merge, reshape, select, clean, wrangle, plot, etc. your data, then you are likely to benefit from pandas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="create-dataframe-from-spreadsheet">
+<h3>Create dataframe from spreadsheet<a class="headerlink" href="#create-dataframe-from-spreadsheet" title="Permalink to this heading">#</a></h3>
+<p>The most important class in pandas is <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. An object of this class corresponds to a sheet in an Excel file. A dataframe can be constructed with the method <code class="docutils literal notranslate"><span class="pre">read.excel</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;path_to_file.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-dataframe-from-python-dictionary">
+<h3>Create dataframe from Python dictionary<a class="headerlink" href="#create-dataframe-from-python-dictionary" title="Permalink to this heading">#</a></h3>
+<p>Dataframes can also be thought of as Python dictionaries and we can also create a dataframe from a Python dictonary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Ceasar&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;Beatrice&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Result&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># create dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># display the 5 first lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="manipulate-data">
+<h3>Manipulate data<a class="headerlink" href="#manipulate-data" title="Permalink to this heading">#</a></h3>
+<p>We can sort the dataframe by a certain column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="analyse-data">
+<h3>Analyse data<a class="headerlink" href="#analyse-data" title="Permalink to this heading">#</a></h3>
+<p>We can list a selection of elements in the dataframe, say those students that passed the examination point limit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can perform statistical anlyses on the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Averaged result is equal to&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;points.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged result is equal to 24.5 points.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     4.000000
+mean     24.500000
+std       6.350853
+min      18.000000
+25%      21.000000
+50%      23.500000
+75%      27.000000
+max      33.000000
+Name: Result, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-data">
+<h3>Plot data<a class="headerlink" href="#plot-data" title="Permalink to this heading">#</a></h3>
+<p>We can plot the data in the dataframe. Pandas has built-in <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">dataframe plot functionality</a> using <a class="reference external" href="https://matplotlib.org/">matplotlib</a> as the underlying plot engine, so you can also import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> for additional plot control.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Points on exam&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xticklabels</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e81bd83ef0d96c9e5aa098c654bf4fa5be0313d4070e6a1fd8ea83a4cc1af4cf.png" src="../_images/e81bd83ef0d96c9e5aa098c654bf4fa5be0313d4070e6a1fd8ea83a4cc1af4cf.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="python-help-function">
 <h2>Python help function<a class="headerlink" href="#python-help-function" title="Permalink to this heading">#</a></h2>
@@ -995,8 +1254,6 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
 </div>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1031,20 +1288,20 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="project.html"
+       href="software.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Project work</p>
+        <p class="prev-next-title">Software for this course</p>
       </div>
     </a>
     <a class="right-next"
-       href="installation.html"
+       href="jupyter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Software installation</p>
+        <p class="prev-next-title">Jupyter notebooks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1073,12 +1330,22 @@ hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bo
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-with-numpy">Arrays with NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array operations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-plotting">Figure plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-matplotlib">Plotting with Matplotlib</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-with-pandas">Dataframes with Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-help-function">Python help function</a></li>
 </ul>
   </nav></div>
