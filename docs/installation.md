@@ -56,13 +56,11 @@ channels:
   - conda-forge
 dependencies:
   - python
-  - jupyter-book
   - jupyterlab
   - jupyterlab-spellchecker
   - jupyterlab_code_formatter
   - black
   - isort
-  - ghp-import
   - numpy
   - scipy
   - matplotlib
