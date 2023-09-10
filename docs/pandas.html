@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Project work &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Pandas &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/project';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/pandas';</script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python for this course" href="python.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
+    <link rel="next" title="Mathematical modeling" href="math.html" />
+    <link rel="prev" title="Jupyter notebook" href="jupyter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,11 +158,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project work</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="python.html">Python for this course</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project work</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="python.html">Python for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -243,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/project.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/pandas.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/docs/project.ipynb" target="_blank"
+      <li><a href="../_sources/docs/pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project work</h1>
+    <h1>Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,7 +365,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
 </ul>
             </nav>
         </div>
@@ -377,27 +381,253 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-work">
-<h1>Project work<a class="headerlink" href="#project-work" title="Permalink to this heading">#</a></h1>
-<p>The <em>project work form</em> is omnipresent in industri and academia alike, making it an expected and all but required skill in every engineer. Thus, it makes good sense to develop this skillset already as a student and as a training ground we will use <em>problem-based learning</em> in our studies of the cross-disciplinary topic of mathematical modeling. An excellent guide to project work is the book titled <em>“Projektarbete: En vägledning för studenter”</em> by Andersen and Schwencke <span id="id1">[<a class="reference internal" href="references.html#id5" title="Erling S. Andersen and Eva Schwencke. Projektarbete—en vägledning för studenter. Studentlitteratur, 2013. URL: https://www.studentlitteratur.se/kurslitteratur/teknik-datorer-it-och-bygg/projektledning-och-kvalitet/projektarbete.">AS13</a>]</span>. A readthrough of this book is well invested time and will provide genreric, valuable, knowhow for future work.</p>
-<section id="project-proposals">
-<h2>Project proposals<a class="headerlink" href="#project-proposals" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Interactions Between Organisms and Their Environment</strong> <br>
-An ecosystem is a group of interacting living and nonliving elements. Every real organism sits in such a mixture of living and nonliving elements, interacting with them all at once. A famous biologist, Barry Commoner, has summed this up with the observation that “Everything is connected to everything else.” Living components of an organism’s environment include those organisms that it eats, those that eat it, those that exchange diseases and parasites with it, and those that try to occupy its space. Chapters 3 and 4 in the course book by Herod and Shonkwiler <span id="id2">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serve as an introduction.</p></li>
-<li><p><strong>Diffusion and membrane transport</strong> <br>
-Many biological phenomena, at all levels of organization, can be modeled by treating them as random processes, behaving much like the diffusion of ink in a container of water. The transmembrane movement of the normal water-soluble compounds of cellular metabolism is regulated by large biochemical molecules that span the membrane. They are called permeases, or transport proteins. Permeases have the ability to select the materials that cross a membrane. Chapter 6 in the course book by Herod and Shonkwiler <span id="id3">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serves as an introduction.</p></li>
-<li><p><strong>Communication and signaling in organisms</strong> <br>
-Neurons are separated by a synaptic cleft, and interneuronal transmission of information is chemically mediated. An action potential in a presynaptic neuron triggers the release of a neurotransmitter chemical that diffuses to the postsynaptic cell. The sum of all the excitatory and inhibitory neurotransmitters that reach a postsynaptic cell in a short period of time determines whether a new action potential is generated. Chapter 7 in the course book by Herod and Shonkwiler <span id="id4">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serves as an introduction.</p></li>
-<li><p><strong>Enzyme kinetics</strong> <br>
-Enzymes serve to catalyze reactions in living systems, enabling complex chemical transformations to occur at moderate temperatures, many times faster than their uncatalyzed counterparts. Proteins, serving as the catalysts, are first used and then regenerated in a multistep process. Overall, the simplest enzyme-catalyzed reactions transform the enzyme’s specific substrate into product, possibly with the release of a by-product. Referred to as enzyme saturation, these reactions are typically rate limited by the amount of enzyme itself. Chapter 8 in the course book by Herod and Shonkwiler <span id="id5">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serves as an introduction.</p></li>
-<li><p><strong>Uptake of lead in mammals</strong> <br>
-While lead interacts differently with the various tissues of the body, as a first approximation we need only distinguish three tissue types: bone, blood, and the other soft tissue of the body. Bone tends to take up lead slowly but retain it for very long periods of time, in contrast to soft tissue, other than blood, in which the turnover of lead is much quicker. Blood is the transport agent of the metal. The disposition of lead in the body can be followed as a three-compartment system by tracking its movement into and out of these three tissue types. Chapter 9 in the course book by Herod and Shonkwiler <span id="id6">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serves as an introduction.</p></li>
-<li><p><strong>T-cell infection by HIV</strong> <br>
-You could think of a question related to HIV infection and treatment, introducing three types of T-cells (normal, latent and active) and the virus to model as particles that interact according to rules that are similar to real life. Chapter 10 in the course book by Herod and Shonkwiler <span id="id7">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> serves as an introduction.</p></li>
-<li><p><strong>Other project</strong> <br>
-Feel free to design a project on a different topic of your interest. You may find inspiration in any of the other chapters of the course book by Herod and Shonkwiler <span id="id8">[<a class="reference internal" href="references.html#id4" title="Ronald W. Shonkwiler and James Herod. Mathematical Biology: An Introduction with Maple and Matlab. Springer, second edition, 2009. URL: https://kth-primo.hosted.exlibrisgroup.com/permalink/f/1pigvvn/TN_cdi_springer_books_10_1007_978_0_387_70984_0.">SH09</a>]</span> or from any other source such as the reviews written by Bailey <span id="id9">[<a class="reference internal" href="references.html#id7" title="James E. Bailey. Mathematical modeling and analysis in biochemical engineering: past accomplishments and future opportunities. Biotech. Prog., 14(1):8-20, 1998. doi:10.1021/bp9701269.">Bai98</a>]</span> and Cvijovic <em>et al.</em> <span id="id10">[<a class="reference internal" href="references.html#id9" title="Marija Cvijovic, Sergio Bordel, and Jens Nielsen. Mathematical models of cell factories: moving towards the core of industrial biotechnology. Microbial Biotechnology, 4(5):572-584, 2011. doi:10.1111/j.1751-7915.2010.00233.x.">CBN11</a>]</span>.</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
+<span id="sec-pandas"></span><h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#getting-started">pandas</a> module is a powerful tool for data manipulation and analysis. Pandas allows for the import and export of data in several standard formats such as <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">comma-separatped values</a> (.csv) and <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Excel">Microsoft Excel</a> (.xls). If you are working with spreadsheets for data handling and would benefit from automatized ways to merge, reshape, select, clean, wrangle, plot, etc. your data, then you are likely to benefit from pandas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="create-dataframe-from-spreadsheet">
+<h2>Create dataframe from spreadsheet<a class="headerlink" href="#create-dataframe-from-spreadsheet" title="Permalink to this heading">#</a></h2>
+<p>The most important class in pandas is <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. An object of this class corresponds to a sheet in an Excel file. A dataframe can be constructed with the method <code class="docutils literal notranslate"><span class="pre">read.excel</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;path_to_file.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-dataframe-from-python-dictionary">
+<h2>Create dataframe from Python dictionary<a class="headerlink" href="#create-dataframe-from-python-dictionary" title="Permalink to this heading">#</a></h2>
+<p>Dataframes can also be thought of as Python dictionaries and we can also create a dataframe from a Python dictonary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Ceasar&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;Beatrice&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Result&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># create dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># display the 5 first lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="manipulate-data">
+<h2>Manipulate data<a class="headerlink" href="#manipulate-data" title="Permalink to this heading">#</a></h2>
+<p>We can sort the dataframe by a certain column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="analyse-data">
+<h2>Analyse data<a class="headerlink" href="#analyse-data" title="Permalink to this heading">#</a></h2>
+<p>We can list a selection of elements in the dataframe, say those students that passed the examination point limit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can perform statistical anlyses on the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Averaged result is equal to&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;points.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged result is equal to 24.5 points.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     4.000000
+mean     24.500000
+std       6.350853
+min      18.000000
+25%      21.000000
+50%      23.500000
+75%      27.000000
+max      33.000000
+Name: Result, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-data">
+<h2>Plot data<a class="headerlink" href="#plot-data" title="Permalink to this heading">#</a></h2>
+<p>We can plot the data in the dataframe. Pandas has built-in <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">dataframe plot functionality</a> using <a class="reference external" href="https://matplotlib.org/">matplotlib</a> as the underlying plot engine, so you can also import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> for additional plot control.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Points on exam&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xticklabels</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e81bd83ef0d96c9e5aa098c654bf4fa5be0313d4070e6a1fd8ea83a4cc1af4cf.png" src="../_images/e81bd83ef0d96c9e5aa098c654bf4fa5be0313d4070e6a1fd8ea83a4cc1af4cf.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -433,20 +663,20 @@ Feel free to design a project on a different topic of your interest. You may fin
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="jupyter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Jupyter notebook</p>
       </div>
     </a>
     <a class="right-next"
-       href="python.html"
+       href="math.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python for this course</p>
+        <p class="prev-next-title">Mathematical modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -468,7 +698,11 @@ Feel free to design a project on a different topic of your interest. You may fin
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
 </ul>
   </nav></div>
 
