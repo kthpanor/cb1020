@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Jupyter notebook" href="jupyter.html" />
-    <link rel="prev" title="Python for this course" href="python.html" />
+    <link rel="next" title="Mathematical modeling" href="math.html" />
+    <link rel="prev" title="Jupyter notebooks" href="jupyter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,10 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="project.html">Project work</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="python.html">Python for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="software.html">Software for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Software installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -342,7 +342,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -358,6 +360,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environment-and-install-packages">Create conda environment and install packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -370,11 +386,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="software-installation">
 <h1>Software installation<a class="headerlink" href="#software-installation" title="Permalink to this heading">#</a></h1>
 <p>Conda is an open-source package and environment management system that runs on Windows, MacOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others.</p>
+<section id="download-and-install-miniconda">
+<h2>Download and install miniconda<a class="headerlink" href="#download-and-install-miniconda" title="Permalink to this heading">#</a></h2>
 <p>Retrieve miniconda from the following website</p>
 <blockquote>
 <div><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p>
 </div></blockquote>
-<p>Install the version for 64 bit computers that comes with Python 3.9.</p>
+<p>Install the version for 64 bit computers.</p>
+</section>
+<section id="create-conda-environment-and-install-packages">
+<h2>Create conda environment and install packages<a class="headerlink" href="#create-conda-environment-and-install-packages" title="Permalink to this heading">#</a></h2>
+<section id="step-by-step">
+<h3>Step-by-step<a class="headerlink" href="#step-by-step" title="Permalink to this heading">#</a></h3>
 <p>Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple <em>environments</em> and you start in the one named <code class="docutils literal notranslate"><span class="pre">base</span></code> as is typically indicated by the prompt. To create a new and additional environment named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, enter the following command line statement</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span>
 </pre></div>
@@ -392,11 +415,43 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">matplotlib</span> <span class="n">jupyterlab</span> <span class="n">mesa</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
+</section>
+<section id="all-in-one-step">
+<h3>All in one step<a class="headerlink" href="#all-in-one-step" title="Permalink to this heading">#</a></h3>
+<p>Get all packages needed for course in one step with use of a YML file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">cb1020</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>where the file <code class="docutils literal notranslate"><span class="pre">cb1020.yml</span></code> should contain</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">cb1020</span>
+<span class="n">channels</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">dependencies</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">python</span>
+  <span class="o">-</span> <span class="n">jupyterlab</span>
+  <span class="o">-</span> <span class="n">jupyterlab</span><span class="o">-</span><span class="n">spellchecker</span>
+  <span class="o">-</span> <span class="n">jupyterlab_code_formatter</span>
+  <span class="o">-</span> <span class="n">black</span>
+  <span class="o">-</span> <span class="n">isort</span>
+  <span class="o">-</span> <span class="n">numpy</span>
+  <span class="o">-</span> <span class="n">scipy</span>
+  <span class="o">-</span> <span class="n">matplotlib</span>
+  <span class="o">-</span> <span class="n">mesa</span>
+  <span class="o">-</span> <span class="n">pandas</span>
+  <span class="o">-</span> <span class="n">openpyxl</span>
+</pre></div>
+</div>
+<p>Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.</p>
+</section>
+</section>
+<section id="try-it-out">
+<h2>Try it out<a class="headerlink" href="#try-it-out" title="Permalink to this heading">#</a></h2>
 <p>You should now be ready to start a Jupyter notebook with the command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">notebook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">lab</span>
 </pre></div>
 </div>
 <p>which should open in your default web browser. A notebook allows for interactive execution of Python code written into cells.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,20 +486,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python.html"
+       href="jupyter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python for this course</p>
+        <p class="prev-next-title">Jupyter notebooks</p>
       </div>
     </a>
     <a class="right-next"
-       href="jupyter.html"
+       href="math.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Jupyter notebook</p>
+        <p class="prev-next-title">Mathematical modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,6 +512,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environment-and-install-packages">Create conda environment and install packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
