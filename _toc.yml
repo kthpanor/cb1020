@@ -3,13 +3,15 @@ root: docs/intro
 sections:
 - file: docs/software
   sections:
+  - file: docs/installation
   - file: docs/python
   - file: docs/jupyter
-  - file: docs/installation
+  - file: docs/mesa
+  - file: docs/pytorch
 - file: docs/math
   sections:
   - file: docs/ode
   - file: docs/data_analysis
   - file: docs/agent
-  - file: docs/pytorch
+  - file: docs/machine_learning
 - file: docs/references
