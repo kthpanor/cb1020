@@ -38,6 +38,7 @@ dependencies:
   - matplotlib
   - mesa
   - pandas
+  - pyarrow
   - openpyxl
   - pytorch
   - torchvision
