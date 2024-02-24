@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Mesa" href="mesa.html" />
-    <link rel="prev" title="Jupyter notebooks" href="jupyter.html" />
+    <link rel="prev" title="Python and notebooks" href="python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +180,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="software.html">Software for this course</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python and notebooks</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
@@ -367,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -383,6 +384,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -393,8 +409,253 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
-<p>Introduction to dataframes and such.</p>
+<span id="sec-pandas"></span><h1>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dataframes">
+<h2>Dataframes<a class="headerlink" href="#dataframes" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html#getting-started">pandas</a> module is a powerful tool for data manipulation and analysis. Pandas allows for the import and export of data in several standard formats such as <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">comma-separatped values</a> (.csv) and <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Excel">Microsoft Excel</a> (.xls). If you are working with spreadsheets for data handling and would benefit from automatized ways to merge, reshape, select, clean, wrangle, plot, etc. your data, then you are likely to benefit from pandas.</p>
+<section id="create-dataframe-from-spreadsheet">
+<h3>Create dataframe from spreadsheet<a class="headerlink" href="#create-dataframe-from-spreadsheet" title="Link to this heading">#</a></h3>
+<p>The most important class in pandas is <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. An object of this class corresponds to a sheet in an Excel file. A dataframe can be constructed with the method <code class="docutils literal notranslate"><span class="pre">read.excel</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;path_to_file.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-dataframe-from-python-dictionary">
+<h3>Create dataframe from Python dictionary<a class="headerlink" href="#create-dataframe-from-python-dictionary" title="Link to this heading">#</a></h3>
+<p>Dataframes can also be thought of as Python dictionaries and we can also create a dataframe from a Python dictonary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Ceasar&quot;</span><span class="p">,</span> <span class="s2">&quot;David&quot;</span><span class="p">,</span> <span class="s2">&quot;Beatrice&quot;</span><span class="p">],</span> <span class="s2">&quot;Result&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">]}</span>
+
+<span class="c1"># create dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># display the 5 first lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="manipulate-data">
+<h3>Manipulate data<a class="headerlink" href="#manipulate-data" title="Link to this heading">#</a></h3>
+<p>We can sort the dataframe by a certain column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>David</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="analyse-data">
+<h3>Analyse data<a class="headerlink" href="#analyse-data" title="Link to this heading">#</a></h3>
+<p>We can list a selection of elements in the dataframe, say those students that passed the examination point limit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alice</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ceasar</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Beatrice</td>
+      <td>22</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can perform statistical anlyses on the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Averaged result is equal to&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s2">&quot;points.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged result is equal to 24.5 points.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count     4.000000
+mean     24.500000
+std       6.350853
+min      18.000000
+25%      21.000000
+50%      23.500000
+75%      27.000000
+max      33.000000
+Name: Result, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-data">
+<h3>Plot data<a class="headerlink" href="#plot-data" title="Link to this heading">#</a></h3>
+<p>We can plot the data in the dataframe. Pandas has built-in <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">dataframe plot functionality</a> using <a class="reference external" href="https://matplotlib.org/">matplotlib</a> as the underlying plot engine, so you can also import <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> for additional plot control.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Result&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Points on exam&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xticklabels</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/656a8904fe4950cbb2c084c58d0318083c310c347c4022ee90305bad414f9b92.png" src="../_images/656a8904fe4950cbb2c084c58d0318083c310c347c4022ee90305bad414f9b92.png" />
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -428,12 +689,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="jupyter.html"
+       href="python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Jupyter notebooks</p>
+        <p class="prev-next-title">Python and notebooks</p>
       </div>
     </a>
     <a class="right-next"
@@ -452,7 +713,27 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-spreadsheet">Create dataframe from spreadsheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dataframe-from-python-dictionary">Create dataframe from Python dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulate-data">Manipulate data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-data">Analyse data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data">Plot data</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

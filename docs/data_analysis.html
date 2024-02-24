@@ -180,8 +180,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="software.html">Software for this course</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python and notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
@@ -424,25 +423,13 @@ document.write(`
 </section>
 <section id="unicef-malaria-datasets">
 <h2>UNICEF malaria datasets<a class="headerlink" href="#unicef-malaria-datasets" title="Link to this heading">#</a></h2>
-<p>As a simple illustration of data analysis, we will study the <a class="reference external" href="https://data.unicef.org/resources/dataset/malaria/">UNICEF datasets on malaria</a> with use of the <a class="reference internal" href="python.html#sec-pandas"><span class="std std-ref">pandas</span></a> module in Python.</p>
+<p>As a simple illustration of data analysis, we will study the <a class="reference external" href="https://data.unicef.org/resources/dataset/malaria/">UNICEF datasets on malaria</a> with use of the <a class="reference internal" href="pandas.html#sec-pandas"><span class="std std-ref">pandas</span></a> module in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_columns&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5h/jd4647d9225d49ljrdh8xjwc0000gq/T/ipykernel_73538/4034816550.py:2: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
 </pre></div>
 </div>
 </div>
