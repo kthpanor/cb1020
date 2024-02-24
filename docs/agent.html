@@ -184,6 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
 </ul>
@@ -611,19 +612,19 @@ We would love to hear what you think about this new feature. If you have any tho
     </tr>
     <tr>
       <th>1</th>
-      <td>0.2744</td>
+      <td>0.3200</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4224</td>
+      <td>0.3736</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.5000</td>
+      <td>0.4664</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.5224</td>
+      <td>0.4576</td>
     </tr>
   </tbody>
 </table>
@@ -668,24 +669,24 @@ We would love to hear what you think about this new feature. If you have any tho
   <tbody>
     <tr>
       <th rowspan="4" valign="top">99</th>
-      <th>33</th>
+      <th>38</th>
+      <td>0</td>
+      <td>(3, 3)</td>
+    </tr>
+    <tr>
+      <th>39</th>
       <td>1</td>
-      <td>(9, 4)</td>
+      <td>(8, 0)</td>
     </tr>
     <tr>
-      <th>46</th>
+      <th>9</th>
       <td>0</td>
-      <td>(6, 1)</td>
+      <td>(1, 8)</td>
     </tr>
     <tr>
-      <th>49</th>
-      <td>0</td>
-      <td>(6, 9)</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>0</td>
-      <td>(5, 0)</td>
+      <th>35</th>
+      <td>1</td>
+      <td>(3, 4)</td>
     </tr>
   </tbody>
 </table>
@@ -700,17 +701,17 @@ We would love to hear what you think about this new feature. If you have any tho
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-0    0                   1         (9, 4)
-     1                   1         (8, 5)
-     2                   1         (4, 0)
-     3                   1         (4, 8)
-     4                   1         (7, 5)
+0    0                   1         (1, 3)
+     1                   1         (3, 6)
+     2                   1         (6, 6)
+     3                   1         (7, 8)
+     4                   1         (2, 1)
 ...                    ...            ...
-99   25                  0         (1, 1)
-     33                  1         (9, 4)
-     46                  0         (6, 1)
-     49                  0         (6, 9)
-     45                  0         (5, 0)
+99   25                  0         (8, 2)
+     38                  0         (3, 3)
+     39                  1         (8, 0)
+     9                   0         (1, 8)
+     35                  1         (3, 4)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -736,7 +737,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a9f066a38b84f150f073647677508d464faff248fe6daaad00721beb2ea87bbe.png" src="../_images/a9f066a38b84f150f073647677508d464faff248fe6daaad00721beb2ea87bbe.png" />
+<img alt="../_images/d55342227b348024a84345f1f16ac22c18b8e3c3babdfee9a88551eb7319a35e.png" src="../_images/d55342227b348024a84345f1f16ac22c18b8e3c3babdfee9a88551eb7319a35e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -759,7 +760,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/54e69685e90b25ad0e620cd861e147c38b3b5a24365b211e5c48e568b90ce691.png" src="../_images/54e69685e90b25ad0e620cd861e147c38b3b5a24365b211e5c48e568b90ce691.png" />
+<img alt="../_images/abdb9fa9154b51a22b39b45d5d5c5c35702b8138ba36bf5e90fc48f1ddd7a37b.png" src="../_images/abdb9fa9154b51a22b39b45d5d5c5c35702b8138ba36bf5e90fc48f1ddd7a37b.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -773,8 +774,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 23
-Step: 49
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 0
+Step: 39
 </pre></div>
 </div>
 </div>
@@ -803,7 +804,7 @@ Step: 49
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd7ac00c89a50337a8f0ae57a12cd0cc43ad922224b4960d3d3ff695511fd175.png" src="../_images/fd7ac00c89a50337a8f0ae57a12cd0cc43ad922224b4960d3d3ff695511fd175.png" />
+<img alt="../_images/f42637d35edb3d935dc1dd237c3f1e8419860fa6823778242b3bf69850696b31.png" src="../_images/f42637d35edb3d935dc1dd237c3f1e8419860fa6823778242b3bf69850696b31.png" />
 </div>
 </div>
 </section>
