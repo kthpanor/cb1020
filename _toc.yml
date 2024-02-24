@@ -1,15 +1,15 @@
 format: jb-article
 root: docs/intro
 sections:
-- file: docs/project
 - file: docs/software
   sections:
-  - file: docs/python.ipynb
-  - file: docs/jupyter.ipynb
-  - file: docs/installation.md
+  - file: docs/python
+  - file: docs/jupyter
+  - file: docs/installation
 - file: docs/math
   sections:
-  - file: docs/ode.md
-  - file: docs/agent.md
+  - file: docs/ode
   - file: docs/data_analysis
+  - file: docs/agent
+  - file: docs/pytorch
 - file: docs/references

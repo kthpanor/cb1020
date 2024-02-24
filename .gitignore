@@ -2,3 +2,5 @@ _build
 .DS_Store
 docs/.DS_Store
 docs/.ipynb_checkpoints/
+data_input/MNIST
+.ipynb_checkpoints/

@@ -16,3 +16,5 @@ dependencies:
   - mesa
   - pandas
   - openpyxl
+  - pytorch
+  - torchvision

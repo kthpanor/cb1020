@@ -10,42 +10,14 @@ Retrieve miniconda from the following website
 
 Install the version for 64 bit computers.
 
-## Create conda environment and install packages
-
-### Step-by-step
-
-Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple *environments* and you start in the one named `base` as is typically indicated by the prompt. To create a new and additional environment named `myenv`, enter the following command line statement
-
-```
-conda create -n myenv
-```
-
-You can list your conda environments
-
-```
-conda env list
-```
-
-The activated environment will be marked with an asterisk (the `base` environment to begin with) and you can activate your new environment with the command
-
-```
-conda activate myenv
-```
-
-as should be indicated by getting a modified prompt.
-
-Install packages into this environment
-
-```
-conda install numpy scipy matplotlib jupyterlab mesa -c conda-forge
-```
+## Create conda environments and install packages
 
 ### All in one step
 
 Get all packages needed for course in one step with use of a YML file
 
 ```
-conda env create -f cb1020.yml
+(base) % conda env create -f cb1020.yml
 ```
 
 where the file `cb1020.yml` should contain
@@ -67,9 +39,53 @@ dependencies:
   - mesa
   - pandas
   - openpyxl
+  - pytorch
+  - torchvision
 ```
 
 Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.
+
+### Step-by-step
+
+Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple *environments* and you start in the one named `base` as is typically indicated by the prompt. To create a new and additional environment named `cb1020`, enter the following command line statement
+
+```
+(base) % conda create -n cb1020
+```
+
+You can list your conda environments
+
+```
+(base) % conda env list
+```
+
+The activated environment will be marked with an asterisk (the `base` environment to begin with) and you can activate your new environment with the command
+
+```
+(base) % conda activate cb1020
+```
+
+as should be indicated by getting a modified prompt.
+
+Install packages into this environment
+
+```
+(cb1020) % conda install numpy scipy matplotlib jupyterlab mesa -c conda-forge
+```
+
+```{admonition} Good practices
+:class: note
+
+- Never install any additional packages in the `base` environment. Keep it minimal and clean and thereby minimize the risk for package conflicts. 
+
+- At times, update the conda package manager <br>
+`(base) % conda update conda`
+
+- At times, clean up among downloaded packages <br>
+`(base) % conda clean --all` <br>
+This command will not remove any functionality but for most parts remove tarball files. 
+
+```
 
 ## Try it out
 
