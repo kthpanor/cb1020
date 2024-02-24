@@ -6,6 +6,7 @@ sections:
   - file: docs/installation
   - file: docs/python
   - file: docs/jupyter
+  - file: docs/pandas
   - file: docs/mesa
   - file: docs/pytorch
 - file: docs/math
