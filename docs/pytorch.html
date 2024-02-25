@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/pytorch';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -395,6 +397,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-bridge">NumPy bridge</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
             </nav>
         </div>
@@ -408,6 +417,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pytorch">
 <h1>PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/PyTorch">PyTorch</a> is a machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing. PyTorch provides two high-level features:</p>
+<ul class="simple">
+<li><p>Tensor computing with acceleration via graphics processing units (GPUs)</p></li>
+<li><p>Deep neural networks built on a tape-based automatic differentiation system</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -442,9 +456,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8573, 0.4175, 0.7322],
-        [0.6959, 0.5871, 0.6323],
-        [0.1605, 0.2979, 0.5853]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0105, 0.9852, 0.3256],
+        [0.8752, 0.1373, 0.6872],
+        [0.2189, 0.1267, 0.7287]])
 </pre></div>
 </div>
 </div>
@@ -468,9 +482,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.8573078513145447, 0.4174988865852356, 0.7322347164154053],
- [0.6958916783332825, 0.5871045589447021, 0.6322659254074097],
- [0.1604582667350769, 0.2979380488395691, 0.5853453278541565]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.010518431663513184, 0.9851788878440857, 0.325580358505249],
+ [0.8752064108848572, 0.13728898763656616, 0.6872426867485046],
+ [0.21885472536087036, 0.1267130970954895, 0.7286776304244995]]
 </pre></div>
 </div>
 </div>
@@ -483,9 +497,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8573, 0.4175, 0.7322],
-        [0.6959, 0.5871, 0.6323],
-        [0.1605, 0.2979, 0.5853]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0105, 0.9852, 0.3256],
+        [0.8752, 0.1373, 0.6872],
+        [0.2189, 0.1267, 0.7287]])
 </pre></div>
 </div>
 </div>
@@ -505,6 +519,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">torch.svd()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torch.sin()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">torch.cos()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.flatten()</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -513,7 +528,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5518)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.4550)
 </pre></div>
 </div>
 </div>
@@ -526,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5517827868461609
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45502907037734985
 </pre></div>
 </div>
 </div>
@@ -590,6 +605,191 @@ Bridged pytorch tensor:
 </div>
 <p>A reason to create a bridge between data can e.g. be to take advantage of the easy accessible  GPU acceleration available in PyTorch for scientific codes developed with NumPy.</p>
 </section>
+</section>
+<section id="neural-networks">
+<h2>Neural networks<a class="headerlink" href="#neural-networks" title="Link to this heading">#</a></h2>
+<p>The machine learning models in PyTorch are built as neural networks with layers of neurons. The input layers received input data; hidden layers transforms the data; and the output layer provides the results upon which model predictions are made.</p>
+<p>Every neuron has an associated activation level. The input level apart, activation levels in a given level, say <span class="math notranslate nohighlight">\(L\)</span>, are determined from those in the previous layer by use of weights that are collected in a matrix <span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span> and biases that are collected in a row vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span>.</p>
+<p>A layer is referred to as <em>linear</em> if the weights and biases are applied in a linear transformation</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}^{(L)} = f(\boldsymbol{a}^{(L-1)} \boldsymbol{W}^T 
++ \boldsymbol{b})
+\]</div>
+<p>As indicated, to get the final activation levels also involves the operation of a  (typically) nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><img alt="Neural Network" src="../_images/Colored_neural_network.svg" /></p>
+<section id="flatten-tensors">
+<h3>Flatten tensors<a class="headerlink" href="#flatten-tensors" title="Link to this heading">#</a></h3>
+<p>PyTorch receives input data in the form of batches of PyTorch tensors of rank 1. If data is stored as tensors of higher rank, they first need to be flattened.</p>
+<p>Let us assume having three <span class="math notranslate nohighlight">\(2\times 2\)</span> tensors as input, e.g. three greyscale images of two-by-two pixels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">tensor_batch</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flatten</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">tensor_batch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These have now been flattened to become three row vectors of dimension four.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2667, 0.6501, 0.4058, 0.6409],
+        [0.4198, 0.7512, 0.4108, 0.9596],
+        [0.8809, 0.1410, 0.3103, 0.8261]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="layer-transformations">
+<h3>Layer transformations<a class="headerlink" href="#layer-transformations" title="Link to this heading">#</a></h3>
+<p>The linear layer transformation described above is achieved with the <code class="docutils literal notranslate"><span class="pre">torch.nn.Linear</span></code> class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When instantiated, the layer object receives weight and bias attributed that are initialized randomly. Here we consider a transformation from an input layer with four neurons to a hidden layer with only two.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span><span class="o">.</span><span class="n">weight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
+tensor([[ 0.0719, -0.0781, -0.0508, -0.0454],
+        [ 0.2635,  0.4105, -0.2349,  0.0293]], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
+tensor([-0.2237,  0.0105], requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use PyToch to perform the layer transoformation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intermediate_result</span> <span class="o">=</span> <span class="n">linear_layer</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intermediate_result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.3051,  0.2711],
+        [-0.3167,  0.3611],
+        [-0.2247,  0.2517]], grad_fn=&lt;AddmmBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the transformation with an explicit calculation of the linear transformation:</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}^{(0)} \boldsymbol{W}^T 
++ \boldsymbol{b}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">linear_layer</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">linear_layer</span><span class="o">.</span><span class="n">bias</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.3051,  0.2711],
+        [-0.3167,  0.3611],
+        [-0.2247,  0.2517]], grad_fn=&lt;AddBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that the two results are identical.</p>
+<p>Now remains the application of the nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>, according to</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{a}^{(1)} =f( 
+\boldsymbol{a}^{(0)} \boldsymbol{W}^T 
++ \boldsymbol{b})
+\]</div>
+<p>A common choice in machine learning is to adopt the rectifier linear unit function</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{ReLU}(x) = \max(0,x) = \frac{x + |x|}{2}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">intermediate_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0000, 0.2711],
+        [0.0000, 0.3611],
+        [0.0000, 0.2517]], grad_fn=&lt;ReluBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The effect of the ReLU function is as anticipated.</p>
+</section>
+</section>
+<section id="loss-function">
+<h2>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h2>
+</section>
+<section id="backward-propagation">
+<h2>Backward propagation<a class="headerlink" href="#backward-propagation" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -663,6 +863,13 @@ Bridged pytorch tensor:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-bridge">NumPy bridge</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
   </nav></div>
 

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -415,7 +415,7 @@ document.write(`
 <span id="sec-agent"></span><h1>Agent-based modeling<a class="headerlink" href="#agent-based-modeling" title="Link to this heading">#</a></h1>
 <p>An <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based model</a> (ABM) is a computational model for simulating the actions and interactions of autonomous agents (both individual or collective entities such as organizations or groups) in order to understand the behavior of a system and what governs its outcomes.</p>
 <p>ABMs are created to simulate the seemingly stochastic behavior of microscopic individuals to build up and predict the appearance of complex macroscopic phenomena. Most agent-based models are composed of: (1) numerous agents specified at various scales (typically referred to as agent-granularity); (2) decision-making heuristics; (3) learning rules or adaptive processes; (4) an interaction topology; and (5) an environment.</p>
-<p>The use and advancements of ABMs is promoted by the increasing computational power of modern computers and there is a natural appeal in explaining macroscopic phenomena from microscopic interactions. There may be a risk, however, of not seeing the forest for all the trees as the complexity of decision-makinng can be increased.</p>
+<p>The use and advancements of <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model_in_biology">ABMs in biology</a> and other fields is promoted by the increasing computational power of modern computers and there is a natural appeal in explaining macroscopic phenomena from microscopic interactions. There may be a risk, however, of not seeing the forest for all the trees as the complexity of decision-makinng can be increased.</p>
 <section id="mesa">
 <h2>Mesa<a class="headerlink" href="#mesa" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://mesa.readthedocs.io/en/stable/overview.html">Mesa</a> is a Python framework for agent-based modeling. It contains three categories of modules:</p>
@@ -611,19 +611,19 @@ We would love to hear what you think about this new feature. If you have any tho
     </tr>
     <tr>
       <th>1</th>
-      <td>0.2952</td>
+      <td>0.2688</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4552</td>
+      <td>0.4136</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.5624</td>
+      <td>0.4408</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.6056</td>
+      <td>0.4576</td>
     </tr>
   </tbody>
 </table>
@@ -668,24 +668,24 @@ We would love to hear what you think about this new feature. If you have any tho
   <tbody>
     <tr>
       <th rowspan="4" valign="top">99</th>
-      <th>29</th>
+      <th>38</th>
       <td>0</td>
-      <td>(7, 4)</td>
+      <td>(1, 6)</td>
     </tr>
     <tr>
-      <th>34</th>
-      <td>4</td>
-      <td>(2, 8)</td>
-    </tr>
-    <tr>
-      <th>16</th>
+      <th>42</th>
       <td>1</td>
-      <td>(7, 9)</td>
+      <td>(8, 7)</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>26</th>
+      <td>3</td>
+      <td>(4, 0)</td>
+    </tr>
+    <tr>
+      <th>44</th>
       <td>0</td>
-      <td>(9, 2)</td>
+      <td>(8, 9)</td>
     </tr>
   </tbody>
 </table>
@@ -700,17 +700,17 @@ We would love to hear what you think about this new feature. If you have any tho
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-0    0                   1         (5, 1)
-     1                   1         (5, 8)
-     2                   1         (2, 9)
-     3                   1         (1, 6)
-     4                   1         (3, 5)
+0    0                   1         (3, 0)
+     1                   1         (6, 2)
+     2                   1         (3, 1)
+     3                   1         (1, 1)
+     4                   1         (6, 7)
 ...                    ...            ...
-99   35                  0         (9, 5)
-     29                  0         (7, 4)
-     34                  4         (2, 8)
-     16                  1         (7, 9)
-     3                   0         (9, 2)
+99   2                   3         (0, 2)
+     38                  0         (1, 6)
+     42                  1         (8, 7)
+     26                  3         (4, 0)
+     44                  0         (8, 9)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -736,7 +736,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5c04a66be010c91d9a7e7982a58f5a052a921685c3e38606fd8cb4c0b906f0df.png" src="../_images/5c04a66be010c91d9a7e7982a58f5a052a921685c3e38606fd8cb4c0b906f0df.png" />
+<img alt="../_images/6a305d0b80859985bb6915b7838b1360f7dbecd378703042001007233584b26c.png" src="../_images/6a305d0b80859985bb6915b7838b1360f7dbecd378703042001007233584b26c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -759,7 +759,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/773f1ec059fd4f2fc5adae234ed912bf7b2209e6cbe12d9b2fede10683ee6305.png" src="../_images/773f1ec059fd4f2fc5adae234ed912bf7b2209e6cbe12d9b2fede10683ee6305.png" />
+<img alt="../_images/06b566fc179b9f3101450fae4a8ef421babeb01ea254a8f58bba329cf51703b8.png" src="../_images/06b566fc179b9f3101450fae4a8ef421babeb01ea254a8f58bba329cf51703b8.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -773,7 +773,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 31
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 24
 Step: 82
 </pre></div>
 </div>
@@ -803,7 +803,7 @@ Step: 82
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d3999a40c0cc05acaef3675d2a5f0642d1bfbd98bfb265940c93cd09a053934c.png" src="../_images/d3999a40c0cc05acaef3675d2a5f0642d1bfbd98bfb265940c93cd09a053934c.png" />
+<img alt="../_images/4c6dae2d2981a628aa175d82bfb72114b23f4dd4fa15228781e996d1462dd2e1.png" src="../_images/4c6dae2d2981a628aa175d82bfb72114b23f4dd4fa15228781e996d1462dd2e1.png" />
 </div>
 </div>
 </section>
