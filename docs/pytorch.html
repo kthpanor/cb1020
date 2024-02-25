@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -366,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -382,6 +384,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">Tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-creation">Tensor creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-operations">Tensor operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-bridge">NumPy bridge</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -393,7 +408,189 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pytorch">
 <h1>PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h1>
-<p>Introduction to pytorch tensors and such.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="tensors">
+<h2>Tensors<a class="headerlink" href="#tensors" title="Link to this heading">#</a></h2>
+<p>The central data abstraction in PyTorch is given by the <code class="docutils literal notranslate"><span class="pre">torch.tensor</span></code> class. It represents the counterpart of the <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> class in NumPy, and many of the respective class methods have similar syntax.</p>
+<section id="tensor-creation">
+<h3>Tensor creation<a class="headerlink" href="#tensor-creation" title="Link to this heading">#</a></h3>
+<p>Ways to create PyTorch tensors include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.tensor()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.empty()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.zeros()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.ones()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.rand()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8573, 0.4175, 0.7322],
+        [0.6959, 0.5871, 0.6323],
+        [0.1605, 0.2979, 0.5853]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, PyTorch tensors are populated with 32-bit (single precision) floating point numbers suitable for arithmetic operations on GPUs, but many other data types are available and include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.bool</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.int8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.int16</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.int32</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.int64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.half</span></code> or <code class="docutils literal notranslate"><span class="pre">torch.float16</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.double</span></code> or <code class="docutils literal notranslate"><span class="pre">torch.float64</span></code></p></li>
+</ul>
+<p>A PyTorch tensor can be converted to a regular Python list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.8573078513145447, 0.4174988865852356, 0.7322347164154053],
+ [0.6958916783332825, 0.5871045589447021, 0.6322659254074097],
+ [0.1604582667350769, 0.2979380488395691, 0.5853453278541565]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conversely, a Python list can be converted to a PyTorch tensor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8573, 0.4175, 0.7322],
+        [0.6959, 0.5871, 0.6323],
+        [0.1605, 0.2979, 0.5853]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tensor-operations">
+<h3>Tensor operations<a class="headerlink" href="#tensor-operations" title="Link to this heading">#</a></h3>
+<p>PyTorch tensors have over three hundred operations that can be performed on them, including:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.abs()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.std()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.prod()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.unique()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.matmul()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.svd()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.sin()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">torch.cos()</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5518)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that a tensor with a scalar number is given in return. To instead get a Python number in return, we can perform</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5517827868461609
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numpy-bridge">
+<h3>NumPy bridge<a class="headerlink" href="#numpy-bridge" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">pth_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pth_tensor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[1., 1., 1.],
+        [1., 1., 1.]], dtype=torch.float64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that the NumPy array default data type of float64 (double precision) is preserved. In fact, we merely created a pointer to the same data in memory such that a change in one object is reflected in both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modified numpy array:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bridged pytorch tensor:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pth_tensor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modified numpy array:
+ [[1. 1. 1.]
+ [1. 1. 2.]]
+Bridged pytorch tensor:
+ tensor([[1., 1., 1.],
+        [1., 1., 2.]], dtype=torch.float64)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A reason to create a bridge between data can e.g. be to take advantage of the easy accessible  GPU acceleration available in PyTorch for scientific codes developed with NumPy.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -451,7 +648,25 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">Tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-creation">Tensor creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-operations">Tensor operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-bridge">NumPy bridge</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -57,8 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/python';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -391,20 +389,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-modules">Important modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-necessities">Some necessities</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-with-numpy">Arrays with NumPy</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-matplotlib">Plotting with Matplotlib</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-completion">Auto-completion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
@@ -425,16 +410,6 @@ document.write(`
 <h1>Python and notebooks<a class="headerlink" href="#python-and-notebooks" title="Link to this heading">#</a></h1>
 <section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> has developed into an (almost) indispensable tool in computational and engineering sciences, in particular in combination with Jupyter notebooks <span id="id1">[<a class="reference internal" href="references.html#id3" title="Jeffrey M. Perkel. Programming: Pick up Python. Nature, 518:125, 2015. doi:10.1038/518125a.">Per15</a>, <a class="reference internal" href="references.html#id2" title="Jeffrey M. Perkel. Why Jupyter is data scientists' computational notebook of choice. Nature, 563:145, 2018. doi:10.1038/d41586-018-07196-1.">Per18</a>]</span>.</p>
-<p>Python offers an intuitive syntax with a high degree of code readability and it is used for everything from simple scripting and fast prototyping to large-scale projects.</p>
-<p>Python is open source and free for use and distribution. It is available for all relevant platforms, including</p>
-<ul class="simple">
-<li><p>Linux</p></li>
-<li><p>MacOS</p></li>
-<li><p>Windows</p></li>
-</ul>
-<section id="important-modules">
-<h3>Important modules<a class="headerlink" href="#important-modules" title="Link to this heading">#</a></h3>
 <p>Python code is typically written in the form of functions that are stored in libraries (or <em>modules</em>) and made available with the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <p>Modules of specific concern in this course include</p>
 <ul class="simple">
@@ -445,378 +420,8 @@ document.write(`
 <li><p><a class="reference external" href="https://mesa.readthedocs.io/en/stable/">Mesa</a> enables agent-based modeling in Python</p></li>
 <li><p><a class="reference external" href="https://pytorch.org/">PyTorch</a> enables machine learning/deep learning in Python</p></li>
 </ul>
-</section>
-<section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h3>
-<p>The amount of Python documentation is vast and so is the community of module contributers. If you are in search of the solution to an isolated task or  problem, there is a great chance that someone has contributed an efficient and stable implementation on the web.</p>
-<ul class="simple">
-<li><p>If you are new to Python, it can be a good idea to first read one of the several books available to get a coherent introduction. A recommended choice is the book titled <em>A Whirlwind Tour of Python</em> authored by Jake VanderPlas as it provides a short, clear, and to-the-point presentation <span id="id2">[<a class="reference internal" href="references.html#id6" title="Jake VanderPlas. A Whirlwind Tour of Python. O'Reilly, 2016. URL: https://jakevdp.github.io/WhirlwindTourOfPython/.">Van16</a>]</span>.</p></li>
-<li><p>If you have some experience and rather benefit from a more reference-oriented documentation, a recommended source is <a class="reference external" href="https://www.w3schools.com/python/python_intro.asp">W3Schools</a>.</p></li>
-<li><p>If you find watching tutorial videos useful, the series made by Corey Schafer is recommended. Below is one example from this series.</p></li>
-</ul>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/HW29067qVWk"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-</section>
-<section id="some-necessities">
-<h3>Some necessities<a class="headerlink" href="#some-necessities" title="Link to this heading">#</a></h3>
-<section id="iterations">
-<h4>Iterations<a class="headerlink" href="#iterations" title="Link to this heading">#</a></h4>
-<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is used for iterating over an iterable object (such as a list, dictionary, or string).</p>
-<p>A “standard” loop is accomplished with the <code class="docutils literal notranslate"><span class="pre">range</span></code> function. The <code class="docutils literal notranslate"><span class="pre">range</span></code> function returns an iterable sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="data-types">
-<h4>Data types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h4>
-<p>Basic Python data types include <code class="docutils literal notranslate"><span class="pre">integer</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, and <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># integer</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">3.1415</span>  <span class="c1"># float</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;text&quot;</span>  <span class="c1"># string</span>
-
-<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>  <span class="c1"># list</span>
-<span class="n">b_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;first&quot;</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">:</span> <span class="n">a_list</span><span class="p">}</span>  <span class="c1"># dictonary</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements in list:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements in dictionary:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">b_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key, value:&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">b_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elements in list:
-0 3.1415 3.1415
-1 [1, 2, 3] [1, 2, 3]
-Elements in dictionary:
-Key, value: first text
-Key, value: second [3.1415, [1, 2, 3]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>The object type is revealed by the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A Python <code class="docutils literal notranslate"><span class="pre">list</span></code> with <span class="math notranslate nohighlight">\(N\)</span> elements is indexed from 0 to <span class="math notranslate nohighlight">\((N-1)\)</span>.</p>
-</div>
-</section>
-<section id="conditions">
-<h4>Conditions<a class="headerlink" href="#conditions" title="Link to this heading">#</a></h4>
-<p>Python supports the usual logical conditions:</p>
-<ul class="simple">
-<li><p>Equal: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code></p></li>
-<li><p>Not Equal: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code></p></li>
-<li><p>Less than: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></p></li>
-<li><p>Less than or equal to: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code></p></li>
-<li><p>Greater than: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code></p></li>
-<li><p>Greater than or equal to: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">b</span></code></p></li>
-</ul>
-<p>These conditions are typically used in conjunction with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alcohols</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;cyclohexanol&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;formula&quot;</span><span class="p">:</span> <span class="s2">&quot;C6H11OH&quot;</span><span class="p">,</span> <span class="s2">&quot;boiling point&quot;</span><span class="p">:</span> <span class="mi">162</span><span class="p">},</span>
-    <span class="s2">&quot;ethanol&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;formula&quot;</span><span class="p">:</span> <span class="s2">&quot;CH3-CH2OH&quot;</span><span class="p">,</span> <span class="s2">&quot;boiling point&quot;</span><span class="p">:</span> <span class="mi">78</span><span class="p">},</span>
-    <span class="s2">&quot;isopropanol&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;formula&quot;</span><span class="p">:</span> <span class="s2">&quot;CH3-CHOH-CH3&quot;</span><span class="p">,</span> <span class="s2">&quot;boiling point&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">},</span>
-    <span class="s2">&quot;methanol&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;formula&quot;</span><span class="p">:</span> <span class="s2">&quot;CH3OH&quot;</span><span class="p">,</span> <span class="s2">&quot;boiling point&quot;</span><span class="p">:</span> <span class="mi">65</span><span class="p">},</span>
-    <span class="s2">&quot;phenylmethanol&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;formula&quot;</span><span class="p">:</span> <span class="s2">&quot;C6H5-CH2OH&quot;</span><span class="p">,</span> <span class="s2">&quot;boiling point&quot;</span><span class="p">:</span> <span class="mi">205</span><span class="p">},</span>
-<span class="p">}</span>
-
-<span class="n">lowest_bp</span> <span class="o">=</span> <span class="mi">9999</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">alcohols</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">alcohols</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">&quot;boiling point&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lowest_bp</span><span class="p">:</span>
-        <span class="n">alc_with_lowest_bp</span> <span class="o">=</span> <span class="n">key</span>
-        <span class="n">lowest_bp</span> <span class="o">=</span> <span class="n">alcohols</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s2">&quot;boiling point&quot;</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">alc_with_lowest_bp</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="s2">&quot;has the lowest boiling point.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It has chemical formula:&quot;</span><span class="p">,</span> <span class="n">alcohols</span><span class="p">[</span><span class="n">alc_with_lowest_bp</span><span class="p">][</span><span class="s2">&quot;formula&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It has a boiling point of&quot;</span><span class="p">,</span> <span class="n">lowest_bp</span><span class="p">,</span> <span class="s2">&quot;degrees Celsius.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Methanol has the lowest boiling point.
-It has chemical formula: CH3OH
-It has a boiling point of 65 degrees Celsius.
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="arrays-with-numpy">
-<h4>Arrays with NumPy<a class="headerlink" href="#arrays-with-numpy" title="Link to this heading">#</a></h4>
-<p>Arrays (such as vectors and matrices) should be represented as objects of the NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> class. <a class="reference external" href="https://numpy.org/doc/stable/user/basics.creation.html">Array creation</a> can be performed in numerous ways. Two ways to create a NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code> from a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> are given below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternative 1:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternative 2:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alternative 1:
- [[1 2 3]
- [4 5 6]
- [7 8 9]]
-Alternative 2:
- [[1 2 3]
- [4 5 6]
- [7 8 9]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>There are several predeifined arrays, all available for different data types.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zero matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;complex&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Identity matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zero matrix:
- [[0 0 0]
- [0 0 0]
- [0 0 0]]
-One matrix:
- [[1. 1. 1.]
- [1. 1. 1.]
- [1. 1. 1.]]
-Identity matrix:
- [[1.+0.j 0.+0.j 0.+0.j]
- [0.+0.j 1.+0.j 0.+0.j]
- [0.+0.j 0.+0.j 1.+0.j]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Array operations should be performed with NumPy routines. The NumPy array operation routines are based on optimized libraries that enable multi-thread execution with use of <a class="reference external" href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a>. On a computer equipped with an Intel processor, the underlying library for NumPy is normally chosen as the <a class="reference external" href="https://en.wikipedia.org/wiki/Math_Kernel_Library">Math Kernel Library (MKL)</a>. Never feel tempted to use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops as the performance is tyically orders of magnitude slower. The two most important Numpy array operations are</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dot(a,b)</span></code>: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">vector dot product</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">matmul(a,b)</span></code>: <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html">matrix mulitplication</a></p></li>
-</ul>
-<p>A comparison of the use of <code class="docutils literal notranslate"><span class="pre">matmul</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops for the multiplication of two matrices of dimension 100<span class="math notranslate nohighlight">\(\times\)</span>100 shows the following execution times (in ms).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-
-<span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">20210802</span><span class="p">)</span>
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
-
-<span class="n">ti</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-<span class="n">tf</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  matmul: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ti</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s2">10.4f</span><span class="si">}</span><span class="s2"> (ms)&quot;</span><span class="p">)</span>
-
-<span class="n">ti</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-            <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-
-<span class="n">tf</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;for loop: </span><span class="si">{</span><span class="p">(</span><span class="n">tf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ti</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s2">10.4f</span><span class="si">}</span><span class="s2"> (ms)&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  matmul:     0.4201 (ms)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for loop:   457.6242 (ms)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="classes-and-object-oriented-programming">
-<h4>Classes and object-oriented programming<a class="headerlink" href="#classes-and-object-oriented-programming" title="Link to this heading">#</a></h4>
 <p>Python naturally invites to good software engineering practices in terms of <a class="reference external" href="https://www.w3schools.com/python/python_classes.asp">object-oriented programming</a>. Almost everything in Python is an <code class="docutils literal notranslate"><span class="pre">object</span></code>, with its properties and methods and a <code class="docutils literal notranslate"><span class="pre">class</span></code> is like an object constructor, or a “blueprint” for creating objects known as <em>instances</em> of the class.</p>
 <p>It cannot be overemphasized that the use of object-oriented programming is highly enabling for code sharing and team development, and it is strongly recommended to adopt these practices.</p>
-<p>As an example, we implement a <em>class</em> <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> with a <em>method</em> <code class="docutils literal notranslate"><span class="pre">area</span></code> and <em>attributes</em> <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
-
-    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
-        <span class="k">return</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The instance reference is automatically passed as the first argument to the methods. By convention, this argument should be recieved as a parameter named <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is executed every time a new instance of the class is created.</p>
-</div>
-<p>It is a common practice to store the code of classes in separate library files (or modules) with the file extension <code class="docutils literal notranslate"><span class="pre">*.py</span></code>. In this case, we can imagine that we store the <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> class together with several other geometric objects into a module named <code class="docutils literal notranslate"><span class="pre">geometry.py</span></code> after which these would be readily available from other modules by means of an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geometry</span> <span class="k">as</span> <span class="nn">gm</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">gm</span></code> is an optional shorter name reference of your choice.</p>
-<p>The user of such an encapsulated module need not be concerned about the details of the code which is the key enabling factor for code-sharing. We define an instance of this class according to</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">gm</span><span class="o">.</span><span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and execute the function that calculates the area and print out the result as follows</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>
-</pre></div>
-</div>
-<p>If the class is kept in the notebook the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is obviously not needed and we instead access the instance attributes and methods as follows</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># class instance</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Base:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">base</span><span class="p">)</span>  <span class="c1"># instance attribute</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Height:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>  <span class="c1"># instance attribute</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">area</span><span class="p">())</span>  <span class="c1"># instance method</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Base: 3
-Height: 5
-Area: 7.5
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="plotting-with-matplotlib">
-<h4>Plotting with Matplotlib<a class="headerlink" href="#plotting-with-matplotlib" title="Link to this heading">#</a></h4>
-<p>Let us use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> to generate an array of random numbers distributed according to the Gaussian distribution</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}
-e^{-(x-\mu)^2 / (2\sigma^2)}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Fixing random state for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">20210722</span><span class="p">)</span>
-
-<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span>  <span class="c1"># mean and standard deviation</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>  <span class="c1"># return a NumPy array</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of values:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean value: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s2"> .4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standard deviation: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="si">:</span><span class="s2"> .4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Object type: &lt;class &#39;numpy.ndarray&#39;&gt;
-Number of values: 5000
-Mean value:  10.0002
-Standard deviation:  0.0996
-</pre></div>
-</div>
-</div>
-</div>
-<p>We use <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> to plot a histogram of the density distribution of the random numbers and compared it to the analytical Gaussian distribution function <span class="math notranslate nohighlight">\(f(x)\)</span> given above.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">counts</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">9.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">f</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">9.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Normal distribution of pseudo random numbers&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">)</span>
-
-<span class="c1"># save the figure in your favorite format</span>
-<span class="c1"># plt.savefig(&#39;figname.pdf&#39;)</span>
-<span class="c1"># plt.savefig(&#39;figname.png&#39;)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/66fb0af50c24436d00912265bc0f4236e3dea2ffbe6d54b6293b03f81c70a823.png" src="../_images/66fb0af50c24436d00912265bc0f4236e3dea2ffbe6d54b6293b03f81c70a823.png" />
-</div>
-</div>
-</section>
-</section>
 </section>
 <section id="jupyter-notebooks">
 <h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h2>
@@ -936,20 +541,7 @@ Standard deviation:  0.0996
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-modules">Important modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-necessities">Some necessities</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iterations">Iterations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conditions">Conditions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-with-numpy">Arrays with NumPy</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-and-object-oriented-programming">Classes and object-oriented programming</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-matplotlib">Plotting with Matplotlib</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebooks">Jupyter notebooks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-completion">Auto-completion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
