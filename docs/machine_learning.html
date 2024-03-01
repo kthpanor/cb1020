@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -446,7 +446,7 @@ document.write(`
 <p><img alt="MNIST handwritten numbers" src="../_images/MnistExamplesModified.png" /></p>
 <section id="loading-dataset">
 <h3>Loading dataset<a class="headerlink" href="#loading-dataset" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
     <span class="n">root</span><span class="o">=</span><span class="s2">&quot;../data_input/&quot;</span><span class="p">,</span>
@@ -455,16 +455,6 @@ document.write(`
     <span class="n">transform</span><span class="o">=</span><span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset MNIST
-    Number of datapoints: 60000
-    Root location: ../data_input/
-    Split: Train
-    StandardTransform
-Transform: ToTensor()
 </pre></div>
 </div>
 </div>
@@ -487,8 +477,8 @@ Transform: ToTensor()
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label: 6
-Dataset item: 27119
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label: 4
+Dataset item: 35201
 Tensor shape: torch.Size([1, 28, 28])
 </pre></div>
 </div>
@@ -503,7 +493,7 @@ Tensor shape: torch.Size([1, 28, 28])
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/12a5190f5b258ebebf8968516ba5428592813d51cc92fbd0f21e60f714699cd1.png" src="../_images/12a5190f5b258ebebf8968516ba5428592813d51cc92fbd0f21e60f714699cd1.png" />
+<img alt="../_images/613ac72fe42d7869a900d9f1930ddc7ca7c7a40a83af40aa566914d38de434d8.png" src="../_images/613ac72fe42d7869a900d9f1930ddc7ca7c7a40a83af40aa566914d38de434d8.png" />
 </div>
 </div>
 </section>
@@ -639,7 +629,7 @@ Tensor shape: torch.Size([1, 28, 28])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 8.5%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 9.8%
 </pre></div>
 </div>
 </div>
@@ -693,11 +683,11 @@ Tensor shape: torch.Size([1, 28, 28])
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch (1/2):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 79.85%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 82.58%
 Epoch (2/2):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 87.49%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 88.19%
 </pre></div>
 </div>
 </div>
@@ -722,7 +712,7 @@ Epoch (2/2):
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/feb477793e43d141d2399d73ccba61c58c73719aeccb098b245bc65d2b42514b.png" src="../_images/feb477793e43d141d2399d73ccba61c58c73719aeccb098b245bc65d2b42514b.png" />
+<img alt="../_images/6c41d131a1508834d57b5fed31fd0047a1b5f34dd83d141a0404593580b23965.png" src="../_images/6c41d131a1508834d57b5fed31fd0047a1b5f34dd83d141a0404593580b23965.png" />
 </div>
 </div>
 </section>
@@ -764,12 +754,12 @@ Epoch (2/2):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test data set item: 7816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test data set item: 7342
 Label: 2
 Predicted : 2
 </pre></div>
 </div>
-<img alt="../_images/10fb12d0237fde7fd8823d57e61febc58e0885ae49f0d654a04305d08932696a.png" src="../_images/10fb12d0237fde7fd8823d57e61febc58e0885ae49f0d654a04305d08932696a.png" />
+<img alt="../_images/83603b13905835c736e4679bef1bd5108e23c14ad2fd05e8e94ffc3ec0b0e11e.png" src="../_images/83603b13905835c736e4679bef1bd5108e23c14ad2fd05e8e94ffc3ec0b0e11e.png" />
 </div>
 </div>
 </section>
