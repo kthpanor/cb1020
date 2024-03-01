@@ -399,7 +399,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a></li>
 </ul>
             </nav>
         </div>
@@ -556,7 +556,7 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/cb1020/lib/python3.11/site-packages/mesa/time.py:82: FutureWarning: The AgentSet is experimental. It may be changed or removed in any and all future releases, including patch releases.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/cb1020/lib/python3.12/site-packages/mesa/time.py:82: FutureWarning: The AgentSet is experimental. It may be changed or removed in any and all future releases, including patch releases.
 We would love to hear what you think about this new feature. If you have any thoughts, share them with us here: https://github.com/projectmesa/mesa/discussions/1919
   self._agents: AgentSet = AgentSet(agents, model)
 </pre></div>
@@ -611,19 +611,19 @@ We would love to hear what you think about this new feature. If you have any tho
     </tr>
     <tr>
       <th>1</th>
-      <td>0.2688</td>
+      <td>0.2112</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4136</td>
+      <td>0.3648</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.4408</td>
+      <td>0.4312</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.4576</td>
+      <td>0.4312</td>
     </tr>
   </tbody>
 </table>
@@ -668,24 +668,24 @@ We would love to hear what you think about this new feature. If you have any tho
   <tbody>
     <tr>
       <th rowspan="4" valign="top">99</th>
-      <th>38</th>
+      <th>11</th>
       <td>0</td>
-      <td>(1, 6)</td>
+      <td>(9, 7)</td>
     </tr>
     <tr>
-      <th>42</th>
-      <td>1</td>
-      <td>(8, 7)</td>
+      <th>24</th>
+      <td>7</td>
+      <td>(1, 3)</td>
     </tr>
     <tr>
-      <th>26</th>
-      <td>3</td>
-      <td>(4, 0)</td>
+      <th>0</th>
+      <td>2</td>
+      <td>(2, 7)</td>
     </tr>
     <tr>
-      <th>44</th>
+      <th>47</th>
       <td>0</td>
-      <td>(8, 9)</td>
+      <td>(9, 5)</td>
     </tr>
   </tbody>
 </table>
@@ -700,17 +700,17 @@ We would love to hear what you think about this new feature. If you have any tho
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-0    0                   1         (3, 0)
-     1                   1         (6, 2)
-     2                   1         (3, 1)
-     3                   1         (1, 1)
-     4                   1         (6, 7)
+0    0                   1         (4, 8)
+     1                   1         (1, 9)
+     2                   1         (3, 4)
+     3                   1         (7, 4)
+     4                   1         (6, 2)
 ...                    ...            ...
-99   2                   3         (0, 2)
-     38                  0         (1, 6)
-     42                  1         (8, 7)
-     26                  3         (4, 0)
-     44                  0         (8, 9)
+99   28                  0         (1, 3)
+     11                  0         (9, 7)
+     24                  7         (1, 3)
+     0                   2         (2, 7)
+     47                  0         (9, 5)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -736,7 +736,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6a305d0b80859985bb6915b7838b1360f7dbecd378703042001007233584b26c.png" src="../_images/6a305d0b80859985bb6915b7838b1360f7dbecd378703042001007233584b26c.png" />
+<img alt="../_images/1bd35f9ea095dfa2c8b5349dd50a304fbce6921b49b23432a073f84e3788ec3f.png" src="../_images/1bd35f9ea095dfa2c8b5349dd50a304fbce6921b49b23432a073f84e3788ec3f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -759,7 +759,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06b566fc179b9f3101450fae4a8ef421babeb01ea254a8f58bba329cf51703b8.png" src="../_images/06b566fc179b9f3101450fae4a8ef421babeb01ea254a8f58bba329cf51703b8.png" />
+<img alt="../_images/1c493b210c936e064739991b88a004711a50d053671ce6f5275985d1fcd2dd94.png" src="../_images/1c493b210c936e064739991b88a004711a50d053671ce6f5275985d1fcd2dd94.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -773,8 +773,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 24
-Step: 82
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 30
+Step: 45
 </pre></div>
 </div>
 </div>
@@ -803,13 +803,13 @@ Step: 82
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c6dae2d2981a628aa175d82bfb72114b23f4dd4fa15228781e996d1462dd2e1.png" src="../_images/4c6dae2d2981a628aa175d82bfb72114b23f4dd4fa15228781e996d1462dd2e1.png" />
+<img alt="../_images/4953db3d44818000aa827055cde534bda4fa081118b2ab91a5d5415b0e2b1059.png" src="../_images/4953db3d44818000aa827055cde534bda4fa081118b2ab91a5d5415b0e2b1059.png" />
 </div>
 </div>
 </section>
 </section>
-<section id="project-proposals">
-<h2>Project proposals<a class="headerlink" href="#project-proposals" title="Link to this heading">#</a></h2>
+<section id="forming-your-project">
+<h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Example</strong> <br></p></li>
 </ol>
@@ -888,7 +888,7 @@ Step: 82
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a></li>
 </ul>
   </nav></div>
 

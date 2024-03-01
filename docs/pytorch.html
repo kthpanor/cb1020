@@ -456,9 +456,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0105, 0.9852, 0.3256],
-        [0.8752, 0.1373, 0.6872],
-        [0.2189, 0.1267, 0.7287]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.7556, 0.7441, 0.3371],
+        [0.2990, 0.4921, 0.0995],
+        [0.9868, 0.7353, 0.6265]])
 </pre></div>
 </div>
 </div>
@@ -482,9 +482,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.010518431663513184, 0.9851788878440857, 0.325580358505249],
- [0.8752064108848572, 0.13728898763656616, 0.6872426867485046],
- [0.21885472536087036, 0.1267130970954895, 0.7286776304244995]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.7556266784667969, 0.7440636157989502, 0.33710891008377075],
+ [0.29901015758514404, 0.4920923709869385, 0.09949040412902832],
+ [0.9867913126945496, 0.7352712750434875, 0.626494288444519]]
 </pre></div>
 </div>
 </div>
@@ -497,9 +497,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0105, 0.9852, 0.3256],
-        [0.8752, 0.1373, 0.6872],
-        [0.2189, 0.1267, 0.7287]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.7556, 0.7441, 0.3371],
+        [0.2990, 0.4921, 0.0995],
+        [0.9868, 0.7353, 0.6265]])
 </pre></div>
 </div>
 </div>
@@ -528,7 +528,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.4550)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5640)
 </pre></div>
 </div>
 </div>
@@ -541,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.45502907037734985
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.563994288444519
 </pre></div>
 </div>
 </div>
@@ -616,8 +616,8 @@ Bridged pytorch tensor:
 \boldsymbol{a}^{(L)} = f(\boldsymbol{a}^{(L-1)} \boldsymbol{W}^T 
 + \boldsymbol{b})
 \]</div>
-<p>As indicated, to get the final activation levels also involves the operation of a  (typically) nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p><img alt="Neural Network" src="../_images/Colored_neural_network.svg" /></p>
+<p>As indicated, to get the final activation levels also involves the elementwise operation of a  (typically) nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><img alt="Neural Network" src="../_images/neural_network.svg" /></p>
 <section id="flatten-tensors">
 <h3>Flatten tensors<a class="headerlink" href="#flatten-tensors" title="Link to this heading">#</a></h3>
 <p>PyTorch receives input data in the form of batches of PyTorch tensors of rank 1. If data is stored as tensors of higher rank, they first need to be flattened.</p>
@@ -653,9 +653,9 @@ Bridged pytorch tensor:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2667, 0.6501, 0.4058, 0.6409],
-        [0.4198, 0.7512, 0.4108, 0.9596],
-        [0.8809, 0.1410, 0.3103, 0.8261]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1023, 0.2679, 0.7926, 0.1335],
+        [0.3543, 0.7779, 0.8961, 0.9192],
+        [0.9710, 0.2434, 0.2692, 0.2311]])
 </pre></div>
 </div>
 </div>
@@ -666,35 +666,40 @@ Bridged pytorch tensor:
 <p>The linear layer transformation described above is achieved with the <code class="docutils literal notranslate"><span class="pre">torch.nn.Linear</span></code> class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>When instantiated, the layer object receives weight and bias attributed that are initialized randomly. Here we consider a transformation from an input layer with four neurons to a hidden layer with only two.</p>
+<p>Here we consider a transformation from an input layer with four neurons, <span class="math notranslate nohighlight">\(n_0 = 4\)</span>, to a hidden layer with only two, <span class="math notranslate nohighlight">\(n_1 = 2\)</span>.</p>
+<p>When instantiated, the hidden layer object receives weight and bias attributes that are initialized randomly with values</p>
+<div class="math notranslate nohighlight">
+\[
+-1/\sqrt{n_0} &lt; w_{ij}, b_i &lt; 1 / \sqrt{n_0}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span><span class="o">.</span><span class="n">weight</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="o">.</span><span class="n">weight</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[ 0.0719, -0.0781, -0.0508, -0.0454],
-        [ 0.2635,  0.4105, -0.2349,  0.0293]], requires_grad=True)
+tensor([[ 0.4021,  0.4149,  0.0172, -0.0722],
+        [-0.2867,  0.2078, -0.4721,  0.4686]], requires_grad=True)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_layer</span><span class="o">.</span><span class="n">bias</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="o">.</span><span class="n">bias</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([-0.2237,  0.0105], requires_grad=True)
+tensor([ 0.1311, -0.0934], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -702,21 +707,14 @@ tensor([-0.2237,  0.0105], requires_grad=True)
 <p>Use PyToch to perform the layer transoformation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intermediate_result</span> <span class="o">=</span> <span class="n">linear_layer</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intermediate_result</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.3051,  0.2711],
-        [-0.3167,  0.3611],
-        [-0.2247,  0.2517]], grad_fn=&lt;AddmmBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.2874, -0.3787],
+        [ 0.5454, -0.0256],
+        [ 0.6104, -0.3399]], grad_fn=&lt;AddmmBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -729,14 +727,14 @@ tensor([-0.2237,  0.0105], requires_grad=True)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">linear_layer</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">linear_layer</span><span class="o">.</span><span class="n">bias</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">linear</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">linear</span><span class="o">.</span><span class="n">bias</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.3051,  0.2711],
-        [-0.3167,  0.3611],
-        [-0.2247,  0.2517]], grad_fn=&lt;AddBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.2874, -0.3787],
+        [ 0.5454, -0.0256],
+        [ 0.6104, -0.3399]], grad_fn=&lt;AddBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -763,7 +761,7 @@ tensor([-0.2237,  0.0105], requires_grad=True)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">intermediate_result</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">linear</span><span class="p">(</span><span class="n">a0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -775,9 +773,9 @@ tensor([-0.2237,  0.0105], requires_grad=True)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.0000, 0.2711],
-        [0.0000, 0.3611],
-        [0.0000, 0.2517]], grad_fn=&lt;ReluBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2874, 0.0000],
+        [0.5454, 0.0000],
+        [0.6104, 0.0000]], grad_fn=&lt;ReluBackward0&gt;)
 </pre></div>
 </div>
 </div>

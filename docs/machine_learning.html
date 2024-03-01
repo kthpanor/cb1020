@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -404,7 +404,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-image-prediction">Single image prediction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-models">Saving and loading models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -474,17 +478,17 @@ Transform: ToTensor()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Label:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset item:&quot;</span><span class="p">,</span> <span class="n">idx_random_tensor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor shape:&quot;</span><span class="p">,</span> <span class="n">tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor shape:&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label: 4
-Dataset item: 33958
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label: 8
+Dataset item: 43110
 Tensor shape: torch.Size([1, 28, 28])
 </pre></div>
 </div>
@@ -492,14 +496,14 @@ Tensor shape: torch.Size([1, 28, 28])
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/99d1aa697c93cd0e33cb6920a762f485a9896ddb7df9b684ca85b4dcebb8a02e.png" src="../_images/99d1aa697c93cd0e33cb6920a762f485a9896ddb7df9b684ca85b4dcebb8a02e.png" />
+<img alt="../_images/edd3828c55648e576ff270b08de25b21b3599685d55d76995b8c5ba27b0de55c.png" src="../_images/edd3828c55648e576ff270b08de25b21b3599685d55d76995b8c5ba27b0de55c.png" />
 </div>
 </div>
 </section>
@@ -552,8 +556,8 @@ Tensor shape: torch.Size([1, 28, 28])
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">logits</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">y</span>
 </pre></div>
 </div>
 </div>
@@ -592,7 +596,7 @@ Tensor shape: torch.Size([1, 28, 28])
 <p>A loss function is defined to quantify the model output from the reference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -602,23 +606,18 @@ Tensor shape: torch.Size([1, 28, 28])
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 
-    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>  <span class="c1"># size is 10,000 in our case</span>
-
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-    <span class="n">total_loss</span><span class="p">,</span> <span class="n">number_correct</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 
+    <span class="n">number_correct</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
-            <span class="c1"># X is batch_size number of tensors and y are the associated labels</span>
-            <span class="n">Y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-            <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-            <span class="n">number_correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>  <span class="c1"># batches of images and labels</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+            <span class="n">number_correct</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="p">)</span>
 
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>  <span class="c1"># size is 10,000 in our case</span>
     <span class="n">accuracy</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">number_correct</span> <span class="o">/</span> <span class="n">size</span>  <span class="c1"># in percent</span>
-    <span class="n">averaged_loss</span> <span class="o">=</span> <span class="n">total_loss</span> <span class="o">/</span> <span class="n">size</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Averaged loss test data set    :</span><span class="si">{</span><span class="n">averaged_loss</span><span class="si">:</span><span class="s2">9.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">&gt;0.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">accuracy</span>
 </pre></div>
@@ -633,13 +632,14 @@ Tensor shape: torch.Size([1, 28, 28])
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">&gt;0.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
 <span class="n">prediction_accuracies</span> <span class="o">=</span> <span class="p">[</span><span class="n">accuracy</span><span class="p">]</span>  <span class="c1"># saved in list for plotting</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged loss test data set    : 0.036162
-Accuracy: 8.4%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 10.8%
 </pre></div>
 </div>
 </div>
@@ -659,25 +659,17 @@ Accuracy: 8.4%
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
 
-    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>  <span class="c1"># batches of images and labels</span>
 
-    <span class="n">total_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-
-    <span class="k">for</span> <span class="n">batch</span><span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
-
-        <span class="c1"># Compute prediction error</span>
-        <span class="n">Y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 
         <span class="c1"># Back propagation</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Averaged loss training data set:</span><span class="si">{</span><span class="n">total_loss</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">size</span><span class="si">:</span><span class="s2">9.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -686,34 +678,26 @@ Accuracy: 8.4%
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_epochs</span><span class="p">):</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch (</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">number_of_epochs</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
 
-    <span class="n">train</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+    <span class="n">train</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
 
-    <span class="n">prediction_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">))</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>    
+    <span class="n">prediction_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch (1/2):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged loss training data set: 0.026831
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 81.14%
+Epoch (2/2):
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged loss test data set    : 0.012942
-Accuracy: 81.4%
-Epoch 2:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged loss training data set: 0.009033
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaged loss test data set    : 0.006968
-Accuracy: 87.9%
-Done!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 87.61%
 </pre></div>
 </div>
 </div>
@@ -738,7 +722,7 @@ Done!
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/93da9d9e80d4313314193ea9434160776dbfdd6dac874e5e5583a36152426dfd.png" src="../_images/93da9d9e80d4313314193ea9434160776dbfdd6dac874e5e5583a36152426dfd.png" />
+<img alt="../_images/f2a9c557d73fc50feff661b104b706c6c9178e6379821518d2c29d34493e7754.png" src="../_images/f2a9c557d73fc50feff661b104b706c6c9178e6379821518d2c29d34493e7754.png" />
 </div>
 </div>
 </section>
@@ -747,9 +731,9 @@ Done!
 <h2>Single image prediction<a class="headerlink" href="#single-image-prediction" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_image</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 
-    <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
     <span class="n">_</span><span class="p">,</span> <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -767,25 +751,25 @@ Done!
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tensor</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test data set item:&quot;</span><span class="p">,</span> <span class="n">idx_random_tensor</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Label:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted :&quot;</span><span class="p">,</span> <span class="n">predict_image</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">model</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted :&quot;</span><span class="p">,</span> <span class="n">predict_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">model</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test data set item: 5020
-Label: 1
-Predicted : 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test data set item: 20
+Label: 5
+Predicted : 5
 </pre></div>
 </div>
-<img alt="../_images/867f652d490229b44a3160815b4e322f57e916c22c53295bf156869774816fd3.png" src="../_images/867f652d490229b44a3160815b4e322f57e916c22c53295bf156869774816fd3.png" />
+<img alt="../_images/7aa873ec6c91bb156e8352366ae885fd61b40a7312c8fbb70fef24eeb94becae.png" src="../_images/7aa873ec6c91bb156e8352366ae885fd61b40a7312c8fbb70fef24eeb94becae.png" />
 </div>
 </div>
 </section>
@@ -827,11 +811,37 @@ Predicted : 1
         </div></div>
 </div>
 </section>
-<section id="project-proposals">
-<h2>Project proposals<a class="headerlink" href="#project-proposals" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Example</strong> <br></p></li>
-</ol>
+<section id="forming-your-project">
+<h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
+<section id="data-representation-in-the-input-layer">
+<h3>Data representation in the input layer<a class="headerlink" href="#data-representation-in-the-input-layer" title="Link to this heading">#</a></h3>
+<p>In the case of images, it is rather obvious how to represent the input data in the input layer namely by associating neurons to the bits in the images.</p>
+<p>In other cases, it may be less obvious. How do we e.g. represent molecules and how can we get an objective measure of closeness  of chemical structures? In answer to these questions, molecular fingerprints have been developed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;kBk8HbjWwCw?si=3yspJyCsgnBynzT0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/kBk8HbjWwCw?si=3yspJyCsgnBynzT0"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+</section>
+<section id="machine-learning-guided-protein-engineering">
+<h3>Machine Learning-Guided Protein Engineering<a class="headerlink" href="#machine-learning-guided-protein-engineering" title="Link to this heading">#</a></h3>
+<p>Find inspiration for using machine learning in protein engineering in the perspective article below. The authors provide an overview of ongoing trends in this domain, highlight recent case studies, and examine the current limitations of machine learning-based methods. They present their opinions on the fundamental problems and outline the potential directions for future research.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/ml_protein.jpeg"><img alt="ML and proteins" class="bg-primary mb-1 align-left" src="../_images/ml_protein.jpeg" style="width: 400px;" /></a>
+<p><em>ACS Catalysis</em> <strong>2023</strong>, 13, 21, 13863–13895, <a class="reference external" href="https://doi.org/10.1021/acscatal.3c02743">https://doi.org/10.1021/acscatal.3c02743</a></p>
+</section>
 </section>
 </section>
 
@@ -914,7 +924,11 @@ Predicted : 1
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-image-prediction">Single image prediction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-models">Saving and loading models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-proposals">Project proposals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
