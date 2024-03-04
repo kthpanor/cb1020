@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -400,10 +400,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
             </nav>
         </div>
@@ -456,9 +456,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5106, 0.1972, 0.2466],
-        [0.3994, 0.5408, 0.9835],
-        [0.1084, 0.5458, 0.3156]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1589, 0.3486, 0.1677],
+        [0.0783, 0.6321, 0.9046],
+        [0.0386, 0.7977, 0.0498]])
 </pre></div>
 </div>
 </div>
@@ -482,9 +482,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.5105651021003723, 0.19719630479812622, 0.2466326355934143],
- [0.39935266971588135, 0.5408194065093994, 0.9834891557693481],
- [0.10837996006011963, 0.5458183288574219, 0.31557828187942505]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.1589457392692566, 0.34863436222076416, 0.1677342653274536],
+ [0.0783417820930481, 0.6320607662200928, 0.9046047925949097],
+ [0.03856998682022095, 0.797675609588623, 0.04977989196777344]]
 </pre></div>
 </div>
 </div>
@@ -497,9 +497,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5106, 0.1972, 0.2466],
-        [0.3994, 0.5408, 0.9835],
-        [0.1084, 0.5458, 0.3156]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1589, 0.3486, 0.1677],
+        [0.0783, 0.6321, 0.9046],
+        [0.0386, 0.7977, 0.0498]])
 </pre></div>
 </div>
 </div>
@@ -528,7 +528,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.4275)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3529)
 </pre></div>
 </div>
 </div>
@@ -541,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.42753684520721436
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35292747616767883
 </pre></div>
 </div>
 </div>
@@ -653,9 +653,9 @@ Bridged pytorch tensor:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5689, 0.3888, 0.0624, 0.7224],
-        [0.8594, 0.0397, 0.5474, 0.3502],
-        [0.0998, 0.9370, 0.3051, 0.3854]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5271, 0.5136, 0.7216, 0.6727],
+        [0.8824, 0.6647, 0.1921, 0.8966],
+        [0.5287, 0.6785, 0.5549, 0.8596]])
 </pre></div>
 </div>
 </div>
@@ -685,8 +685,8 @@ Bridged pytorch tensor:
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[ 0.1972, -0.3768,  0.3593,  0.2741],
-        [ 0.3108,  0.1948, -0.0304, -0.2023]], requires_grad=True)
+tensor([[-0.4319,  0.0722,  0.4675,  0.0452],
+        [ 0.1584,  0.3780,  0.0108, -0.3563]], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -699,7 +699,7 @@ tensor([[ 0.1972, -0.3768,  0.3593,  0.2741],
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([0.1046, 0.1402], requires_grad=True)
+tensor([-0.2336, -0.3900], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -712,9 +712,9 @@ tensor([0.1046, 0.1402], requires_grad=True)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.2907,  0.2447],
-        [ 0.5518,  0.3275],
-        [-0.0135,  0.2665]], grad_fn=&lt;AddmmBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0563, -0.3443],
+        [-0.4363, -0.3164],
+        [-0.1146, -0.3501]], grad_fn=&lt;AddmmBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -732,9 +732,9 @@ tensor([0.1046, 0.1402], requires_grad=True)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 0.2907,  0.2447],
-        [ 0.5518,  0.3275],
-        [-0.0135,  0.2665]], grad_fn=&lt;AddBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0563, -0.3443],
+        [-0.4363, -0.3164],
+        [-0.1146, -0.3501]], grad_fn=&lt;AddBackward0&gt;)
 </pre></div>
 </div>
 </div>
@@ -773,19 +773,18 @@ tensor([0.1046, 0.1402], requires_grad=True)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2907, 0.2447],
-        [0.5518, 0.3275],
-        [0.0000, 0.2665]], grad_fn=&lt;ReluBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0., 0.],
+        [0., 0.],
+        [0., 0.]], grad_fn=&lt;ReluBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
 <p>The effect of the ReLU function is as anticipated.</p>
 </section>
-</section>
 <section id="loss-function">
-<h2>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h2>
-<p>In the process of training the network, we need a measure of closeness between the prediction in the output layer and the correct result. This measure is given by a <em>loss function</em>. Several <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">loss functions are available in PyTorch</a> for different purposes. In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> is a typical choice.</p>
+<h3>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h3>
+<p>In the process of training the network, we need a measure of closeness between the prediction in the output layer and the correct result. This measure is given by a <em>loss function</em>. Several <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">loss functions are available in PyTorch</a> for different purposes. In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> function is a typical choice.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
@@ -918,7 +917,8 @@ bad prediction loss  = tensor(2.0434)
 <p>We note that the resulting losses are identical to those obtained with the PyTorch loss function.</p>
 </section>
 <section id="backward-propagation">
-<h2>Backward propagation<a class="headerlink" href="#backward-propagation" title="Link to this heading">#</a></h2>
+<h3>Backward propagation<a class="headerlink" href="#backward-propagation" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -995,10 +995,10 @@ bad prediction loss  = tensor(2.0434)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
 </ul>
   </nav></div>
 
@@ -1023,7 +1023,7 @@ By Patrick Norman
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
