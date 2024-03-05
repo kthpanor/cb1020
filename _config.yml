@@ -4,6 +4,7 @@
 title: Project in Mathematical Modeling (CB1020)
 author: Patrick Norman
 logo: logo.png
+copyright              : "2024"  # Copyright year to be placed in the footer
 exclude_patterns       : [ README.md, data_input, cb1020.yml ]
 only_build_toc_files   : false
 
