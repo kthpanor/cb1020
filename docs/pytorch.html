@@ -465,9 +465,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1540, 0.7801, 0.6154],
-        [0.9629, 0.3847, 0.1055],
-        [0.3040, 0.3419, 0.9969]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8865, 0.1549, 0.1294],
+        [0.8374, 0.9591, 0.3307],
+        [0.2855, 0.2161, 0.1054]])
 </pre></div>
 </div>
 </div>
@@ -491,9 +491,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.15397804975509644, 0.7800819277763367, 0.6153919696807861],
- [0.9628796577453613, 0.38474225997924805, 0.10553443431854248],
- [0.304043173789978, 0.34190356731414795, 0.9969209432601929]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.8865488767623901, 0.15486472845077515, 0.1293950080871582],
+ [0.8374490141868591, 0.9590802192687988, 0.33074408769607544],
+ [0.28547269105911255, 0.21607238054275513, 0.10538196563720703]]
 </pre></div>
 </div>
 </div>
@@ -506,9 +506,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1540, 0.7801, 0.6154],
-        [0.9629, 0.3847, 0.1055],
-        [0.3040, 0.3419, 0.9969]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.8865, 0.1549, 0.1294],
+        [0.8374, 0.9591, 0.3307],
+        [0.2855, 0.2161, 0.1054]])
 </pre></div>
 </div>
 </div>
@@ -537,7 +537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5162)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.4339)
 </pre></div>
 </div>
 </div>
@@ -550,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5161640644073486
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.43388986587524414
 </pre></div>
 </div>
 </div>
@@ -897,7 +897,7 @@ tensor([-0.1304, -0.0389, -0.1370, -0.2898], requires_grad=True)
 </section>
 <section id="cross-entropy-loss-function">
 <h3>Cross entropy loss function<a class="headerlink" href="#cross-entropy-loss-function" title="Link to this heading">#</a></h3>
-<p>In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> is a typical choice. The evaluation of this loss function is somewhat less straightforward and sincle it will be subsequently used, it is therefore also illustrated here with an example.</p>
+<p>In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> function is a typical choice. The evaluation of this loss function is somewhat less straightforward and sincle it will be subsequently used, it is therefore also illustrated here with an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
