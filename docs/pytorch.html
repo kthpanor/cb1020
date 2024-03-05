@@ -465,9 +465,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1966, 0.4047, 0.1746],
-        [0.5635, 0.9260, 0.4547],
-        [0.0501, 0.1748, 0.2421]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1767, 0.4362, 0.9153],
+        [0.8723, 0.9314, 0.5970],
+        [0.5923, 0.4247, 0.0158]])
 </pre></div>
 </div>
 </div>
@@ -491,9 +491,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.19663435220718384, 0.4047060012817383, 0.17456114292144775],
- [0.5635169148445129, 0.9259994029998779, 0.4546676278114319],
- [0.05006331205368042, 0.17480188608169556, 0.24210846424102783]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.17672628164291382, 0.4361584186553955, 0.9153150320053101],
+ [0.8722790479660034, 0.931350588798523, 0.597039520740509],
+ [0.5923321843147278, 0.424654483795166, 0.01575767993927002]]
 </pre></div>
 </div>
 </div>
@@ -506,9 +506,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1966, 0.4047, 0.1746],
-        [0.5635, 0.9260, 0.4547],
-        [0.0501, 0.1748, 0.2421]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1767, 0.4362, 0.9153],
+        [0.8723, 0.9314, 0.5970],
+        [0.5923, 0.4247, 0.0158]])
 </pre></div>
 </div>
 </div>
@@ -537,7 +537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3541)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5513)
 </pre></div>
 </div>
 </div>
@@ -550,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35411766171455383
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5512903332710266
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ tensor([-0.1304, -0.0389, -0.1370, -0.2898], requires_grad=True)
 </div>
 </div>
 </div>
-<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in out network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(1)}_{30}\)</span>, <span class="math notranslate nohighlight">\(w^{(1)}_{31}\)</span>, and <span class="math notranslate nohighlight">\(w^{(1)}_{32}\)</span> vanish.</p>
+<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in our network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(1)}_{30}\)</span>, <span class="math notranslate nohighlight">\(w^{(1)}_{31}\)</span>, and <span class="math notranslate nohighlight">\(w^{(1)}_{32}\)</span> vanish.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">grad</span>
@@ -890,7 +890,7 @@ tensor([-0.1304, -0.0389, -0.1370, -0.2898], requires_grad=True)
 </div>
 </div>
 </div>
-<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in out network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(2)}_{03}\)</span> and <span class="math notranslate nohighlight">\(w^{(2)}_{13}\)</span> vanish.</p>
+<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in our network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(2)}_{03}\)</span> and <span class="math notranslate nohighlight">\(w^{(2)}_{13}\)</span> vanish.</p>
 <p>With access to these gradients, the parameters can be modified in a way to reduce the value of the loss function. This iterative process is referred to as training the network.</p>
 <p>A large training data set is required in practice and an approach such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">stochastic gradient descent</a> method can be used to update the parameter values.</p>
 </section>
