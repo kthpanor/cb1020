@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -398,10 +398,19 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-layer">Input layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-layer">Hidden layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformation">Layer transformation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-function">Activation function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-layer">Output layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropagation">Backpropagation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-loss-function">Cross entropy loss function</a></li>
 </ul>
 </li>
 </ul>
@@ -456,9 +465,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1589, 0.3486, 0.1677],
-        [0.0783, 0.6321, 0.9046],
-        [0.0386, 0.7977, 0.0498]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1540, 0.7801, 0.6154],
+        [0.9629, 0.3847, 0.1055],
+        [0.3040, 0.3419, 0.9969]])
 </pre></div>
 </div>
 </div>
@@ -482,9 +491,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.1589457392692566, 0.34863436222076416, 0.1677342653274536],
- [0.0783417820930481, 0.6320607662200928, 0.9046047925949097],
- [0.03856998682022095, 0.797675609588623, 0.04977989196777344]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.15397804975509644, 0.7800819277763367, 0.6153919696807861],
+ [0.9628796577453613, 0.38474225997924805, 0.10553443431854248],
+ [0.304043173789978, 0.34190356731414795, 0.9969209432601929]]
 </pre></div>
 </div>
 </div>
@@ -497,9 +506,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1589, 0.3486, 0.1677],
-        [0.0783, 0.6321, 0.9046],
-        [0.0386, 0.7977, 0.0498]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.1540, 0.7801, 0.6154],
+        [0.9629, 0.3847, 0.1055],
+        [0.3040, 0.3419, 0.9969]])
 </pre></div>
 </div>
 </div>
@@ -528,7 +537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3529)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.5162)
 </pre></div>
 </div>
 </div>
@@ -541,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35292747616767883
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5161640644073486
 </pre></div>
 </div>
 </div>
@@ -608,144 +617,134 @@ Bridged pytorch tensor:
 </section>
 <section id="neural-networks">
 <h2>Neural networks<a class="headerlink" href="#neural-networks" title="Link to this heading">#</a></h2>
-<p>The machine learning models in PyTorch are built as neural networks with layers of neurons. The input layers received input data; hidden layers transforms the data; and the output layer provides the results upon which model predictions are made.</p>
-<p>Every neuron has an associated activation level. The input level apart, activation levels in a given level, say <span class="math notranslate nohighlight">\(L\)</span>, are determined from those in the previous layer by use of weights that are collected in a matrix <span class="math notranslate nohighlight">\(\boldsymbol{W}\)</span> and biases that are collected in a row vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span>.</p>
+<p>The machine learning models in PyTorch are built as neural networks with layers of neurons. Every neuron has an associated activation level.</p>
+<p><img alt="Neural Network" src="../_images/neural_network.svg" /></p>
+<p>The input layer receives input data; hidden layers transform the data; and the output layer provides the results upon which model predictions are made.</p>
+<p>The input level apart, activation levels in a given level, say <span class="math notranslate nohighlight">\(L\)</span>, are determined from those in the previous layer by use of weights that are collected in a matrix <span class="math notranslate nohighlight">\(\boldsymbol{W}^{(L)}\)</span> and biases that are collected in a row vector <span class="math notranslate nohighlight">\(\boldsymbol{b}^{(L)}\)</span>.</p>
+<p>The organization of the weights into matrix form is illustrated in figure. The neuron number in layer <span class="math notranslate nohighlight">\(L\)</span> becomes the row index and the neuron number in layer <span class="math notranslate nohighlight">\(L-1\)</span> becomes the column index.</p>
 <p>A layer is referred to as <em>linear</em> if the weights and biases are applied in a linear transformation</p>
 <div class="math notranslate nohighlight">
 \[
-\boldsymbol{a}^{(L)} = f(\boldsymbol{a}^{(L-1)} \boldsymbol{W}^T 
-+ \boldsymbol{b})
+\boldsymbol{a}^{(L)} = f(\boldsymbol{a}^{(L-1)} \big[\boldsymbol{W}^{(L)}\big]^T 
++ \boldsymbol{b}^{(L)})
 \]</div>
 <p>As indicated, to get the final activation levels also involves the elementwise operation of a  (typically) nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p><img alt="Neural Network" src="../_images/neural_network.svg" /></p>
-<section id="flatten-tensors">
-<h3>Flatten tensors<a class="headerlink" href="#flatten-tensors" title="Link to this heading">#</a></h3>
-<p>PyTorch receives input data in the form of batches of PyTorch tensors of rank 1. If data is stored as tensors of higher rank, they first need to be flattened.</p>
-<p>Let us assume having three <span class="math notranslate nohighlight">\(2\times 2\)</span> tensors as input, e.g. three greyscale images of two-by-two pixels.</p>
+<p>When instantiated, layer <span class="math notranslate nohighlight">\(L\)</span> receives weight and bias attributes that are initialized randomly with values</p>
+<div class="math notranslate nohighlight">
+\[
+-1/\sqrt{n_{L-1}} &lt; w_{ij}^{(L)}, b_i^{(L)} &lt; 1 / \sqrt{n_{L-1}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{L-1}\)</span> is the number of neurons in layer <span class="math notranslate nohighlight">\(L-1\)</span>.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">20240305</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="input-layer">
+<h3>Input layer<a class="headerlink" href="#input-layer" title="Link to this heading">#</a></h3>
+<p>Let us assume that we have the following input data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">2.8317</span><span class="p">,</span> <span class="mf">0.7713</span><span class="p">,</span> <span class="mf">0.7910</span><span class="p">])</span>
 
-<span class="n">tensor_batch</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flatten</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">tensor_batch</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>These have now been flattened to become three row vectors of dimension four.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input layer data:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.5271, 0.5136, 0.7216, 0.6727],
-        [0.8824, 0.6647, 0.1921, 0.8966],
-        [0.5287, 0.6785, 0.5549, 0.8596]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input layer data:
+ tensor([2.8317, 0.7713, 0.7910])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="layer-transformations">
-<h3>Layer transformations<a class="headerlink" href="#layer-transformations" title="Link to this heading">#</a></h3>
-<p>The linear layer transformation described above is achieved with the <code class="docutils literal notranslate"><span class="pre">torch.nn.Linear</span></code> class.</p>
+<section id="hidden-layer">
+<h3>Hidden layer<a class="headerlink" href="#hidden-layer" title="Link to this heading">#</a></h3>
+<section id="layer-transformation">
+<h4>Layer transformation<a class="headerlink" href="#layer-transformation" title="Link to this heading">#</a></h4>
+<p>The linear layer transformation is achieved with the <code class="docutils literal notranslate"><span class="pre">torch.nn.Linear</span></code> class.</p>
+<p>Here we consider a transformation from an input layer with three neurons, <span class="math notranslate nohighlight">\(n_0 = 3\)</span>, to a hidden layer with four neurons, <span class="math notranslate nohighlight">\(n_1 = 4\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here we consider a transformation from an input layer with four neurons, <span class="math notranslate nohighlight">\(n_0 = 4\)</span>, to a hidden layer with only two, <span class="math notranslate nohighlight">\(n_1 = 2\)</span>.</p>
-<p>When instantiated, the hidden layer object receives weight and bias attributes that are initialized randomly with values</p>
-<div class="math notranslate nohighlight">
-\[
--1/\sqrt{n_0} &lt; w_{ij}, b_i &lt; 1 / \sqrt{n_0}
-\]</div>
+<p>The weights and biases are available as attributes of the layer object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="o">.</span><span class="n">weight</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden</span><span class="o">.</span><span class="n">weight</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[-0.4319,  0.0722,  0.4675,  0.0452],
-        [ 0.1584,  0.3780,  0.0108, -0.3563]], requires_grad=True)
+tensor([[ 0.3830,  0.3132, -0.4861],
+        [ 0.3464, -0.4345, -0.4673],
+        [ 0.0303,  0.3445,  0.0182],
+        [-0.1550,  0.4523, -0.1824]], requires_grad=True)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="o">.</span><span class="n">bias</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden</span><span class="o">.</span><span class="n">bias</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([-0.2336, -0.3900], requires_grad=True)
+tensor([-0.1304, -0.0389, -0.1370, -0.2898], requires_grad=True)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Use PyToch to perform the layer transoformation.</p>
+<p>We now use PyToch to perform the layer transformation of the input data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden</span><span class="p">(</span><span class="n">a0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0563, -0.3443],
-        [-0.4363, -0.3164],
-        [-0.1146, -0.3501]], grad_fn=&lt;AddmmBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([ 0.8114,  0.2372,  0.2288, -0.5243], grad_fn=&lt;ViewBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Check the transformation with an explicit calculation of the linear transformation:</p>
+<p>We check the transformation with an explicit calculation of the linear transformation:</p>
 <div class="math notranslate nohighlight">
 \[
-\boldsymbol{a}^{(0)} \boldsymbol{W}^T 
-+ \boldsymbol{b}
+\boldsymbol{a}^{(0)} \big[\boldsymbol{W}^{(1)}\big]^T 
++ \boldsymbol{b}^{(1)}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">linear</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">linear</span><span class="o">.</span><span class="n">bias</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">hidden</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">hidden</span><span class="o">.</span><span class="n">bias</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.0563, -0.3443],
-        [-0.4363, -0.3164],
-        [-0.1146, -0.3501]], grad_fn=&lt;AddBackward0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([ 0.8114,  0.2372,  0.2288, -0.5243], grad_fn=&lt;AddBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
 <p>We note that the two results are identical.</p>
+</section>
+<section id="activation-function">
+<h4>Activation function<a class="headerlink" href="#activation-function" title="Link to this heading">#</a></h4>
 <p>Now remains the application of the nonlinear activation function, <span class="math notranslate nohighlight">\(f\)</span>, according to</p>
 <div class="math notranslate nohighlight">
 \[
 \boldsymbol{a}^{(1)} =f( 
-\boldsymbol{a}^{(0)} \boldsymbol{W}^T 
-+ \boldsymbol{b})
+\boldsymbol{a}^{(0)} \big[\boldsymbol{W}^{(1)}\big]^T 
++ \boldsymbol{b}^{(1)})
 \]</div>
 <p>A common choice in machine learning is to adopt the rectifier linear unit function</p>
 <div class="math notranslate nohighlight">
@@ -761,30 +760,144 @@ tensor([-0.2336, -0.3900], requires_grad=True)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">linear</span><span class="p">(</span><span class="n">a0</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">hidden</span><span class="p">(</span><span class="n">a0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hidden layer data:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hidden layer data:
+ tensor([0.8114, 0.2372, 0.2288, 0.0000], grad_fn=&lt;ReluBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The effect of the ReLU function is as anticipated, turning activation level <span class="math notranslate nohighlight">\(a^{(1)}_3\)</span> to zero.</p>
+</section>
+</section>
+<section id="output-layer">
+<h3>Output layer<a class="headerlink" href="#output-layer" title="Link to this heading">#</a></h3>
+<p>We create the output layer as a linear layer without a nonlinear activation function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">output</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output layer data:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0., 0.],
-        [0., 0.],
-        [0., 0.]], grad_fn=&lt;ReluBackward0&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output layer data:
+ tensor([-0.1211, -0.2292], grad_fn=&lt;ViewBackward0&gt;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>The effect of the ReLU function is as anticipated.</p>
 </section>
+<section id="network-training">
+<h3>Network training<a class="headerlink" href="#network-training" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+
+<span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="loss-function">
-<h3>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h3>
-<p>In the process of training the network, we need a measure of closeness between the prediction in the output layer and the correct result. This measure is given by a <em>loss function</em>. Several <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">loss functions are available in PyTorch</a> for different purposes. In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> function is a typical choice.</p>
+<h4>Loss function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h4>
+<p>In the process of training the network, we need a measure of closeness between the prediction in the output layer and the correct result. This measure is given by a <em>loss function</em>. Several <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">loss functions are available in PyTorch</a> for different purposes. We will here adopt the <em>mean square error</em> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_mse</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">loss_mse</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">training_data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loss based on mean square error:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loss based on mean square error:
+ tensor(0.3688, grad_fn=&lt;MseLossBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">a2</span> <span class="o">-</span> <span class="n">training_data</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.3688, grad_fn=&lt;DivBackward0&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="backpropagation">
+<h4>Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h4>
+<p>The gradient of the loss function with respect to weight and bias parameters are determined with a method known as <a class="reference external" href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a> that is based on chain rule differentiation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hidden</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">grad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[-0.7216, -0.1966, -0.2016],
+        [ 0.0070,  0.0019,  0.0019],
+        [ 1.2845,  0.3499,  0.3588],
+        [ 0.0000,  0.0000,  0.0000]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in out network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(1)}_{30}\)</span>, <span class="math notranslate nohighlight">\(w^{(1)}_{31}\)</span>, and <span class="math notranslate nohighlight">\(w^{(1)}_{32}\)</span> vanish.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">grad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.3074, 0.0899, 0.0867, 0.0000],
+        [0.6254, 0.1828, 0.1764, 0.0000]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We note that since activation level <span class="math notranslate nohighlight">\(a_3^{(1)}\)</span> became equal to zero in out network, the gradient with respect to weight parameters <span class="math notranslate nohighlight">\(w^{(2)}_{03}\)</span> and <span class="math notranslate nohighlight">\(w^{(2)}_{13}\)</span> vanish.</p>
+<p>With access to these gradients, the parameters can be modified in a way to reduce the value of the loss function. This iterative process is referred to as training the network.</p>
+<p>A large training data set is required in practice and an approach such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">stochastic gradient descent</a> method can be used to update the parameter values.</p>
+</section>
+</section>
+<section id="cross-entropy-loss-function">
+<h3>Cross entropy loss function<a class="headerlink" href="#cross-entropy-loss-function" title="Link to this heading">#</a></h3>
+<p>In binary classification networks, the <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss()</span></code> is a typical choice. The evaluation of this loss function is somewhat less straightforward and sincle it will be subsequently used, it is therefore also illustrated here with an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
@@ -916,9 +1029,6 @@ bad prediction loss  = tensor(2.0434)
 </div>
 <p>We note that the resulting losses are identical to those obtained with the PyTorch loss function.</p>
 </section>
-<section id="backward-propagation">
-<h3>Backward propagation<a class="headerlink" href="#backward-propagation" title="Link to this heading">#</a></h3>
-</section>
 </section>
 </section>
 
@@ -993,10 +1103,19 @@ bad prediction loss  = tensor(2.0434)
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flatten-tensors">Flatten tensors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformations">Layer transformations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backward-propagation">Backward propagation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-layer">Input layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-layer">Hidden layer</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-transformation">Layer transformation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-function">Activation function</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-layer">Output layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropagation">Backpropagation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy-loss-function">Cross entropy loss function</a></li>
 </ul>
 </li>
 </ul>
