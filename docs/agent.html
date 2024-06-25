@@ -556,7 +556,7 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/cb1020/lib/python3.12/site-packages/mesa/time.py:82: FutureWarning: The AgentSet is experimental. It may be changed or removed in any and all future releases, including patch releases.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/panor/miniconda3/envs/cb1020/lib/python3.12/site-packages/mesa/time.py:82: FutureWarning: The AgentSet is experimental. It may be changed or removed in any and all future releases, including patch releases.
 We would love to hear what you think about this new feature. If you have any thoughts, share them with us here: https://github.com/projectmesa/mesa/discussions/1919
   self._agents: AgentSet = AgentSet(agents, model)
 </pre></div>
@@ -611,19 +611,19 @@ We would love to hear what you think about this new feature. If you have any tho
     </tr>
     <tr>
       <th>1</th>
-      <td>0.3432</td>
+      <td>0.3200</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4728</td>
+      <td>0.3808</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.5056</td>
+      <td>0.4472</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.5400</td>
+      <td>0.4928</td>
     </tr>
   </tbody>
 </table>
@@ -668,24 +668,24 @@ We would love to hear what you think about this new feature. If you have any tho
   <tbody>
     <tr>
       <th rowspan="4" valign="top">99</th>
-      <th>41</th>
+      <th>6</th>
       <td>0</td>
-      <td>(1, 4)</td>
+      <td>(8, 1)</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>1</td>
-      <td>(0, 4)</td>
+      <th>15</th>
+      <td>0</td>
+      <td>(8, 0)</td>
     </tr>
     <tr>
       <th>32</th>
-      <td>3</td>
-      <td>(3, 8)</td>
+      <td>4</td>
+      <td>(5, 6)</td>
     </tr>
     <tr>
-      <th>17</th>
-      <td>0</td>
-      <td>(5, 5)</td>
+      <th>26</th>
+      <td>1</td>
+      <td>(9, 9)</td>
     </tr>
   </tbody>
 </table>
@@ -700,17 +700,17 @@ We would love to hear what you think about this new feature. If you have any tho
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-0    0                   1         (6, 1)
-     1                   1         (7, 9)
-     2                   1         (3, 0)
-     3                   1         (2, 2)
-     4                   1         (9, 5)
+0    0                   1         (9, 3)
+     1                   1         (7, 7)
+     2                   1         (8, 9)
+     3                   1         (1, 8)
+     4                   1         (0, 8)
 ...                    ...            ...
-99   48                  2         (4, 0)
-     41                  0         (1, 4)
-     13                  1         (0, 4)
-     32                  3         (3, 8)
-     17                  0         (5, 5)
+99   10                  1         (9, 2)
+     6                   0         (8, 1)
+     15                  0         (8, 0)
+     32                  4         (5, 6)
+     26                  1         (9, 9)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -736,7 +736,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/491abf884e3277e3ad4167bfd6cbee9158e464f6380b3abf880cd0d270dec20d.png" src="../_images/491abf884e3277e3ad4167bfd6cbee9158e464f6380b3abf880cd0d270dec20d.png" />
+<img alt="../_images/76f45abb60d7314e62d344005d4ab30baa36c536dc5d9fe7ad431a3b1880a17f.png" src="../_images/76f45abb60d7314e62d344005d4ab30baa36c536dc5d9fe7ad431a3b1880a17f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -759,7 +759,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/26acfa28daf7e8881d7d631b660fcf237923cb2a9e3ba9316005607489df7c48.png" src="../_images/26acfa28daf7e8881d7d631b660fcf237923cb2a9e3ba9316005607489df7c48.png" />
+<img alt="../_images/c30b87e4152ee369bdab428658039d736e031c8046fcfee9e6d6f9352b2a0ae8.png" src="../_images/c30b87e4152ee369bdab428658039d736e031c8046fcfee9e6d6f9352b2a0ae8.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -773,8 +773,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 15
-Step: 38
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 30
+Step: 87
 </pre></div>
 </div>
 </div>
@@ -803,15 +803,21 @@ Step: 38
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/258a9ed4e3601597d0fd48e4b18befac2cd04398032d0bc438fc4363f29e9be7.png" src="../_images/258a9ed4e3601597d0fd48e4b18befac2cd04398032d0bc438fc4363f29e9be7.png" />
+<img alt="../_images/760be1e4142abcb97325319a5bf2ce5412b3479224d85b79188f859e7c68d389.png" src="../_images/760be1e4142abcb97325319a5bf2ce5412b3479224d85b79188f859e7c68d389.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="forming-your-project">
 <h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
+<p>You are encouraged to develop your own model. Below are two examples from CB1020 HT23 which may serve as inspiration.</p>
 <ol class="arabic simple">
-<li><p><strong>Example</strong> <br></p></li>
+<li><p><strong>Population dynamics of sea turtles under different temperature scenarios</strong> <br>
+There is a direct correlation between the number of male turtle hatchlings and the temperature during nesting season; increasing temperatures lead to decreasing number of males. The dynamics and interactions between sea turtles during and outside mating season can be modeled using ABM. By letting the temperature increase during the simulation, the effect of increasing temperatures on the gender distribution and reproduction patterns of sea turtles is illustrated.</p></li>
+<li><p><strong>Modeling the genetic damage of arsenic</strong> <br>
+Reactive oxygen species are byproducts of mitochondrial metabolism. In healthy mitochondria, there is a balance in the levels of ROS being produced, converted and consumed. One of the effects of arsenic in the cell is an increased amount of reactive oxygen species (ROS).
+If the concentration of ROSs becomes too high, it can cause damage to the host.
+This damage can be countered by the Base Excision Repair (BER) pathway, a DNA damage repair mechanism. With ABM, the course of ROS-induced damage followed by the repair mechanism can be simulated and the effect of different arsenic intakes and the time and amount it takes to cause permanent gene damage can be simulated and studied.</p></li>
 </ol>
 </section>
 </section>
