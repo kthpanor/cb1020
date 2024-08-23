@@ -10,6 +10,11 @@ Retrieve miniconda from the following website
 
 Install the version for 64 bit computers.
 
+**OBS** for MacOS, there are different downloads for intel and M1 processors. Follow these steps to find out what is on your laptop:
+1. Click the Apple icon in the top-left corner of your Mac.
+2. This will bring up a drop-down menu. Pick the top option: About This Mac.
+3. The resulting window should show you the information you need: look for ```intel``` or ```M1```
+
 ## Create conda environments and install packages
 
 ### All in one step
@@ -20,7 +25,7 @@ Get all packages needed for course in one step with use of a YML file
 (base) % conda env create -f cb1020.yml
 ```
 
-where the file `cb1020.yml` should contain
+where the file [`cb1020.yml`](../cb1020.yml)* contains
 
 ```
 name: cb1020
@@ -45,6 +50,8 @@ dependencies:
 ```
 
 Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.
+
+***OBS** simply download the file, do not open it!
 
 ### Step-by-step
 
