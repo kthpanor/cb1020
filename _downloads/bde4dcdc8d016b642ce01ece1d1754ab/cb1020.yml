@@ -1,0 +1,21 @@
+name: cb1020
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - jupyter-book
+  - jupyterlab
+  - jupyterlab-spellchecker
+  - jupyterlab_code_formatter
+  - black
+  - isort
+  - ghp-import
+  - numpy
+  - scipy
+  - matplotlib
+  - mesa
+  - pandas
+  - pyarrow
+  - openpyxl
+  - pytorch
+  - torchvision
