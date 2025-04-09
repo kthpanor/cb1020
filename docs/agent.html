@@ -190,7 +190,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ode.html">Differential equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Agent-based modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning</a></li>
@@ -392,7 +391,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesa">Mesa</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-abm">Implementing ABM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent">Agent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">Running the simulation</a></li>
@@ -417,14 +416,8 @@ document.write(`
 <p>An <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based model</a> (ABM) is a computational model for simulating the actions and interactions of autonomous agents (both individual or collective entities such as organizations or groups) in order to understand the behavior of a system and what governs its outcomes.</p>
 <p>ABMs are created to simulate the seemingly stochastic behavior of microscopic individuals to build up and predict the appearance of complex macroscopic phenomena. Most agent-based models are composed of: (1) numerous agents specified at various scales (typically referred to as agent-granularity); (2) decision-making heuristics; (3) learning rules or adaptive processes; (4) an interaction topology; and (5) an environment.</p>
 <p>The use and advancements of <a class="reference external" href="https://en.wikipedia.org/wiki/Agent-based_model_in_biology">ABMs in biology</a> and other fields is promoted by the increasing computational power of modern computers and there is a natural appeal in explaining macroscopic phenomena from microscopic interactions. There may be a risk, however, of not seeing the forest for all the trees as the complexity of decision-makinng can be increased.</p>
-<section id="mesa">
-<h2>Mesa<a class="headerlink" href="#mesa" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://mesa.readthedocs.io/en/stable/overview.html">Mesa</a> is a Python framework for agent-based modeling. It contains three categories of modules:</p>
-<ol class="arabic simple">
-<li><p><strong>Modeling</strong>: Modules used to build the models themselves: a model and agent classes, a scheduler to determine the sequence in which the agents act, and space for them to move around on.</p></li>
-<li><p><strong>Analysis</strong>: Tools to collect data generated from your model, or to run it multiple times with different parameter values.</p></li>
-<li><p><strong>Visualization</strong>: Classes to create and launch an interactive model visualization, using a server with a JavaScript interface.</p></li>
-</ol>
+<section id="implementing-abm">
+<h2>Implementing ABM<a class="headerlink" href="#implementing-abm" title="Link to this heading">#</a></h2>
 <p>Every ABM requires two classes, one for the overall model and one for the agents. These classes will be derived classes of Mesa’s base classes <code class="docutils literal notranslate"><span class="pre">Model</span></code> and <code class="docutils literal notranslate"><span class="pre">Agent</span></code>. The model class holds the model-level attributes, manages the agents, and generally handles the global level of our model. Each instantiation of the model class will be a specific model run. Each model will contain multiple agents, all of which are instantiations of the agent class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -434,7 +427,6 @@ document.write(`
 <span class="c1"># Analysis</span>
 <span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
 <span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">MultiGrid</span>
-<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
 </pre></div>
 </div>
 </div>
@@ -451,7 +443,6 @@ document.write(`
         <span class="c1"># additional initialization for the derived class</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">num_agents</span> <span class="o">=</span> <span class="n">N</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">MultiGrid</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
             <span class="n">model_reporters</span><span class="o">=</span><span class="p">{</span>
                 <span class="s2">&quot;Gini coefficient&quot;</span><span class="p">:</span> <span class="n">compute_gini</span>  <span class="c1"># function defined below</span>
@@ -464,8 +455,8 @@ document.write(`
 
         <span class="c1"># Create agents</span>
         <span class="k">for</span> <span class="n">unique_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_agents</span><span class="p">):</span>
-            <span class="n">agent</span> <span class="o">=</span> <span class="n">MoneyAgent</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">MoneyAgent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="c1"># self.schedule.add(agent)</span>
 
             <span class="c1"># Add the agent to a random grid cell</span>
             <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
@@ -474,7 +465,7 @@ document.write(`
 
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shuffle_do</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -486,9 +477,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MoneyAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
         <span class="c1"># run the __init__ method of the parent class</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        
         <span class="c1"># additional initialization for the derived class</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">wealth</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -531,7 +523,7 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <span class="n">N</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">num_agents</span>
 
     <span class="c1"># collect wealth of agent into a list and sort it in increasing order</span>
-    <span class="n">agent_wealths</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">wealth</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+    <span class="n">agent_wealths</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">wealth</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
     <span class="n">x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agent_wealths</span><span class="p">)</span>
 
     <span class="c1"># calculate the Gini coefficient</span>
@@ -553,13 +545,6 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/josefine/miniconda3/envs/cb1020-dev/lib/python3.11/site-packages/mesa/time.py:82: FutureWarning: The AgentSet is experimental. It may be changed or removed in any and all future releases, including patch releases.
-We would love to hear what you think about this new feature. If you have any thoughts, share them with us here: https://github.com/projectmesa/mesa/discussions/1919
-  self._agents: AgentSet = AgentSet(agents, model)
 </pre></div>
 </div>
 </div>
@@ -612,19 +597,19 @@ We would love to hear what you think about this new feature. If you have any tho
     </tr>
     <tr>
       <th>1</th>
-      <td>0.2112</td>
+      <td>0.2688</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.3200</td>
+      <td>0.4136</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.4488</td>
+      <td>0.4968</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.4840</td>
+      <td>0.5528</td>
     </tr>
   </tbody>
 </table>
@@ -668,25 +653,25 @@ We would love to hear what you think about this new feature. If you have any tho
   </thead>
   <tbody>
     <tr>
-      <th rowspan="4" valign="top">99</th>
-      <th>2</th>
+      <th rowspan="4" valign="top">100</th>
+      <th>47</th>
       <td>0</td>
-      <td>(1, 2)</td>
+      <td>(1, 3)</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>(3, 9)</td>
+      <th>48</th>
+      <td>1</td>
+      <td>(6, 1)</td>
     </tr>
     <tr>
-      <th>38</th>
-      <td>2</td>
-      <td>(5, 2)</td>
+      <th>49</th>
+      <td>0</td>
+      <td>(9, 4)</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>50</th>
       <td>0</td>
-      <td>(6, 5)</td>
+      <td>(2, 1)</td>
     </tr>
   </tbody>
 </table>
@@ -701,17 +686,17 @@ We would love to hear what you think about this new feature. If you have any tho
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-0    0                   1         (5, 9)
-     1                   1         (7, 3)
-     2                   1         (2, 6)
-     3                   1         (7, 7)
-     4                   1         (2, 2)
+1    1                   1         (3, 1)
+     2                   1         (5, 0)
+     3                   1         (2, 3)
+     4                   1         (7, 0)
+     5                   1         (7, 2)
 ...                    ...            ...
-99   44                  0         (5, 0)
-     2                   0         (1, 2)
-     5                   0         (3, 9)
-     38                  2         (5, 2)
-     10                  0         (6, 5)
+100  46                  3         (2, 2)
+     47                  0         (1, 3)
+     48                  1         (6, 1)
+     49                  0         (9, 4)
+     50                  0         (2, 1)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -737,7 +722,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3a2fa6f1af3b128c20e98282458440376443ff64bf8c6cc8d07bd915b5336d8.png" src="../_images/e3a2fa6f1af3b128c20e98282458440376443ff64bf8c6cc8d07bd915b5336d8.png" />
+<img alt="../_images/4ff3b04245479728841e535c8f4bbc7c106596c89e524466a3df023e801477c5.png" src="../_images/4ff3b04245479728841e535c8f4bbc7c106596c89e524466a3df023e801477c5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -760,7 +745,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5db0d091581a8a05f5652b113d13ad3cbff6c7a2f14fb489bd02d78a2c2f484a.png" src="../_images/5db0d091581a8a05f5652b113d13ad3cbff6c7a2f14fb489bd02d78a2c2f484a.png" />
+<img alt="../_images/a3eaab18ae37e207ea44c0b982796905b33e9d743b239fe3ffec335844582cb6.png" src="../_images/a3eaab18ae37e207ea44c0b982796905b33e9d743b239fe3ffec335844582cb6.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -774,8 +759,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 40
-Step: 56
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 46
+Step: 50
 </pre></div>
 </div>
 </div>
@@ -804,24 +789,24 @@ Step: 56
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73243cc665ff080d0b68314682e650793ceab7d6fb430ed2bc616821ff535bf7.png" src="../_images/73243cc665ff080d0b68314682e650793ceab7d6fb430ed2bc616821ff535bf7.png" />
+<img alt="../_images/982fb0dad6af94c9facdaad1f40890bc5ef3fa738e7016a767b30a4c1c279f74.png" src="../_images/982fb0dad6af94c9facdaad1f40890bc5ef3fa738e7016a767b30a4c1c279f74.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="forming-your-project">
 <h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
-<p>You are encouraged to develop your own model. Below are two examples from CB1020 HT23 which may serve as inspiration.</p>
+<p>You are encouraged to develop your own model. Below are three examples which may serve as inspiration.</p>
 <ol class="arabic simple">
-<li><p><strong>Population dynamics of sea turtles under different temperature scenarios</strong> <br>
+<li><p><strong>Population dynamics of sea turtles under different temperature scenarios (Project from CB1020 HT23)</strong> <br>
 There is a direct correlation between the number of male turtle hatchlings and the temperature during nesting season; increasing temperatures lead to decreasing number of males. The dynamics and interactions between sea turtles during and outside mating season can be modeled using ABM. By letting the temperature increase during the simulation, the effect of increasing temperatures on the gender distribution and reproduction patterns of sea turtles is illustrated.</p></li>
-<li><p><strong>Modeling the genetic damage of arsenic</strong> <br>
+<li><p><strong>Modeling the genetic damage of arsenic (Project from CB1020 HT23)</strong> <br>
 Reactive oxygen species are byproducts of mitochondrial metabolism. In healthy mitochondria, there is a balance in the levels of ROS being produced, converted and consumed. One of the effects of arsenic in the cell is an increased amount of reactive oxygen species (ROS).
 If the concentration of ROSs becomes too high, it can cause damage to the host.
 This damage can be countered by the Base Excision Repair (BER) pathway, a DNA damage repair mechanism. With ABM, the course of ROS-induced damage followed by the repair mechanism can be simulated and the effect of different arsenic intakes and the time and amount it takes to cause permanent gene damage can be simulated and studied.</p></li>
-<li><p><strong>Modeling the microenvironment of prostate cancer tumor</strong> <br>
+<li><p><strong>Modeling the microenvironment of prostate cancer tumor [1]</strong> <br>
 The second most common cancer in men worldwide is prostate cancer (PCa). With a PCa-specific ABM, the nature of cell-cell interactions in the tumor microenvironment (TME) was studied.
-The ABM effectively modeled the hormonal perturbations caused by androgen deprivation therapy (ADT) and how ADT influences the cell-cell interactions in prostate TMEs. The study gained insight into tumor growth patterns and tumor survival enhancement by ADT via mathematical modeling. [1]</p></li>
+The ABM effectively modeled the hormonal perturbations caused by androgen deprivation therapy (ADT) and how ADT influences the cell-cell interactions in prostate TMEs. The study gained insight into tumor growth patterns and tumor survival enhancement by ADT via mathematical modeling.</p></li>
 </ol>
 <p>[1] van Genderen, M.N.G., Kneppers, J., Zaalberg, A. et al. Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties. <em>npj Syst Biol Appl</em> 10 (2024). <a class="reference external" href="https://doi.org/10.1038/s41540-024-00344-6">https://doi.org/10.1038/s41540-024-00344-6</a></p>
 </section>
@@ -891,7 +876,7 @@ The ABM effectively modeled the hormonal perturbations caused by androgen depriv
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesa">Mesa</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-abm">Implementing ABM</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent">Agent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-simulation">Running the simulation</a></li>
@@ -914,7 +899,7 @@ The ABM effectively modeled the hormonal perturbations caused by androgen depriv
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick Norman
+By Patrick Norman and Josefine H. Andersen
 </p>
 
   </div>
@@ -924,7 +909,7 @@ By Patrick Norman
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

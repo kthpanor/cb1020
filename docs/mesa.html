@@ -188,7 +188,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="ode.html">Differential equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning</a></li>
@@ -393,8 +392,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mesa">
-<h1>Mesa<a class="headerlink" href="#mesa" title="Link to this heading">#</a></h1>
-<p>Introduction to the mesa package, the Model and Agent classes, and such.</p>
+<span id="sec-mesa"></span><h1>Mesa<a class="headerlink" href="#mesa" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://mesa.readthedocs.io/en/stable/overview.html">Mesa</a> is a Python-based framework for agent-based modeling (ABM). It offers built-in core components from which one can quickly setup and customize the implementation of an ABM. Furthermore, Mesa has built-in tools for data collection and analysis of the results obtained from the ABM simulations.</p>
+<p>Mesacontains three categories of modules:</p>
+<ol class="arabic simple">
+<li><p><strong>Modeling</strong>: Modules used to build the models themselves: a model and agent classes, a scheduler to determine the sequence in which the agents act, and space for them to move around on.</p></li>
+<li><p><strong>Analysis</strong>: Tools to collect data generated from your model, or to run it multiple times with different parameter values.</p></li>
+<li><p><strong>Visualization</strong>: Classes to create and launch an interactive model visualization, using a server with a JavaScript interface.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Installed version</p>
+<p>The version of Mesa installed via <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> is not up-to-date with the latest release. For some functionalities, it might be necessary to install Mesa with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-</span> <span class="pre">U</span> <span class="pre">mesa</span></code> (<em>still inside your <code class="docutils literal notranslate"><span class="pre">cb1020</span> <span class="pre">conda</span></code> environment</em>)</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -461,7 +470,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick Norman
+By Patrick Norman and Josefine H. Andersen
 </p>
 
   </div>
@@ -471,7 +480,7 @@ By Patrick Norman
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

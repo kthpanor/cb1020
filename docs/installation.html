@@ -188,7 +188,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="ode.html">Differential equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning</a></li>
@@ -393,7 +392,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environments-and-install-packages">Create conda environments and install packages</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">Step-by-step (if you did not follow the all-in-one-step procedure)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
@@ -410,7 +409,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="software-installation">
 <h1>Software installation<a class="headerlink" href="#software-installation" title="Link to this heading">#</a></h1>
-<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others.</p>
+<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">zlib</span></code>.</p>
 <section id="download-and-install-miniconda">
 <h2>Download and install miniconda<a class="headerlink" href="#download-and-install-miniconda" title="Link to this heading">#</a></h2>
 <p>Retrieve miniconda from the following website</p>
@@ -458,8 +457,8 @@ document.write(`
 <p>Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.</p>
 <p>*<strong>OBS</strong> simply download the file, do not open it!</p>
 </section>
-<section id="step-by-step">
-<h3>Step-by-step<a class="headerlink" href="#step-by-step" title="Link to this heading">#</a></h3>
+<section id="step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">
+<h3>Step-by-step (if you did not follow the all-in-one-step procedure)<a class="headerlink" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure" title="Link to this heading">#</a></h3>
 <p>Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple <em>environments</em> and you start in the one named <code class="docutils literal notranslate"><span class="pre">base</span></code> as is typically indicated by the prompt. To create a new and additional environment named <code class="docutils literal notranslate"><span class="pre">cb1020</span></code>, enter the following command line statement</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">cb1020</span>
 </pre></div>
@@ -497,7 +496,7 @@ This command will not remove any functionality but for most parts remove tarball
 <span class="p">(</span><span class="n">cb1020</span><span class="p">)</span> <span class="o">%</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">lab</span>
 </pre></div>
 </div>
-<p>which should open the web browser interface.</p>
+<p>which should open in the web browser interface.</p>
 </section>
 </section>
 
@@ -568,7 +567,7 @@ This command will not remove any functionality but for most parts remove tarball
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environments-and-install-packages">Create conda environments and install packages</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">Step-by-step (if you did not follow the all-in-one-step procedure)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
@@ -586,7 +585,7 @@ This command will not remove any functionality but for most parts remove tarball
   <div class="footer-item">
     
 <p class="component-author">
-By Patrick Norman
+By Patrick Norman and Josefine H. Andersen
 </p>
 
   </div>
@@ -596,7 +595,7 @@ By Patrick Norman
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
