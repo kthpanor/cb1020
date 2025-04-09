@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Project in Mathematical Modeling (CB1020)
-author: Patrick Norman
+author: Patrick Norman and Josefine H. Andersen
 logo: logo.png
-copyright              : "2024"  # Copyright year to be placed in the footer
+copyright              : "2025"  # Copyright year to be placed in the footer
 exclude_patterns       : [ README.md, data_input, cb1020.yml ]
 only_build_toc_files   : false
 

@@ -10,7 +10,7 @@ sections:
   - file: docs/pytorch
 - file: docs/math
   sections:
-  - file: docs/ode
+#  - file: docs/ode
   - file: docs/data_analysis
   - file: docs/agent
   - file: docs/machine_learning

@@ -1,6 +1,6 @@
 # Software installation
 
-Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including pip, zlib and a few others.
+Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including ```pip```, ```zlib```.
 
 ## Download and install miniconda
 
@@ -53,7 +53,7 @@ Some additional features are then made available in your notebooks such as a spe
 
 ***OBS** simply download the file, do not open it!
 
-### Step-by-step
+### Step-by-step (if you did not follow the all-in-one-step procedure)
 
 Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple *environments* and you start in the one named `base` as is typically indicated by the prompt. To create a new and additional environment named `cb1020`, enter the following command line statement
 
@@ -104,4 +104,4 @@ You should now be ready to start JupyterLab with the commands
 (cb1020) % jupyter-lab
 ```
 
-which should open the web browser interface.
+which should open in the web browser interface.
