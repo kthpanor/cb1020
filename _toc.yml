@@ -13,6 +13,6 @@ sections:
 #  - file: docs/ode
   - file: docs/data_analysis
   - file: docs/agent
-#  - file: docs/machine_learning
+  - file: docs/machine_learning
   - file: docs/machine_learning_scikit
 - file: docs/references
