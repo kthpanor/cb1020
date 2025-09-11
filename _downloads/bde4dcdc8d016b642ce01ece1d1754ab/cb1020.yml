@@ -4,12 +4,13 @@ channels:
 dependencies:
   - python
   - jupyter-book
+  - ghp-import
   - jupyterlab
   - jupyterlab-spellchecker
   - jupyterlab_code_formatter
   - black
   - isort
-  - ghp-import
+  - ipywidgets
   - numpy
   - scipy
   - matplotlib
