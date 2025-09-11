@@ -25,7 +25,7 @@ Get all packages needed for course in one step with use of a YML file
 (base) % conda env create -f cb1020.yml
 ```
 
-where the file [`cb1020.yml`](../cb1020.yml)* contains
+where the file `cb1020.yml` contains
 
 ```
 name: cb1020
@@ -38,6 +38,7 @@ dependencies:
   - jupyterlab_code_formatter
   - black
   - isort
+  - ipywidgets
   - numpy
   - scipy
   - matplotlib
@@ -47,11 +48,10 @@ dependencies:
   - openpyxl
   - pytorch
   - torchvision
+  - scikit-learn
 ```
 
 Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.
-
-***OBS** simply download the file, do not open it!
 
 ### Step-by-step (if you did not follow the all-in-one-step procedure)
 

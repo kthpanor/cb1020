@@ -5,7 +5,7 @@ title: Project in Mathematical Modeling (CB1020)
 author: Patrick Norman, Josefine H. Andersen and Marco Bauer
 logo: logo.png
 copyright              : "2025"  # Copyright year to be placed in the footer
-exclude_patterns       : [ README.md, data_input, cb1020.yml ]
+exclude_patterns       : [ README.md, data_input, cb1020.yml, docs/ode.ipynb]
 only_build_toc_files   : false
 
 # Force re-execution of notebooks on each build.
