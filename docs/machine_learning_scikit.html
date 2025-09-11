@@ -1232,7 +1232,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/840228f3ed3bab61bf6fb55c4b7db135233fe24a5d0256e116c6f6c39e71d997.png" src="../_images/840228f3ed3bab61bf6fb55c4b7db135233fe24a5d0256e116c6f6c39e71d997.png" />
+<img alt="../_images/cc7863900fb2214853bcf6e98c6b4a76a4f7f52a602fbf8b3bcbb5e0d4df05bc.png" src="../_images/cc7863900fb2214853bcf6e98c6b4a76a4f7f52a602fbf8b3bcbb5e0d4df05bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1249,20 +1249,20 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification report for classifier SVC(gamma=0.001):
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        41
-           1       1.00      1.00      1.00        35
-           2       1.00      1.00      1.00        40
-           3       1.00      1.00      1.00        38
-           4       1.00      1.00      1.00        36
-           5       1.00      1.00      1.00        30
-           6       1.00      1.00      1.00        33
-           7       1.00      1.00      1.00        38
-           8       1.00      1.00      1.00        30
-           9       1.00      1.00      1.00        39
+           0       1.00      1.00      1.00        36
+           1       1.00      1.00      1.00        36
+           2       1.00      1.00      1.00        33
+           3       1.00      1.00      1.00        34
+           4       1.00      1.00      1.00        40
+           5       1.00      0.95      0.97        38
+           6       0.97      0.97      0.97        32
+           7       1.00      1.00      1.00        35
+           8       0.94      1.00      0.97        29
+           9       0.98      0.98      0.98        47
 
-    accuracy                           1.00       360
-   macro avg       1.00      1.00      1.00       360
-weighted avg       1.00      1.00      1.00       360
+    accuracy                           0.99       360
+   macro avg       0.99      0.99      0.99       360
+weighted avg       0.99      0.99      0.99       360
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1280,7 @@ weighted avg       1.00      1.00      1.00       360
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17fbc2737009c5692840cd3032dde987f683cdaf375f5ce58e48ab6982cccc80.png" src="../_images/17fbc2737009c5692840cd3032dde987f683cdaf375f5ce58e48ab6982cccc80.png" />
+<img alt="../_images/e518a4d54e59373b6d694c753bad7ea8651a04b57946244513964672bc6e21f7.png" src="../_images/e518a4d54e59373b6d694c753bad7ea8651a04b57946244513964672bc6e21f7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1336,10 +1336,10 @@ The amount of coefficients used by an NN model for this problem inspired by the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 1.0, while the NN has an accuracy of 0.9888888888888889
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 0.9888888888888889, while the NN has an accuracy of 0.9555555555555556
 </pre></div>
 </div>
-<img alt="../_images/97f07c6b9cb7ff4510d000934959290545b154bcf4446789ba36237fe5ebf3c3.png" src="../_images/97f07c6b9cb7ff4510d000934959290545b154bcf4446789ba36237fe5ebf3c3.png" />
+<img alt="../_images/3338d5c31e341f2192c7fb82168fbc8b57bc22d81830b529fdc81c5bd4842027.png" src="../_images/3338d5c31e341f2192c7fb82168fbc8b57bc22d81830b529fdc81c5bd4842027.png" />
 </div>
 </div>
 <p>As can be seen the overall accuracy is very good, with the confusion matrix showing which numbers have been confused with each other how often.
@@ -1375,18 +1375,18 @@ It is also interesting to see how the model performance improved over the traini
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max_epoch accuracy
-0 0.10833333333333334
-1 0.6694444444444444
-2 0.8166666666666667
-5 0.9527777777777777
-10 0.9972222222222222
-20 0.9972222222222222
-50 1.0
-100 1.0
-200 1.0
+0 0.13055555555555556
+1 0.6416666666666667
+2 0.8527777777777777
+5 0.9472222222222222
+10 0.975
+20 0.9833333333333333
+50 0.9888888888888889
+100 0.9888888888888889
+200 0.9888888888888889
 </pre></div>
 </div>
-<img alt="../_images/ded73cce4a23507a1848aabf0f65c9fff57210c959382b55c9d1145df6f7769b.png" src="../_images/ded73cce4a23507a1848aabf0f65c9fff57210c959382b55c9d1145df6f7769b.png" />
+<img alt="../_images/47d66b552906e556eeabe7aa026d68bfc4de2b0b4ee4398e7ecc79d19115cf80.png" src="../_images/47d66b552906e556eeabe7aa026d68bfc4de2b0b4ee4398e7ecc79d19115cf80.png" />
 </div>
 </div>
 <p>One can also investigate how the performance differs when using more or less data.</p>
@@ -1421,7 +1421,7 @@ It is also interesting to see how the model performance improved over the traini
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Learning Curve for SVC&#39;)
 </pre></div>
 </div>
-<img alt="../_images/49e4e33a45581a309421544af234137cee3dfae4339ec13e6b50dcc816822fdf.png" src="../_images/49e4e33a45581a309421544af234137cee3dfae4339ec13e6b50dcc816822fdf.png" />
+<img alt="../_images/b385c319c2b8b80ab1a52e57ffca55d558754aa128084006a855d9dba181da29.png" src="../_images/b385c319c2b8b80ab1a52e57ffca55d558754aa128084006a855d9dba181da29.png" />
 </div>
 </div>
 </section>
@@ -1445,7 +1445,7 @@ It is also interesting to see how the model performance improved over the traini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a6928c39e7ecfc18588d7a3782fa9f6620915e86dc00477a1a8b1c3f68ae84f4.png" src="../_images/a6928c39e7ecfc18588d7a3782fa9f6620915e86dc00477a1a8b1c3f68ae84f4.png" />
+<img alt="../_images/edb9f096d45ecaa326c2fef22546ed9f96d0460ee7f298f3c32842be15c115e1.png" src="../_images/edb9f096d45ecaa326c2fef22546ed9f96d0460ee7f298f3c32842be15c115e1.png" />
 </div>
 </div>
 </section>
