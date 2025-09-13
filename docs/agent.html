@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -405,7 +405,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-based-modeling-of-the-prostate-tumor-microenvironment">Agent-based modeling of the prostate tumor microenvironment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-course-projects">Previous course projects</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -607,15 +611,15 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4224</td>
+      <td>0.3272</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.5192</td>
+      <td>0.4408</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.4824</td>
+      <td>0.4984</td>
     </tr>
   </tbody>
 </table>
@@ -661,23 +665,23 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <tr>
       <th rowspan="4" valign="top">100</th>
       <th>47</th>
-      <td>3</td>
-      <td>(1, 3)</td>
+      <td>0</td>
+      <td>(4, 3)</td>
     </tr>
     <tr>
       <th>48</th>
       <td>2</td>
-      <td>(5, 4)</td>
+      <td>(4, 0)</td>
     </tr>
     <tr>
       <th>49</th>
       <td>0</td>
-      <td>(2, 6)</td>
+      <td>(7, 1)</td>
     </tr>
     <tr>
       <th>50</th>
       <td>3</td>
-      <td>(7, 2)</td>
+      <td>(3, 4)</td>
     </tr>
   </tbody>
 </table>
@@ -692,17 +696,17 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-1    1                   1         (1, 8)
-     2                   1         (9, 1)
-     3                   1         (6, 8)
-     4                   1         (2, 3)
-     5                   1         (4, 4)
+1    1                   1         (2, 7)
+     2                   1         (2, 9)
+     3                   1         (9, 5)
+     4                   1         (6, 9)
+     5                   1         (6, 8)
 ...                    ...            ...
-100  46                  0         (1, 0)
-     47                  3         (1, 3)
-     48                  2         (5, 4)
-     49                  0         (2, 6)
-     50                  3         (7, 2)
+100  46                  0         (5, 6)
+     47                  0         (4, 3)
+     48                  2         (4, 0)
+     49                  0         (7, 1)
+     50                  3         (3, 4)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -728,7 +732,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb0917a12e6ab29b72d990d967e61ddf973035cf59b2183719b900a62587f8b1.png" src="../_images/eb0917a12e6ab29b72d990d967e61ddf973035cf59b2183719b900a62587f8b1.png" />
+<img alt="../_images/0ae64262ff2e448e90406026a030ad999f12b07cdae7de5e255981ab1a7a1b45.png" src="../_images/0ae64262ff2e448e90406026a030ad999f12b07cdae7de5e255981ab1a7a1b45.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -751,7 +755,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9906d94a57ca8aa0a97ad7889776e6b5c265f90bcaf65c7f312ca5801aa3a012.png" src="../_images/9906d94a57ca8aa0a97ad7889776e6b5c265f90bcaf65c7f312ca5801aa3a012.png" />
+<img alt="../_images/809f76373ef97b1a33aff578157892aa024e1858f341cbdb1493d79d127e61e8.png" src="../_images/809f76373ef97b1a33aff578157892aa024e1858f341cbdb1493d79d127e61e8.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -765,8 +769,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 31
-Step: 93
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 43
+Step: 95
 </pre></div>
 </div>
 </div>
@@ -795,14 +799,26 @@ Step: 93
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/191b68bf5a9d6a3b021fd101a196fd8c31d3341dd0fa638e5485ff61a9b8c508.png" src="../_images/191b68bf5a9d6a3b021fd101a196fd8c31d3341dd0fa638e5485ff61a9b8c508.png" />
+<img alt="../_images/d368b4f11e20dc12e9c32069f78153422635c884c2c4c9e1b64d474908bd984b.png" src="../_images/d368b4f11e20dc12e9c32069f78153422635c884c2c4c9e1b64d474908bd984b.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="forming-your-project">
 <h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
-<p>You are encouraged to develop your own model. Below are three examples which may serve as inspiration.</p>
+<p>Below are examples which may serve as inspiration on the use of ABM modeling.</p>
+<section id="agent-based-modeling-of-the-prostate-tumor-microenvironment">
+<h3>Agent-based modeling of the prostate tumor microenvironment<a class="headerlink" href="#agent-based-modeling-of-the-prostate-tumor-microenvironment" title="Link to this heading">#</a></h3>
+<p>Inhibiting androgen receptor (AR) signaling through androgen deprivation therapy (ADT) reduces prostate cancer (PCa) growth in virtually all patients, but response may be temporary, in which case resistance develops, ultimately leading to lethal castration-resistant prostate cancer (CRPC).</p>
+<p>The tumor microenvironment (TME) plays an important role in the development and progression of PCa. In addition to tumor cells, TME-resident macrophages and fibroblasts express AR and are therefore also affected by ADT. However, the interplay of different TME cell types in the development of CRPC remains largely unexplored. To understand the complex stochastic nature of cell-cell interactions, we created a PCa-specific agent-based model (PCABM) based on <em>in vitro</em> cell proliferation data [1].</p>
+<figure class="align-center" id="overview-fig">
+<a class="reference internal image-reference" href="../_images/abm-cancer-model.png"><img alt="../_images/abm-cancer-model.png" src="../_images/abm-cancer-model.png" style="width: 400px;" />
+</a>
+</figure>
+<p>[1] van Genderen, M.N.G., Kneppers, J., Zaalberg, A. <em>et al.</em> Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties. <em>npj Syst Biol Appl</em> 10 (2024). <a class="reference external" href="https://doi.org/10.1038/s41540-024-00344-6">https://doi.org/10.1038/s41540-024-00344-6</a></p>
+</section>
+<section id="previous-course-projects">
+<h3>Previous course projects<a class="headerlink" href="#previous-course-projects" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Population dynamics of sea turtles under different temperature scenarios (Project from CB1020 HT23)</strong> <br>
 There is a direct correlation between the number of male turtle hatchlings and the temperature during nesting season; increasing temperatures lead to decreasing number of males. The dynamics and interactions between sea turtles during and outside mating season can be modeled using ABM. By letting the temperature increase during the simulation, the effect of increasing temperatures on the gender distribution and reproduction patterns of sea turtles is illustrated.</p></li>
@@ -814,7 +830,7 @@ This damage can be countered by the Base Excision Repair (BER) pathway, a DNA da
 The second most common cancer in men worldwide is prostate cancer (PCa). With a PCa-specific ABM, the nature of cell-cell interactions in the tumor microenvironment (TME) was studied.
 The ABM effectively modeled the hormonal perturbations caused by androgen deprivation therapy (ADT) and how ADT influences the cell-cell interactions in prostate TMEs. The study gained insight into tumor growth patterns and tumor survival enhancement by ADT via mathematical modeling.</p></li>
 </ol>
-<p>[1] van Genderen, M.N.G., Kneppers, J., Zaalberg, A. et al. Agent-based modeling of the prostate tumor microenvironment uncovers spatial tumor growth constraints and immunomodulatory properties. <em>npj Syst Biol Appl</em> 10 (2024). <a class="reference external" href="https://doi.org/10.1038/s41540-024-00344-6">https://doi.org/10.1038/s41540-024-00344-6</a></p>
+</section>
 </section>
 </section>
 
@@ -890,7 +906,11 @@ The ABM effectively modeled the hormonal perturbations caused by androgen depriv
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent-based-modeling-of-the-prostate-tumor-microenvironment">Agent-based modeling of the prostate tumor microenvironment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-course-projects">Previous course projects</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
