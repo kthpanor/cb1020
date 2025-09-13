@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Machine Learning with scikit &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>ML with sklearn &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/machine_learning_scikit';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ml_sklearn';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="Machine learning with pytorch" href="machine_learning.html" />
+    <link rel="prev" title="ML with PyTorch" href="ml_pytorch.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,9 +192,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ml.html">Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning with pytorch</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Machine Learning with scikit</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="machine_learning.html">Machine learning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">ML with sklearn</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -269,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/machine_learning_scikit.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/ml_sklearn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +301,7 @@
       
       
       
-      <li><a href="../_sources/docs/machine_learning_scikit.ipynb" target="_blank"
+      <li><a href="../_sources/docs/ml_sklearn.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +385,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Machine Learning with scikit</h1>
+    <h1>ML with sklearn</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,9 +413,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-with-scikit">
-<span id="sec-ml-scikit"></span><h1>Machine Learning with scikit<a class="headerlink" href="#machine-learning-with-scikit" title="Link to this heading">#</a></h1>
-<p>This tutorial uses <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>, an open source machine learning (ML) framework based on numpy, scipy and matplotlib.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ml-with-sklearn">
+<span id="sec-ml-scikit"></span><h1>ML with sklearn<a class="headerlink" href="#ml-with-sklearn" title="Link to this heading">#</a></h1>
+<p>This tutorial uses <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> (or sklearn), an open source machine learning (ML) framework based on numpy, scipy and matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For visualization</span>
@@ -1232,7 +1234,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cc7863900fb2214853bcf6e98c6b4a76a4f7f52a602fbf8b3bcbb5e0d4df05bc.png" src="../_images/cc7863900fb2214853bcf6e98c6b4a76a4f7f52a602fbf8b3bcbb5e0d4df05bc.png" />
+<img alt="../_images/df524439dc1ca72b6f00099ff2a442efcb6efdd600cd605c7460c8d861945117.png" src="../_images/df524439dc1ca72b6f00099ff2a442efcb6efdd600cd605c7460c8d861945117.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1249,16 +1251,16 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification report for classifier SVC(gamma=0.001):
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        36
-           1       1.00      1.00      1.00        36
-           2       1.00      1.00      1.00        33
-           3       1.00      1.00      1.00        34
-           4       1.00      1.00      1.00        40
-           5       1.00      0.95      0.97        38
-           6       0.97      0.97      0.97        32
-           7       1.00      1.00      1.00        35
-           8       0.94      1.00      0.97        29
-           9       0.98      0.98      0.98        47
+           0       1.00      1.00      1.00        43
+           1       1.00      1.00      1.00        35
+           2       1.00      1.00      1.00        37
+           3       1.00      0.94      0.97        33
+           4       1.00      1.00      1.00        36
+           5       0.97      0.97      0.97        34
+           6       0.97      1.00      0.99        39
+           7       0.95      1.00      0.97        37
+           8       1.00      1.00      1.00        29
+           9       1.00      0.97      0.99        37
 
     accuracy                           0.99       360
    macro avg       0.99      0.99      0.99       360
@@ -1280,7 +1282,7 @@ weighted avg       0.99      0.99      0.99       360
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e518a4d54e59373b6d694c753bad7ea8651a04b57946244513964672bc6e21f7.png" src="../_images/e518a4d54e59373b6d694c753bad7ea8651a04b57946244513964672bc6e21f7.png" />
+<img alt="../_images/2d3fe9c47c351a237b8fb9ff03a1cb3b8b493ec8e83efdb955cf2af600681f91.png" src="../_images/2d3fe9c47c351a237b8fb9ff03a1cb3b8b493ec8e83efdb955cf2af600681f91.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1336,10 +1338,10 @@ The amount of coefficients used by an NN model for this problem inspired by the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 0.9888888888888889, while the NN has an accuracy of 0.9555555555555556
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 0.9888888888888889, while the NN has an accuracy of 0.9583333333333334
 </pre></div>
 </div>
-<img alt="../_images/3338d5c31e341f2192c7fb82168fbc8b57bc22d81830b529fdc81c5bd4842027.png" src="../_images/3338d5c31e341f2192c7fb82168fbc8b57bc22d81830b529fdc81c5bd4842027.png" />
+<img alt="../_images/f0c8f0efc59bba66683735664c15d9cdb1f226e9ea647b76fd4fc10ea694d41e.png" src="../_images/f0c8f0efc59bba66683735664c15d9cdb1f226e9ea647b76fd4fc10ea694d41e.png" />
 </div>
 </div>
 <p>As can be seen the overall accuracy is very good, with the confusion matrix showing which numbers have been confused with each other how often.
@@ -1375,18 +1377,18 @@ It is also interesting to see how the model performance improved over the traini
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max_epoch accuracy
-0 0.13055555555555556
-1 0.6416666666666667
-2 0.8527777777777777
-5 0.9472222222222222
-10 0.975
+0 0.10277777777777777
+1 0.6305555555555555
+2 0.7361111111111112
+5 0.9611111111111111
+10 0.9805555555555555
 20 0.9833333333333333
-50 0.9888888888888889
+50 0.9861111111111112
 100 0.9888888888888889
 200 0.9888888888888889
 </pre></div>
 </div>
-<img alt="../_images/47d66b552906e556eeabe7aa026d68bfc4de2b0b4ee4398e7ecc79d19115cf80.png" src="../_images/47d66b552906e556eeabe7aa026d68bfc4de2b0b4ee4398e7ecc79d19115cf80.png" />
+<img alt="../_images/87b3ddd8a508d0f6a4ecb606050cc94377e5df4a6f2a770bcf143cdf0488af41.png" src="../_images/87b3ddd8a508d0f6a4ecb606050cc94377e5df4a6f2a770bcf143cdf0488af41.png" />
 </div>
 </div>
 <p>One can also investigate how the performance differs when using more or less data.</p>
@@ -1421,7 +1423,7 @@ It is also interesting to see how the model performance improved over the traini
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Learning Curve for SVC&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b385c319c2b8b80ab1a52e57ffca55d558754aa128084006a855d9dba181da29.png" src="../_images/b385c319c2b8b80ab1a52e57ffca55d558754aa128084006a855d9dba181da29.png" />
+<img alt="../_images/a0612f90eb659f088c679d00d3810e5a657bc1230281a1bb15979237b7fcb00b.png" src="../_images/a0612f90eb659f088c679d00d3810e5a657bc1230281a1bb15979237b7fcb00b.png" />
 </div>
 </div>
 </section>
@@ -1445,7 +1447,7 @@ It is also interesting to see how the model performance improved over the traini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/edb9f096d45ecaa326c2fef22546ed9f96d0460ee7f298f3c32842be15c115e1.png" src="../_images/edb9f096d45ecaa326c2fef22546ed9f96d0460ee7f298f3c32842be15c115e1.png" />
+<img alt="../_images/d95b3549a77affe772e983c8490364cf3c20baf8661c5ca4ef28165e70092457.png" src="../_images/d95b3549a77affe772e983c8490364cf3c20baf8661c5ca4ef28165e70092457.png" />
 </div>
 </div>
 </section>
@@ -1507,12 +1509,12 @@ It is also interesting to see how the model performance improved over the traini
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="machine_learning.html"
+       href="ml_pytorch.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine learning with pytorch</p>
+        <p class="prev-next-title">ML with PyTorch</p>
       </div>
     </a>
     <a class="right-next"

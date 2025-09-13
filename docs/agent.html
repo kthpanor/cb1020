@@ -63,7 +63,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Machine Learning" href="ml.html" />
+    <link rel="next" title="Machine learning" href="machine_learning.html" />
     <link rel="prev" title="Data analysis" href="data_analysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -194,9 +194,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Agent-based modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ml.html">Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning with pytorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning_scikit.html">Machine Learning with scikit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="machine_learning.html">Machine learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_sklearn.html">ML with sklearn</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -601,19 +603,19 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     </tr>
     <tr>
       <th>1</th>
-      <td>0.2408</td>
+      <td>0.2112</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.3200</td>
+      <td>0.4224</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.3736</td>
+      <td>0.5192</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.4408</td>
+      <td>0.4824</td>
     </tr>
   </tbody>
 </table>
@@ -659,23 +661,23 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <tr>
       <th rowspan="4" valign="top">100</th>
       <th>47</th>
-      <td>0</td>
-      <td>(3, 1)</td>
+      <td>3</td>
+      <td>(1, 3)</td>
     </tr>
     <tr>
       <th>48</th>
       <td>2</td>
-      <td>(2, 3)</td>
+      <td>(5, 4)</td>
     </tr>
     <tr>
       <th>49</th>
       <td>0</td>
-      <td>(7, 9)</td>
+      <td>(2, 6)</td>
     </tr>
     <tr>
       <th>50</th>
-      <td>2</td>
-      <td>(8, 1)</td>
+      <td>3</td>
+      <td>(7, 2)</td>
     </tr>
   </tbody>
 </table>
@@ -690,17 +692,17 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-1    1                   1         (5, 2)
-     2                   1         (4, 5)
-     3                   1         (7, 7)
-     4                   1         (7, 4)
-     5                   1         (8, 4)
+1    1                   1         (1, 8)
+     2                   1         (9, 1)
+     3                   1         (6, 8)
+     4                   1         (2, 3)
+     5                   1         (4, 4)
 ...                    ...            ...
-100  46                  0         (2, 3)
-     47                  0         (3, 1)
-     48                  2         (2, 3)
-     49                  0         (7, 9)
-     50                  2         (8, 1)
+100  46                  0         (1, 0)
+     47                  3         (1, 3)
+     48                  2         (5, 4)
+     49                  0         (2, 6)
+     50                  3         (7, 2)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -726,7 +728,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e495da6cd5b9411e9dfe7de6f780fd8f3e415e581c5c51430e4dd87a12c229c.png" src="../_images/8e495da6cd5b9411e9dfe7de6f780fd8f3e415e581c5c51430e4dd87a12c229c.png" />
+<img alt="../_images/eb0917a12e6ab29b72d990d967e61ddf973035cf59b2183719b900a62587f8b1.png" src="../_images/eb0917a12e6ab29b72d990d967e61ddf973035cf59b2183719b900a62587f8b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -749,7 +751,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73d5dba6e7f4bf2b9ba417f2eb974061859ae9a633491bf2e61e5a8de6c0d0be.png" src="../_images/73d5dba6e7f4bf2b9ba417f2eb974061859ae9a633491bf2e61e5a8de6c0d0be.png" />
+<img alt="../_images/9906d94a57ca8aa0a97ad7889776e6b5c265f90bcaf65c7f312ca5801aa3a012.png" src="../_images/9906d94a57ca8aa0a97ad7889776e6b5c265f90bcaf65c7f312ca5801aa3a012.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -763,8 +765,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 44
-Step: 80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 31
+Step: 93
 </pre></div>
 </div>
 </div>
@@ -793,7 +795,7 @@ Step: 80
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bf1401c5286c3e48115d8cbe2f3f316daa5b322b86822fcd82b4a659f1382f32.png" src="../_images/bf1401c5286c3e48115d8cbe2f3f316daa5b322b86822fcd82b4a659f1382f32.png" />
+<img alt="../_images/191b68bf5a9d6a3b021fd101a196fd8c31d3341dd0fa638e5485ff61a9b8c508.png" src="../_images/191b68bf5a9d6a3b021fd101a196fd8c31d3341dd0fa638e5485ff61a9b8c508.png" />
 </div>
 </div>
 </section>
@@ -856,11 +858,11 @@ The ABM effectively modeled the hormonal perturbations caused by androgen depriv
       </div>
     </a>
     <a class="right-next"
-       href="ml.html"
+       href="machine_learning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine Learning</p>
+        <p class="prev-next-title">Machine learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Machine learning with pytorch &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Machine learning &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -61,8 +61,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Machine Learning with scikit" href="machine_learning_scikit.html" />
-    <link rel="prev" title="Machine Learning" href="ml.html" />
+    <link rel="next" title="ML with PyTorch" href="ml_pytorch.html" />
+    <link rel="prev" title="Agent-based modeling" href="agent.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,9 +192,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ml.html">Machine Learning</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Machine learning with pytorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning_scikit.html">Machine Learning with scikit</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Machine learning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_sklearn.html">ML with sklearn</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -370,9 +372,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -383,39 +383,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Machine learning with pytorch</h1>
+    <h1>Machine learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-set">Data set</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-dataset">Loading dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-set-into-subsets">Split data set into subsets</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-model">Neural network model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-model">Setting up the model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-assessment">Model assessment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-model-performance">Initial model performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">Model training</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-image-prediction">Single image prediction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-models">Saving and loading models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forming your project</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -425,426 +397,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-with-pytorch">
-<span id="sec-ml-pytorch"></span><h1>Machine learning with pytorch<a class="headerlink" href="#machine-learning-with-pytorch" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/PyTorch">PyTorch</a> is an open source machine learning (ML) framework based on the Python programming language and the Torch library.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torchvision</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
+<span id="sec-ml"></span><h1>Machine learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a> (ML) is a widely applied tool from computer science, ranging from mathematics over engineering to natural and even social sciences.</p>
+<p>Due to their simple nature and vast possibilities for their application, multiple ML frameworks exist that enable you to build and train a model with just a few lines of code. We will illustrate things with the classic example of identifying digits in hand-written images. The two ML frameworks we have adopted for this task are among the most used ones:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ml_pytorch.html#sec-ml-pytorch"><span class="std std-ref">ML with PyTorch</span></a></p></li>
+<li><p><a class="reference internal" href="ml_sklearn.html#sec-ml-scikit"><span class="std std-ref">ML with sklearn</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>PyTorch offers domain-specific libraries such as <code class="docutils literal notranslate"><span class="pre">TorchText</span></code>, <code class="docutils literal notranslate"><span class="pre">TorchVision</span></code>, and <code class="docutils literal notranslate"><span class="pre">TorchAudio</span></code>, all of which include datasets. We will use a TorchVision dataset named MNIST.</p>
-<section id="data-set">
-<h2>Data set<a class="headerlink" href="#data-set" title="Link to this heading">#</a></h2>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST data set</a> consists of 28 x 28 pixel greyscale images of handwritten digits, along with labels for each image indicating which digit it represents. The data set has 60,000 images.</p>
-<p><img alt="MNIST handwritten numbers" src="../_images/MnistExamplesModified.png" /></p>
-<section id="loading-dataset">
-<h3>Loading dataset<a class="headerlink" href="#loading-dataset" title="Link to this heading">#</a></h3>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span>
-    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;../data_input/&quot;</span><span class="p">,</span>
-    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">transform</span><span class="o">=</span><span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_random_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Label:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset item:&quot;</span><span class="p">,</span> <span class="n">idx_random_tensor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor shape:&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Label: 7
-Dataset item: 2102
-Tensor shape: torch.Size([1, 28, 28])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/48585df0af7d357f6c3ce9281c060df4047052e4b4a16fb68688343f46c86779.png" src="../_images/48585df0af7d357f6c3ce9281c060df4047052e4b4a16fb68688343f46c86779.png" />
-</div>
-</div>
-</section>
-<section id="split-data-set-into-subsets">
-<h3>Split data set into subsets<a class="headerlink" href="#split-data-set-into-subsets" title="Link to this heading">#</a></h3>
-<p>In machine learning, <a class="reference external" href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">data sets are typically divided into the three categories</a> of training, validation, and test. We will divide data into two categories and skip the model tuning in the validation step.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">training_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">mnist_dataset</span><span class="p">,</span> <span class="p">[</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We create data loaders to be able to load the data in batches.</p>
-<p>The shuffle option is set for the training data loader, so that the batches generated in each epoch are different. As the validation data loader is used only for evaluating the model, there is no need to shuffle these data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
-
-<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">training_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">test_dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="neural-network-model">
-<h2>Neural network model<a class="headerlink" href="#neural-network-model" title="Link to this heading">#</a></h2>
-<section id="setting-up-the-model">
-<h3>Setting up the model<a class="headerlink" href="#setting-up-the-model" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MnistModel</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-
-    <span class="n">input_layer_dim</span> <span class="o">=</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">28</span>
-    <span class="n">hidden_layer_dim</span> <span class="o">=</span> <span class="mi">512</span>
-    <span class="n">number_classes</span> <span class="o">=</span> <span class="mi">10</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">linear_stack</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_layer_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer_dim</span><span class="p">),</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer_dim</span><span class="p">),</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_layer_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_classes</span><span class="p">),</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">y</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">MnistModel</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MnistModel(
-  (linear_stack): Sequential(
-    (0): Flatten(start_dim=1, end_dim=-1)
-    (1): Linear(in_features=784, out_features=512, bias=True)
-    (2): ReLU()
-    (3): Linear(in_features=512, out_features=512, bias=True)
-    (4): ReLU()
-    (5): Linear(in_features=512, out_features=10, bias=True)
-  )
-)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="model-assessment">
-<h3>Model assessment<a class="headerlink" href="#model-assessment" title="Link to this heading">#</a></h3>
-<p>A loss function is defined to quantify the model output from the reference.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loss_func</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>With this loss function, we determine the averaged loss and the percentage of correct predictions.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
-
-    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-
-    <span class="n">number_correct</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>  <span class="c1"># batches of images and labels</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
-            <span class="n">number_correct</span> <span class="o">+=</span> <span class="p">(</span>
-                <span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-            <span class="p">)</span>
-
-    <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>  <span class="c1"># size is 10,000 in our case</span>
-    <span class="n">accuracy</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">number_correct</span> <span class="o">/</span> <span class="n">size</span>  <span class="c1"># in percent</span>
-
-    <span class="k">return</span> <span class="n">accuracy</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="initial-model-performance">
-<h3>Initial model performance<a class="headerlink" href="#initial-model-performance" title="Link to this heading">#</a></h3>
-<p>With random parameters, we expect to prediction success of about 10%.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">&gt;0.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-
-<span class="n">prediction_accuracies</span> <span class="o">=</span> <span class="p">[</span><span class="n">accuracy</span><span class="p">]</span>  <span class="c1"># saved in list for plotting</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 5.9%
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="model-training">
-<h3>Model training<a class="headerlink" href="#model-training" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_epochs</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># number of iterations in the training</span>
-
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># step length in gradient descent</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
-
-    <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>  <span class="c1"># batches of images and labels</span>
-
-        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
-
-        <span class="c1"># Back propagation</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_of_epochs</span><span class="p">):</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch (</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">number_of_epochs</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
-
-    <span class="n">train</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-
-    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>    
-    <span class="n">prediction_accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch (1/2):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 81.74%
-Epoch (2/2):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  accuracy: 87.49%
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prediction_accuracies</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;navy&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prediction_accuracies</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;deepskyblue&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_epochs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">number_of_epochs</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of epochs in model training&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Prediction accuraciy (%)&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/a172a84f45ebed3475a9c60c1f675fbe1eff5a60092f62d2938f8a10aab923ae.png" src="../_images/a172a84f45ebed3475a9c60c1f675fbe1eff5a60092f62d2938f8a10aab923ae.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="single-image-prediction">
-<h2>Single image prediction<a class="headerlink" href="#single-image-prediction" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict_image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="n">_</span><span class="p">,</span> <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx_random_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[</span><span class="n">idx_random_tensor</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test data set item:&quot;</span><span class="p">,</span> <span class="n">idx_random_tensor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Label:&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted :&quot;</span><span class="p">,</span> <span class="n">predict_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">model</span><span class="p">))</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test data set item: 201
-Label: 3
-Predicted : 3
-</pre></div>
-</div>
-<img alt="../_images/00b98eae78614aa70a0f251780efc59e9a67a9a5fc412864a02f014a7e10b24a.png" src="../_images/00b98eae78614aa70a0f251780efc59e9a67a9a5fc412864a02f014a7e10b24a.png" />
-</div>
-</div>
-</section>
-<section id="saving-and-loading-models">
-<h2>Saving and loading models<a class="headerlink" href="#saving-and-loading-models" title="Link to this heading">#</a></h2>
-<p>The model parameters (weights and biases) are returned by the <code class="docutils literal notranslate"><span class="pre">state_dict()</span></code> method.</p>
-<p>The model parameters can be saved to a file.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># torch.save(model.state_dict(), &quot;mnist-model.pth&quot;)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>A saved model can be read from file.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># model = MnistModel()</span>
-<span class="c1"># model.load_state_dict(torch.load(&quot;mnist-model.pth&quot;))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="youtube-material">
-<h2>YouTube material<a class="headerlink" href="#youtube-material" title="Link to this heading">#</a></h2>
-<p>If you choose a project in the category of machine learning, it is <em>highly</em> recommended (close to mandatory) that you also take the time to watch the series of four videos on neural networks from the (generally) excellent channel <a class="reference external" href="https://www.youtube.com/&#64;3blue1brown">3Blue1Brown</a>.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/aircAruvnKk?si=p7eKKqYI8u8mqfIb"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-</section>
-<section id="forming-your-project">
-<h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
-<section id="data-representation-in-the-input-layer">
-<h3>Data representation in the input layer<a class="headerlink" href="#data-representation-in-the-input-layer" title="Link to this heading">#</a></h3>
-<p>In the case of images, it is rather obvious how to represent the input data in the input layer namely by associating neurons to the bits in the images.</p>
-<p>In other cases, it may be less obvious. How do we e.g. represent molecules and how can we get an objective measure of closeness  of chemical structures? In answer to these questions, molecular fingerprints have been developed.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="400"
-            height="300"
-            src="https://www.youtube.com/embed/kBk8HbjWwCw?si=3yspJyCsgnBynzT0"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-</section>
-<section id="machine-learning-guided-protein-engineering">
-<h3>Machine Learning-Guided Protein Engineering<a class="headerlink" href="#machine-learning-guided-protein-engineering" title="Link to this heading">#</a></h3>
-<p>Find inspiration for using machine learning in protein engineering in the perspective article below. The authors provide an overview of ongoing trends in this domain, highlight recent case studies, and examine the current limitations of machine learning-based methods. They present their opinions on the fundamental problems and outline the potential directions for future research.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/ml_protein.jpeg"><img alt="ML and proteins" class="bg-primary mb-1 align-center" src="../_images/ml_protein.jpeg" style="width: 400px;" />
-</a>
-<p><em>ACS Catalysis</em> <strong>2023</strong>, 13, 21, 13863–13895, <a class="reference external" href="https://doi.org/10.1021/acscatal.3c02743">https://doi.org/10.1021/acscatal.3c02743</a></p>
-</section>
-</section>
-<section id="id1">
-<h2>Forming your project<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>You are encouraged to develop your own model. Below is an example from CB1020 HT24 which may serve as inspiration.</p>
-<ol class="arabic simple">
-<li><p><strong>Identification of risk factors for cardiovascular disease using data analysis and machine learning (Project from CB1020 HT24)</strong> <br>
-Cardiovascular disease (CVD) is the leading cause of death in Sweden, with over 2 million affected and approximately 30,000 annual deaths.
-The aim of the project was to use data analysis combined with the machine learning algorithms GradientBoosting, RandomForest and SHAP in Python to investigate which five factors contribute most to CVD, and to use machine learning to predict whether a person has CVD or not. The project analyzed a csv file with patient data from 70,000 people in twelve different categories: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol level, glucose level,
-smoking, alcohol intake, physical activity and presence or absence of cardiovascular disease.
-The five most important risk factors for CVD were identified as systolic and diastolic blood pressure, BMI, age, and cholesterol. The results showed that older people and individuals with higher BMI had an increased risk of CVD, which is consistent with previous research. The machine learning algorithms GradientBoosting and RandomForest demonstrated a test accuracy of 73.6%, with a better ability to identify CVD cases than non-CVD cases. Data analysis also indicated that there were shortcomings in the representation of different age groups and gender, which may have influenced the results.</p></li>
-</ol>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -878,20 +440,20 @@ The five most important risk factors for CVD were identified as systolic and dia
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ml.html"
+       href="agent.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine Learning</p>
+        <p class="prev-next-title">Agent-based modeling</p>
       </div>
     </a>
     <a class="right-next"
-       href="machine_learning_scikit.html"
+       href="ml_pytorch.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine Learning with scikit</p>
+        <p class="prev-next-title">ML with PyTorch</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -901,41 +463,6 @@ The five most important risk factors for CVD were identified as systolic and dia
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-set">Data set</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-dataset">Loading dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-set-into-subsets">Split data set into subsets</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-model">Neural network model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-model">Setting up the model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-assessment">Model assessment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-model-performance">Initial model performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">Model training</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-image-prediction">Single image prediction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-models">Saving and loading models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forming your project</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

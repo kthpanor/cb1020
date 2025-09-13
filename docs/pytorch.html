@@ -194,9 +194,11 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ml.html">Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning with pytorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="machine_learning_scikit.html">Machine Learning with scikit</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="machine_learning.html">Machine learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_sklearn.html">ML with sklearn</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -469,9 +471,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.7677, 0.5128, 0.5761],
-        [0.0795, 0.3515, 0.3668],
-        [0.5079, 0.1608, 0.9310]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2861, 0.8288, 0.4289],
+        [0.8678, 0.8943, 0.9974],
+        [0.7655, 0.8321, 0.1649]])
 </pre></div>
 </div>
 </div>
@@ -495,9 +497,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.7677136659622192, 0.512813925743103, 0.5760989189147949],
- [0.07948082685470581, 0.3515123724937439, 0.36676061153411865],
- [0.5078859329223633, 0.1607998013496399, 0.9310239553451538]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.2861117720603943, 0.8287599086761475, 0.42889404296875],
+ [0.8677539229393005, 0.8942596316337585, 0.9973576664924622],
+ [0.7655075192451477, 0.8321478366851807, 0.164870023727417]]
 </pre></div>
 </div>
 </div>
@@ -510,9 +512,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.7677, 0.5128, 0.5761],
-        [0.0795, 0.3515, 0.3668],
-        [0.5079, 0.1608, 0.9310]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2861, 0.8288, 0.4289],
+        [0.8678, 0.8943, 0.9974],
+        [0.7655, 0.8321, 0.1649]])
 </pre></div>
 </div>
 </div>
@@ -541,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.4727)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.6740)
 </pre></div>
 </div>
 </div>
@@ -554,7 +556,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4726766347885132
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6739624738693237
 </pre></div>
 </div>
 </div>
