@@ -395,7 +395,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-models">ML models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-frameworks">ML frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-neural-network">What is a neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
@@ -415,14 +417,63 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
 <span id="sec-ml"></span><h1>Machine learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a> (ML) is a widely applied tool from computer science, ranging from mathematics over engineering to natural and even social sciences.</p>
-<p>Due to their simple nature and vast possibilities for their application, multiple ML frameworks exist that enable you to build and train a model with just a few lines of code. We will illustrate things with the classic example of identifying digits in hand-written images. The two ML frameworks we have adopted for this task are among the most used ones:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">Machine learning</a> (ML) is a widely applied tool from computer science with applications in fields ranging from mathematics over engineering to natural and even social sciences.</p>
+<section id="ml-models">
+<h2>ML models<a class="headerlink" href="#ml-models" title="Link to this heading">#</a></h2>
+<p>There are a multitude of ML models developed for different purposes and to navigate the landscape can seem overwhelming. A broad categorization includes the classes:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="ml_pytorch.html#sec-ml-pytorch"><span class="std std-ref">ML with PyTorch</span></a></p></li>
-<li><p><a class="reference internal" href="ml_sklearn.html#sec-ml-scikit"><span class="std std-ref">ML with sklearn</span></a></p></li>
+<li><p><strong>Supervised Learning Models</strong> <br>
+These models learn from labeled data to make predictions or classify new data.</p>
+<ul>
+<li><p>Linear Regression:
+Predicts continuous values by identifying the relationship between input variables and a dependent variable.</p></li>
+<li><p>Logistic Regression:
+Used for classification tasks, determining if an input belongs to a specific group.</p></li>
+<li><p>Decision Trees:
+Create a flowchart-like structure to make predictions by traversing through nodes and leaves based on features.</p></li>
+<li><p>Random Forests:
+An ensemble method that combines multiple decision trees to improve prediction accuracy and reduce overfitting.</p></li>
+<li><p>Support Vector Machines (SVM):
+Creates a hyperplane to separate data points into categories based on their features.</p></li>
+<li><p>K-Nearest Neighbors (KNN):
+Groups data points based on their similarity to their ‘k’ closest neighbors in the dataset.</p></li>
+<li><p>Naive Bayes:
+A probabilistic classifier that uses Bayes’ Theorem and assumes independence among variables.</p></li>
 </ul>
-<section id="youtube-material">
-<h2>YouTube material<a class="headerlink" href="#youtube-material" title="Link to this heading">#</a></h2>
+</li>
+<li><p><strong>Unsupervised Learning Models</strong> <br>
+These models find patterns and structures in unlabeled data.</p>
+<ul>
+<li><p>K-Means Clustering: An algorithm for grouping data into ‘k’ distinct clusters based on similarity.</p></li>
+</ul>
+</li>
+<li><p><strong>Deep Learning Models</strong> <br>
+A subfield of machine learning that uses artificial neural networks with multiple layers to learn from vast amounts of data.</p>
+<ul>
+<li><p>Feedforward Neural Networks (FNNs)
+The simplest type of neural network, where data moves in one direction from input to output, without loops or cycles. Applications: Used for tasks like image recognition and speech recognition, where data is processed without a temporal component.</p></li>
+<li><p>Recurrent Neural Networks (RNNs):
+Networks designed to process sequential data by using connections that create cycles, allowing data to flow back and forth. They possess an “internal memory” to understand the order and context of inputs. Applications: Ideal for natural language processing, speech recognition, handwriting recognition, and other tasks involving time-series data.</p></li>
+<li><p>Convolutional Neural Networks (CNNs):
+A specialized type of neural network based on multilayer perceptrons but with convolutional layers designed to extract spatial hierarchies of features from data. Applications: Highly effective for computer vision tasks such as image classification, object detection, and image generation.</p></li>
+<li><p>Transformer Networks:
+A modern neural network architecture that relies on self-attention mechanisms to weigh the importance of different parts of the input data. This allows them to capture long-range dependencies more effectively than RNNs. Applications:
+Revolutionized natural language processing (NLP) and are a foundational technology behind large language models like ChatGPT, enabling tasks such as machine translation and text generation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ml-frameworks">
+<h2>ML frameworks<a class="headerlink" href="#ml-frameworks" title="Link to this heading">#</a></h2>
+<p>A ML framework is a software (predominantly based on Python) into which ML models can be implemented and run.</p>
+<p>Owing to their simple nature and vast possibilities for their application, multiple ML frameworks exist that enable you to build and train a model with just a few lines of code. We will illustrate things with the classic example of identifying digits in hand-written images. The two ML frameworks we have adopted for this task are among the most used ones:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ml_sklearn.html#sec-ml-scikit"><span class="std std-ref">ML with sklearn</span></a>: Easy to use for supervised and unsupervised models.</p></li>
+<li><p><a class="reference internal" href="ml_pytorch.html#sec-ml-pytorch"><span class="std std-ref">ML with PyTorch</span></a>: Developed by Meta AI and together with TensorFlow by Google, they are the dominant frameworks for deep learning and consequently AI.</p></li>
+</ul>
+</section>
+<section id="what-is-a-neural-network">
+<h2>What is a neural network<a class="headerlink" href="#what-is-a-neural-network" title="Link to this heading">#</a></h2>
 <p>If you choose a project in the category of machine learning, it is <em>highly</em> recommended (close to mandatory) that you also take the time to watch the series of four videos on neural networks from the (generally) excellent channel <a class="reference external" href="https://www.youtube.com/&#64;3blue1brown">3Blue1Brown</a>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -545,7 +596,9 @@ The machine learning algorithms <code class="docutils literal notranslate"><span
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#youtube-material">YouTube material</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-models">ML models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-frameworks">ML frameworks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-neural-network">What is a neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
