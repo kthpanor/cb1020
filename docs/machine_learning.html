@@ -399,9 +399,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-frameworks">ML frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-neural-network">What is a neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#published-work">Published work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-course-projects">Previous course projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-data-representation-in-the-input-layer">A note on data representation in the input layer</a></li>
 </ul>
 </li>
 </ul>
@@ -491,8 +491,32 @@ Revolutionized natural language processing (NLP) and are a foundational technolo
 </section>
 <section id="forming-your-project">
 <h2>Forming your project<a class="headerlink" href="#forming-your-project" title="Link to this heading">#</a></h2>
-<section id="data-representation-in-the-input-layer">
-<h3>Data representation in the input layer<a class="headerlink" href="#data-representation-in-the-input-layer" title="Link to this heading">#</a></h3>
+<section id="published-work">
+<h3>Published work<a class="headerlink" href="#published-work" title="Link to this heading">#</a></h3>
+<p><strong>Machine Learning-Guided Protein Engineering</strong></p>
+<p>Find inspiration for using machine learning in protein engineering in the perspective article below. The authors provide an overview of ongoing trends in this domain, highlight recent case studies, and examine the current limitations of machine learning-based methods [1]. They present their opinions on the fundamental problems and outline the potential directions for future research.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/ml_protein.jpeg"><img alt="ML and proteins" class="bg-primary mb-1 align-center" src="../_images/ml_protein.jpeg" style="width: 400px;" />
+</a>
+<p>[1] <em>ACS Catalysis</em> <strong>2023</strong>, 13, 21, 13863–13895, <a class="reference external" href="https://doi.org/10.1021/acscatal.3c02743">https://doi.org/10.1021/acscatal.3c02743</a></p>
+<p><strong>A new era of artificial intelligence in neuroradiology</strong></p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/ml_models.jpg"><img alt="ML models" class="bg-primary mb-1 align-right" src="../_images/ml_models.jpg" style="width: 400px;" />
+</a>
+<p>Find inspiration in this review on the use of AI-based techniques in neuroradiology, focusing on conditions such as vascular diseases, epilepsy, and demyelinating and neurodegenerative conditions. Some of the algorithms behind the applications are introduced, briefly discussing a few of the challenges of generalization in the use of AI models in neuroradiology. If well designed, AI algorithms have the potential to radically improve radiology, strengthening image analysis, enhancing the value of quantitative imaging techniques, and mitigating diagnostic errors.</p>
+<p>[2] <em>Arq. Neuro-Psiquiatr.</em> <strong>2024</strong>, 82, 59-70, <a class="reference external" href="https://dx.doi.org/10.1055/s-0044-1779486">https://dx.doi.org/10.1055/s-0044-1779486</a></p>
+</section>
+<section id="previous-course-projects">
+<h3>Previous course projects<a class="headerlink" href="#previous-course-projects" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Identification of risk factors for cardiovascular disease using data analysis and machine learning (Project from CB1020 HT24)</strong> <br>
+Cardiovascular disease (CVD) is the leading cause of death in Sweden, with over 2 million affected and approximately 30,000 annual deaths.<br>
+The aim of this project was to use data analysis combined with the machine learning algorithms <code class="docutils literal notranslate"><span class="pre">GradientBoosting</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomForest</span></code>, and <code class="docutils literal notranslate"><span class="pre">SHAP</span></code> in sklearn to investigate which five factors contribute most to CVD, and to use machine learning to predict whether a person has CVD or not.<br>
+The project analyzed a file with patient data from 70,000 people in twelve different categories: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol level, glucose level, smoking, alcohol intake, physical activity and presence or absence of cardiovascular disease.<br>
+The five most important risk factors for CVD were identified as systolic and diastolic blood pressure, BMI, age, and cholesterol. The results showed that older people and individuals with higher BMI had an increased risk of CVD, which is consistent with previous research.<br>
+The machine learning algorithms <code class="docutils literal notranslate"><span class="pre">GradientBoosting</span></code> and <code class="docutils literal notranslate"><span class="pre">RandomForest</span></code> demonstrated a test accuracy of 73.6%, with a better ability to identify CVD cases than non-CVD cases. Data analysis also indicated that there were shortcomings in the representation of different age groups and gender, which may have influenced the results.</p></li>
+</ol>
+</section>
+<section id="a-note-on-data-representation-in-the-input-layer">
+<h3>A note on data representation in the input layer<a class="headerlink" href="#a-note-on-data-representation-in-the-input-layer" title="Link to this heading">#</a></h3>
 <p>In many cases, such as in classifications of images, it is rather obvious how to represent the input data in the input layer namely by associating neurons to the pixels in the images.</p>
 <p>In other cases, it may be less obvious. How do we e.g. represent molecules and how can we get an objective measure of closeness  of chemical structures? In answer to these questions, molecular fingerprints have been developed.</p>
 <div class="cell tag_remove-input docutils container">
@@ -508,24 +532,6 @@ Revolutionized natural language processing (NLP) and are a foundational technolo
         ></iframe>
         </div></div>
 </div>
-</section>
-<section id="machine-learning-guided-protein-engineering">
-<h3>Machine Learning-Guided Protein Engineering<a class="headerlink" href="#machine-learning-guided-protein-engineering" title="Link to this heading">#</a></h3>
-<p>Find inspiration for using machine learning in protein engineering in the perspective article below. The authors provide an overview of ongoing trends in this domain, highlight recent case studies, and examine the current limitations of machine learning-based methods. They present their opinions on the fundamental problems and outline the potential directions for future research.</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/ml_protein.jpeg"><img alt="ML and proteins" class="bg-primary mb-1 align-center" src="../_images/ml_protein.jpeg" style="width: 400px;" />
-</a>
-<p><em>ACS Catalysis</em> <strong>2023</strong>, 13, 21, 13863–13895, <a class="reference external" href="https://doi.org/10.1021/acscatal.3c02743">https://doi.org/10.1021/acscatal.3c02743</a></p>
-</section>
-<section id="previous-course-projects">
-<h3>Previous course projects<a class="headerlink" href="#previous-course-projects" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Identification of risk factors for cardiovascular disease using data analysis and machine learning (Project from CB1020 HT24)</strong> <br>
-Cardiovascular disease (CVD) is the leading cause of death in Sweden, with over 2 million affected and approximately 30,000 annual deaths.<br>
-The aim of this project was to use data analysis combined with the machine learning algorithms <code class="docutils literal notranslate"><span class="pre">GradientBoosting</span></code>, <code class="docutils literal notranslate"><span class="pre">RandomForest</span></code>, and <code class="docutils literal notranslate"><span class="pre">SHAP</span></code> in sklearn to investigate which five factors contribute most to CVD, and to use machine learning to predict whether a person has CVD or not.<br>
-The project analyzed a file with patient data from 70,000 people in twelve different categories: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol level, glucose level, smoking, alcohol intake, physical activity and presence or absence of cardiovascular disease.<br>
-The five most important risk factors for CVD were identified as systolic and diastolic blood pressure, BMI, age, and cholesterol. The results showed that older people and individuals with higher BMI had an increased risk of CVD, which is consistent with previous research.<br>
-The machine learning algorithms <code class="docutils literal notranslate"><span class="pre">GradientBoosting</span></code> and <code class="docutils literal notranslate"><span class="pre">RandomForest</span></code> demonstrated a test accuracy of 73.6%, with a better ability to identify CVD cases than non-CVD cases. Data analysis also indicated that there were shortcomings in the representation of different age groups and gender, which may have influenced the results.</p></li>
-</ol>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -600,9 +606,9 @@ The machine learning algorithms <code class="docutils literal notranslate"><span
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-frameworks">ML frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-neural-network">What is a neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forming-your-project">Forming your project</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-representation-in-the-input-layer">Data representation in the input layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-guided-protein-engineering">Machine Learning-Guided Protein Engineering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#published-work">Published work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-course-projects">Previous course projects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-data-representation-in-the-input-layer">A note on data representation in the input layer</a></li>
 </ul>
 </li>
 </ul>
