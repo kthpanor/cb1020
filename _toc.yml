@@ -8,6 +8,7 @@ sections:
   - file: docs/pandas
   - file: docs/mesa
   - file: docs/pytorch
+  - file: docs/scikit
 - file: docs/math
   sections:
 #  - file: docs/ode
