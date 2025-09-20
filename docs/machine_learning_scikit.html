@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ML with sklearn &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Machine Learning with scikit &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ml_sklearn';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/machine_learning_scikit';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="ML with PyTorch" href="ml_pytorch.html" />
+    <link rel="prev" title="Machine learning with pytorch" href="machine_learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,17 +187,13 @@
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scikit.html">Scikit-Learn</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="machine_learning.html">Machine learning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">ML with sklearn</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning with pytorch</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Machine Learning with scikit</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -272,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/ml_sklearn.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/machine_learning_scikit.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +298,7 @@
       
       
       
-      <li><a href="../_sources/docs/ml_sklearn.ipynb" target="_blank"
+      <li><a href="../_sources/docs/machine_learning_scikit.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ML with sklearn</h1>
+    <h1>Machine Learning with scikit</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,9 +410,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ml-with-sklearn">
-<span id="sec-ml-scikit"></span><h1>ML with sklearn<a class="headerlink" href="#ml-with-sklearn" title="Link to this heading">#</a></h1>
-<p>This tutorial uses <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> (or sklearn), an open source machine learning (ML) framework based on numpy, scipy and matplotlib.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-with-scikit">
+<span id="sec-ml-scikit"></span><h1>Machine Learning with scikit<a class="headerlink" href="#machine-learning-with-scikit" title="Link to this heading">#</a></h1>
+<p>This tutorial uses <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>, an open source machine learning (ML) framework based on numpy, scipy and matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For visualization</span>
@@ -494,7 +490,16 @@ document.write(`
 </section>
 <section id="pick-the-model">
 <h2>Pick the model<a class="headerlink" href="#pick-the-model" title="Link to this heading">#</a></h2>
-<p>With a rather modest amount of annotated data at hand to solve a classification type problem, it makes sense to use an SVM, since they can make use of different kernels, projecting lower dimensional parameter spaces into higher dimensional ones and therefore saving a lot on the parameters to fit. NNs are more flexible in their basic form, which comes with the price of more parameters.</p>
+<p>In order to make an educated choice for the model to be applied, it helps to understand the structure of the data at hand. This is, however, a rather vague statement, which should encourage you to play around with models sometimes. There are three basic approaches, depending on the type of data you have, which are <a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning#Approaches">supervised, unsupervised and reinforcement learning</a>. With annotated data at hand, we can apply techniques from the supervised learning approach. For the actual model, one can pick from a vast zoo, with common ones being</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)">Neural Network (NN)</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Support_vector_machine">Support Vector Machine (SVM)</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Random_forest">Decision Tree models, especially Random Forest</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes (NB)</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Regression_analysis#Linear_regression">Linear Regression</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">K-Nearest Neighbors (KNN)</a>.</p></li>
+</ul>
+<p>With a rather modest amount of data at hand to solve a classification type problem, it makes sense to use an SVM, since they can make use of different kernels, projecting lower dimensional parameter spaces into higher order ones and therefore saving a lot on the parameters to fit. NNs are more flexible in their basic form, which comes with the price of more parameters to fit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create SVM classifier with a radial basis function (RBF) kernel</span>
@@ -1226,7 +1231,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2bacf2ffd2f4ee78ca44c6e6ebef32d69f3dcf19d95c4a64dfdf0c929411c042.png" src="../_images/2bacf2ffd2f4ee78ca44c6e6ebef32d69f3dcf19d95c4a64dfdf0c929411c042.png" />
+<img alt="../_images/2a86159d37ad17fdb3d6aea11caf5e9c2c2781fca665c3d4529da4a3388ecc74.png" src="../_images/2a86159d37ad17fdb3d6aea11caf5e9c2c2781fca665c3d4529da4a3388ecc74.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1243,20 +1248,20 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification report for classifier SVC(gamma=0.001):
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        34
-           1       0.98      1.00      0.99        41
-           2       1.00      1.00      1.00        28
-           3       1.00      1.00      1.00        39
-           4       1.00      1.00      1.00        29
-           5       1.00      0.97      0.98        33
-           6       0.98      1.00      0.99        43
-           7       1.00      1.00      1.00        36
-           8       1.00      0.98      0.99        41
-           9       1.00      1.00      1.00        36
+           0       1.00      1.00      1.00        38
+           1       1.00      1.00      1.00        38
+           2       1.00      1.00      1.00        34
+           3       1.00      1.00      1.00        41
+           4       1.00      1.00      1.00        37
+           5       1.00      1.00      1.00        42
+           6       1.00      1.00      1.00        34
+           7       1.00      1.00      1.00        31
+           8       0.97      1.00      0.98        29
+           9       1.00      0.97      0.99        36
 
-    accuracy                           0.99       360
-   macro avg       1.00      0.99      0.99       360
-weighted avg       0.99      0.99      0.99       360
+    accuracy                           1.00       360
+   macro avg       1.00      1.00      1.00       360
+weighted avg       1.00      1.00      1.00       360
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1279,7 @@ weighted avg       0.99      0.99      0.99       360
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e07ea9430ad83607e7bb0ed04d38aeed4754422f503a201265bf9df00834f398.png" src="../_images/e07ea9430ad83607e7bb0ed04d38aeed4754422f503a201265bf9df00834f398.png" />
+<img alt="../_images/d806fbcebfad3dfe2eb0c7524f729c29d73f19113b835bceb6d258808811f67f.png" src="../_images/d806fbcebfad3dfe2eb0c7524f729c29d73f19113b835bceb6d258808811f67f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1330,10 +1335,10 @@ The amount of coefficients used by an NN model for this problem inspired by the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 0.9944444444444445, while the NN has an accuracy of 0.9555555555555556
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The SVM has an accuracy of 0.9972222222222222, while the NN has an accuracy of 0.9861111111111112
 </pre></div>
 </div>
-<img alt="../_images/6b7ca5fc966a9e21c408b31f4be62d88d4cec0ca937e10b016a67f425d95c2b8.png" src="../_images/6b7ca5fc966a9e21c408b31f4be62d88d4cec0ca937e10b016a67f425d95c2b8.png" />
+<img alt="../_images/2b0c30e43a3f838fca3b4c3d860d63ec368705d64d164e4bbf8cda9fe65e352e.png" src="../_images/2b0c30e43a3f838fca3b4c3d860d63ec368705d64d164e4bbf8cda9fe65e352e.png" />
 </div>
 </div>
 <p>As can be seen the overall accuracy is very good, with the confusion matrix showing which numbers have been confused with each other how often.
@@ -1370,17 +1375,17 @@ It is also interesting to see how the model performance improved over the traini
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max_epoch accuracy
 0 0.1
-1 0.5527777777777778
-2 0.75
-5 0.9388888888888889
-10 0.975
-20 0.9916666666666667
-50 0.9916666666666667
-100 0.9944444444444445
-200 0.9944444444444445
+1 0.675
+2 0.8638888888888889
+5 0.9638888888888889
+10 0.9944444444444445
+20 0.9944444444444445
+50 0.9972222222222222
+100 0.9972222222222222
+200 0.9972222222222222
 </pre></div>
 </div>
-<img alt="../_images/da0cd9ce097ac19d13c3166ffaf70d6bf6c9517a1657b39fa407559edb6ab653.png" src="../_images/da0cd9ce097ac19d13c3166ffaf70d6bf6c9517a1657b39fa407559edb6ab653.png" />
+<img alt="../_images/d448c281301cbf059ffeb7aa1cb3455df035c4a2118f3e9876614df6a56d9403.png" src="../_images/d448c281301cbf059ffeb7aa1cb3455df035c4a2118f3e9876614df6a56d9403.png" />
 </div>
 </div>
 <p>One can also investigate how the performance differs when using more or less data.</p>
@@ -1415,7 +1420,7 @@ It is also interesting to see how the model performance improved over the traini
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Learning Curve for SVC&#39;)
 </pre></div>
 </div>
-<img alt="../_images/ab46d78523c23b96393cb88e02089657b22f6978e4c788aba80a3755898d2dc4.png" src="../_images/ab46d78523c23b96393cb88e02089657b22f6978e4c788aba80a3755898d2dc4.png" />
+<img alt="../_images/8a67f71dfd8539ea0dabadc347d6a7eb142dee29a135119c111a7ae5cc0b90c4.png" src="../_images/8a67f71dfd8539ea0dabadc347d6a7eb142dee29a135119c111a7ae5cc0b90c4.png" />
 </div>
 </div>
 </section>
@@ -1439,7 +1444,7 @@ It is also interesting to see how the model performance improved over the traini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05248e2e90d8e1cc1b81f5a2262f5d7f050a759f432974ac64a4061168e60803.png" src="../_images/05248e2e90d8e1cc1b81f5a2262f5d7f050a759f432974ac64a4061168e60803.png" />
+<img alt="../_images/3b6d91425187486a2831ba0a4ffada328740fcb6819e613e3d5bfadd2a628ac1.png" src="../_images/3b6d91425187486a2831ba0a4ffada328740fcb6819e613e3d5bfadd2a628ac1.png" />
 </div>
 </div>
 </section>
@@ -1501,12 +1506,12 @@ It is also interesting to see how the model performance improved over the traini
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ml_pytorch.html"
+       href="machine_learning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">ML with PyTorch</p>
+        <p class="prev-next-title">Machine learning with pytorch</p>
       </div>
     </a>
     <a class="right-next"

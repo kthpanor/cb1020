@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scikit.html">Scikit-Learn</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -440,6 +441,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/marco/miniconda3/envs/cb1020/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
 </div>
 <section id="model">
 <h3>Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h3>
@@ -607,19 +614,19 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     </tr>
     <tr>
       <th>1</th>
-      <td>0.4296</td>
+      <td>0.4104</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.4664</td>
+      <td>0.5024</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.5840</td>
+      <td>0.5744</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.6024</td>
+      <td>0.6032</td>
     </tr>
   </tbody>
 </table>
@@ -665,23 +672,23 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
     <tr>
       <th rowspan="4" valign="top">100</th>
       <th>47</th>
-      <td>3</td>
-      <td>(1, 9)</td>
+      <td>1</td>
+      <td>(8, 0)</td>
     </tr>
     <tr>
       <th>48</th>
       <td>0</td>
-      <td>(1, 0)</td>
+      <td>(6, 9)</td>
     </tr>
     <tr>
       <th>49</th>
-      <td>0</td>
-      <td>(9, 3)</td>
+      <td>1</td>
+      <td>(6, 1)</td>
     </tr>
     <tr>
       <th>50</th>
-      <td>2</td>
-      <td>(7, 2)</td>
+      <td>1</td>
+      <td>(6, 0)</td>
     </tr>
   </tbody>
 </table>
@@ -696,17 +703,17 @@ N + 1 - \frac{2}{X} \sum_{i=1}^N (N+1-i) x_i
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Agent wealth Agent position
 Step AgentID                             
-1    1                   1         (6, 9)
-     2                   1         (9, 9)
-     3                   1         (7, 4)
-     4                   1         (9, 7)
-     5                   1         (4, 5)
+1    1                   1         (0, 7)
+     2                   1         (1, 6)
+     3                   1         (2, 9)
+     4                   1         (9, 0)
+     5                   1         (7, 3)
 ...                    ...            ...
-100  46                  0         (9, 9)
-     47                  3         (1, 9)
-     48                  0         (1, 0)
-     49                  0         (9, 3)
-     50                  2         (7, 2)
+100  46                  0         (2, 1)
+     47                  1         (8, 0)
+     48                  0         (6, 9)
+     49                  1         (6, 1)
+     50                  1         (6, 0)
 
 [5000 rows x 2 columns]
 </pre></div>
@@ -732,7 +739,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3f2a4870caaaec1765dee3dd34413b78adeff54c22ce4f7ebc169847c9071f8.png" src="../_images/a3f2a4870caaaec1765dee3dd34413b78adeff54c22ce4f7ebc169847c9071f8.png" />
+<img alt="../_images/435e15c0ca722a06e1e6e4ffab83f2cdd6a62435b155d8d549ea80bca60069a3.png" src="../_images/435e15c0ca722a06e1e6e4ffab83f2cdd6a62435b155d8d549ea80bca60069a3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -755,7 +762,7 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5b3904b1af8f0410343022a5ca0c1ce9c3c5280e719dffbf1bbe3c6ee0268f51.png" src="../_images/5b3904b1af8f0410343022a5ca0c1ce9c3c5280e719dffbf1bbe3c6ee0268f51.png" />
+<img alt="../_images/1ab16923da3817c04604320f7d57b0a2c4266620332724336c74800710db7534.png" src="../_images/1ab16923da3817c04604320f7d57b0a2c4266620332724336c74800710db7534.png" />
 </div>
 </div>
 <p>Let us find the agent that accumulated maximum wealth and the time step at which this occured.</p>
@@ -769,8 +776,8 @@ Step AgentID
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 32
-Step: 87
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent: 3
+Step: 84
 </pre></div>
 </div>
 </div>
@@ -799,7 +806,7 @@ Step: 87
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1e8d06be3bfd73e433b27d06e9f04380058403bb2cfe2389aa168880592603c9.png" src="../_images/1e8d06be3bfd73e433b27d06e9f04380058403bb2cfe2389aa168880592603c9.png" />
+<img alt="../_images/432df3e2fcfb5c557c002eba4150dd7ee2e680722df433f9ff108b789755e6df.png" src="../_images/432df3e2fcfb5c557c002eba4150dd7ee2e680722df433f9ff108b789755e6df.png" />
 </div>
 </div>
 </section>

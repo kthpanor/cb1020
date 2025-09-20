@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Software installation &#8212; Project in Mathematical Modeling (CB1020)</title>
+    <title>Machine Learning &#8212; Project in Mathematical Modeling (CB1020)</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/installation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ml';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python and notebooks" href="python.html" />
-    <link rel="prev" title="Software for this course" href="software.html" />
+    <link rel="next" title="Machine learning with pytorch" href="machine_learning.html" />
+    <link rel="prev" title="Agent-based modeling" href="agent.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,23 +181,20 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="software.html">Software for this course</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Software installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="software.html">Software for this course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Software installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python and notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scikit.html">Scikit-Learn</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="data_analysis.html">Data analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent.html">Agent-based modeling</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="machine_learning.html">Machine learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="ml_pytorch.html">ML with PyTorch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ml_sklearn.html">ML with sklearn</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning.html">Machine learning with pytorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning_scikit.html">Machine Learning with scikit</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
@@ -272,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/installation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/kthpanor/cb1020/issues/new?title=Issue%20on%20page%20%2Fdocs/ml.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +299,7 @@
       
       
       
-      <li><a href="../_sources/docs/installation.md" target="_blank"
+      <li><a href="../_sources/docs/ml.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +309,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -373,9 +370,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -386,25 +381,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Software installation</h1>
+    <h1>Machine Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environments-and-install-packages">Create conda environments and install packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">Step-by-step (if you did not follow the all-in-one-step procedure)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -414,98 +395,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="software-installation">
-<h1>Software installation<a class="headerlink" href="#software-installation" title="Link to this heading">#</a></h1>
-<p>Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux. The conda repository contains a large number of open-source certified packages enabling scientific work. It is recommended that you install the minimal installer for conda named miniconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages, including <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">zlib</span></code>.</p>
-<section id="download-and-install-miniconda">
-<h2>Download and install miniconda<a class="headerlink" href="#download-and-install-miniconda" title="Link to this heading">#</a></h2>
-<p>Retrieve miniconda from the following website</p>
-<blockquote>
-<div><p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a></p>
-</div></blockquote>
-<p>Install the version for 64 bit computers.</p>
-<p><strong>OBS</strong> for MacOS, there are different downloads for intel and M1 processors. Follow these steps to find out what is on your laptop:</p>
-<ol class="arabic simple">
-<li><p>Click the Apple icon in the top-left corner of your Mac.</p></li>
-<li><p>This will bring up a drop-down menu. Pick the top option: About This Mac.</p></li>
-<li><p>The resulting window should show you the information you need: look for <code class="docutils literal notranslate"><span class="pre">intel</span></code> or <code class="docutils literal notranslate"><span class="pre">M1</span></code></p></li>
-</ol>
-</section>
-<section id="create-conda-environments-and-install-packages">
-<h2>Create conda environments and install packages<a class="headerlink" href="#create-conda-environments-and-install-packages" title="Link to this heading">#</a></h2>
-<section id="all-in-one-step">
-<h3>All in one step<a class="headerlink" href="#all-in-one-step" title="Link to this heading">#</a></h3>
-<p>Get all packages needed for course in one step with use of a YML file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">cb1020</span><span class="o">.</span><span class="n">yml</span>
-</pre></div>
-</div>
-<p>where the file <code class="docutils literal notranslate"><span class="pre">cb1020.yml</span></code> contains</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">cb1020</span>
-<span class="n">channels</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-<span class="n">dependencies</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">python</span>
-  <span class="o">-</span> <span class="n">jupyterlab</span>
-  <span class="o">-</span> <span class="n">jupyterlab</span><span class="o">-</span><span class="n">spellchecker</span>
-  <span class="o">-</span> <span class="n">jupyterlab_code_formatter</span>
-  <span class="o">-</span> <span class="n">black</span>
-  <span class="o">-</span> <span class="n">isort</span>
-  <span class="o">-</span> <span class="n">ipywidgets</span>
-  <span class="o">-</span> <span class="n">numpy</span>
-  <span class="o">-</span> <span class="n">scipy</span>
-  <span class="o">-</span> <span class="n">matplotlib</span>
-  <span class="o">-</span> <span class="n">mesa</span>
-  <span class="o">-</span> <span class="n">pandas</span>
-  <span class="o">-</span> <span class="n">pyarrow</span>
-  <span class="o">-</span> <span class="n">openpyxl</span>
-  <span class="o">-</span> <span class="n">pytorch</span>
-  <span class="o">-</span> <span class="n">torchvision</span>
-  <span class="o">-</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
-</pre></div>
-</div>
-<p>Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.</p>
-</section>
-<section id="step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">
-<h3>Step-by-step (if you did not follow the all-in-one-step procedure)<a class="headerlink" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure" title="Link to this heading">#</a></h3>
-<p>Start a conda terminal, or Anaconda Powershell as it is referred to on a Windows system. Conda supports multiple <em>environments</em> and you start in the one named <code class="docutils literal notranslate"><span class="pre">base</span></code> as is typically indicated by the prompt. To create a new and additional environment named <code class="docutils literal notranslate"><span class="pre">cb1020</span></code>, enter the following command line statement</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">cb1020</span>
-</pre></div>
-</div>
-<p>You can list your conda environments</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
-</pre></div>
-</div>
-<p>The activated environment will be marked with an asterisk (the <code class="docutils literal notranslate"><span class="pre">base</span></code> environment to begin with) and you can activate your new environment with the command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">cb1020</span>
-</pre></div>
-</div>
-<p>as should be indicated by getting a modified prompt.</p>
-<p>Install packages into this environment</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">cb1020</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">matplotlib</span> <span class="n">jupyterlab</span> <span class="n">mesa</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-</pre></div>
-</div>
-<div class="note admonition">
-<p class="admonition-title">Good practices</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
+<span id="sec-ml"></span><h1>Machine Learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
+<p>Machine Learning (ML) is probably the widest applied tool from computer science. Ranging from mathematics over engineering to natural and even social sciences, we interact daily with it. Due to their simple nature and vast possibilities for their application, multiple frameworks exist that enable you to build and train a model with just a few lines of code. The two frameworks presented in the following are amongst the most common ones.</p>
 <ul class="simple">
-<li><p>Never install any additional packages in the <code class="docutils literal notranslate"><span class="pre">base</span></code> environment. Keep it minimal and clean and thereby minimize the risk for package conflicts.</p></li>
-<li><p>At times, update the conda package manager <br>
-<code class="docutils literal notranslate"><span class="pre">(base)</span> <span class="pre">%</span> <span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></p></li>
-<li><p>At times, clean up among downloaded packages <br>
-<code class="docutils literal notranslate"><span class="pre">(base)</span> <span class="pre">%</span> <span class="pre">conda</span> <span class="pre">clean</span> <span class="pre">--all</span></code> <br>
-This command will not remove any functionality but for most parts remove tarball files.</p></li>
+<li><p><a class="reference internal" href="machine_learning.html#sec-ml-pytorch"><span class="std std-ref">machine learning with pytorch</span></a></p></li>
+<li><p><a class="reference internal" href="machine_learning_scikit.html#sec-ml-scikit"><span class="std std-ref">machine learning with scikit</span></a></p></li>
 </ul>
-</div>
-</section>
-</section>
-<section id="try-it-out">
-<h2>Try it out<a class="headerlink" href="#try-it-out" title="Link to this heading">#</a></h2>
-<p>You should now be ready to start JupyterLab with the commands</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">%</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">cb1020</span>
-<span class="p">(</span><span class="n">cb1020</span><span class="p">)</span> <span class="o">%</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">lab</span>
-</pre></div>
-</div>
-<p>which should open in the web browser interface.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -539,20 +435,20 @@ This command will not remove any functionality but for most parts remove tarball
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="software.html"
+       href="agent.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Software for this course</p>
+        <p class="prev-next-title">Agent-based modeling</p>
       </div>
     </a>
     <a class="right-next"
-       href="python.html"
+       href="machine_learning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python and notebooks</p>
+        <p class="prev-next-title">Machine learning with pytorch</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -562,27 +458,6 @@ This command will not remove any functionality but for most parts remove tarball
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-install-miniconda">Download and install miniconda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-conda-environments-and-install-packages">Create conda environments and install packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-in-one-step">All in one step</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-if-you-did-not-follow-the-all-in-one-step-procedure">Step-by-step (if you did not follow the all-in-one-step procedure)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-it-out">Try it out</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

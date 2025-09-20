@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mathematical modeling" href="math.html" />
+    <link rel="next" title="Scikit-Learn" href="scikit.html" />
     <link rel="prev" title="Mesa" href="mesa.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesa.html">Mesa</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">PyTorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scikit.html">Scikit-Learn</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="math.html">Mathematical modeling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -471,9 +472,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2861, 0.8288, 0.4289],
-        [0.8678, 0.8943, 0.9974],
-        [0.7655, 0.8321, 0.1649]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.6786, 0.5166, 0.0874],
+        [0.9345, 0.5948, 0.9712],
+        [0.8719, 0.5668, 0.7016]])
 </pre></div>
 </div>
 </div>
@@ -497,9 +498,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.2861117720603943, 0.8287599086761475, 0.42889404296875],
- [0.8677539229393005, 0.8942596316337585, 0.9973576664924622],
- [0.7655075192451477, 0.8321478366851807, 0.164870023727417]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.6786131262779236, 0.5166417360305786, 0.08737266063690186],
+ [0.9345213770866394, 0.5948305130004883, 0.9712110161781311],
+ [0.8719172477722168, 0.5668463110923767, 0.7016059160232544]]
 </pre></div>
 </div>
 </div>
@@ -512,9 +513,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.2861, 0.8288, 0.4289],
-        [0.8678, 0.8943, 0.9974],
-        [0.7655, 0.8321, 0.1649]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[0.6786, 0.5166, 0.0874],
+        [0.9345, 0.5948, 0.9712],
+        [0.8719, 0.5668, 0.7016]])
 </pre></div>
 </div>
 </div>
@@ -543,7 +544,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.6740)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.6582)
 </pre></div>
 </div>
 </div>
@@ -556,7 +557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6739624738693237
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6581733226776123
 </pre></div>
 </div>
 </div>
@@ -1012,7 +1013,10 @@ step 3: bad prediction loss  = tensor([1.1434, 0.6434, 2.0434, 3.6434])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>step 4: good prediction loss = tensor([0.0000, 0.0000, 0.1571, 0.0000])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>step 4: good prediction loss = 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([0.0000, 0.0000, 0.1571, 0.0000])
 step 4: bad prediction loss  = tensor([0.0000, 0.0000, 2.0434, 0.0000])
 </pre></div>
 </div>
@@ -1078,11 +1082,11 @@ bad prediction loss  = tensor(2.0434)
       </div>
     </a>
     <a class="right-next"
-       href="math.html"
+       href="scikit.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mathematical modeling</p>
+        <p class="prev-next-title">Scikit-Learn</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
