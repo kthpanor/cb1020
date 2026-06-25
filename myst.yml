@@ -1,9 +1,6 @@
 version: 1
 project:
   title: Mathematical Modeling in Biotechnology
-  authors:
-    - name: Patrick Norman
-    - name: Marco Bauer
   copyright: '2025'
   exclude:
     - README.md
@@ -29,7 +26,6 @@ project:
         - file: docs/scikit.ipynb
     - file: docs/math.ipynb
       children:
-        - file: docs/data_analysis.ipynb
         - file: docs/agent.ipynb
         - file: docs/machine_learning.ipynb
           children:
