@@ -1,0 +1,44 @@
+version: 1
+project:
+  title: Project in Mathematical Modeling (CB1020)
+  authors:
+    - name: Patrick Norman
+    - name: Marco Bauer
+  copyright: '2025'
+  exclude:
+    - README.md
+    - data_input
+    - cb1020.yml
+    - docs/ode.ipynb
+  github: kthpanor/cb1020
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: docs/intro.ipynb
+    - file: docs/software.ipynb
+      children:
+        - file: docs/installation.md
+        - file: docs/python.ipynb
+        - file: docs/pandas.ipynb
+        - file: docs/mesa.ipynb
+        - file: docs/pytorch.ipynb
+        - file: docs/scikit.ipynb
+    - file: docs/math.ipynb
+      children:
+        - file: docs/data_analysis.ipynb
+        - file: docs/agent.ipynb
+        - file: docs/machine_learning.ipynb
+          children:
+            - file: docs/ml_pytorch.ipynb
+            - file: docs/ml_sklearn.ipynb
+    - file: docs/references.md
+site:
+  options:
+    logo: logo.png
+    favicon: favicon.png
+    folders: true
+  template: book-theme
