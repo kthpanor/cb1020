@@ -1,7 +1,49 @@
 # Project inspiration
 
-1. **The efficiency of the Swedish model during the COVID-19 Pandemic (Project from CB1020 HT23)** <br>
-The COVID-19 pandemic that dominated the years 2020-2022 had a huge impact on the societies around the world. Most affected countries took action to limit the spread of the virus, for example by introducing social distancing, face masks, and vaccination programs. However, the extend to which these restrictions were introduced and enforced varied among countries. By analysing data available through UN and WHO, the effect of the national strategies on the excess mortality of the respective populations can the evaluated, also taking into account factors such as population density and age distribution.
+## Agent-based modeling
 
-2. **Investigating gene expression patterns of endometriosis (Project from CB1020 HT23)** <br>
-Approximately 190 million women and girls of childbearing age are affected by endometriosis, a chronic inflammatory condition. By analyzing the expression levels of genes in samples from endometriosis tissue and normal endometrial tissue, it is possible to identify genes that are differentially expressed in patients with endometriosis. Further statistical analyses can investigate whether some genes can act as biomarkers for initial diagnosis of the condition.
+### Prostate tumor microenvironment
+Inhibiting androgen receptor (AR) signaling through androgen deprivation therapy (ADT) reduces prostate cancer (PCa) growth in virtually all patients, but response may be temporary, in which case resistance develops, ultimately leading to lethal castration-resistant prostate cancer (CRPC). <br> The tumor microenvironment (TME) plays an important role in the development and progression of PCa. In addition to tumor cells, TME-resident macrophages and fibroblasts express AR and are therefore also affected by ADT. However, the interplay of different TME cell types in the development of CRPC remains largely unexplored. To understand the complex stochastic nature of cell-cell interactions, we created a PCa-specific agent-based model (PCABM) based on *in vitro* cell proliferation data [https://doi.org/10.1038/s41540-024-00344-6](https://doi.org/10.1038/s41540-024-00344-6).
+
+:::{image} ../images/abm-cancer-model.png
+:width: 400px
+:align: center
+:::
+
+### Population dynamics of sea turtles under different temperature scenarios (CB1020 HT23)
+There is a direct correlation between the number of male turtle hatchlings and the temperature during nesting season; increasing temperatures lead to decreasing number of males. The dynamics and interactions between sea turtles during and outside mating season can be modeled using ABM. By letting the temperature increase during the simulation, the effect of increasing temperatures on the gender distribution and reproduction patterns of sea turtles is illustrated.
+
+### Modeling the genetic damage of arsenic (CB1020 HT23)
+Reactive oxygen species are byproducts of mitochondrial metabolism. In healthy mitochondria, there is a balance in the levels of ROS being produced, converted and consumed. One of the effects of arsenic in the cell is an increased amount of reactive oxygen species (ROS).
+If the concentration of ROSs becomes too high, it can cause damage to the host.
+This damage can be countered by the Base Excision Repair (BER) pathway, a DNA damage repair mechanism. With ABM, the course of ROS-induced damage followed by the repair mechanism can be simulated and the effect of different arsenic intakes and the time and amount it takes to cause permanent gene damage can be simulated and studied.
+
+## AI/ML
+
+### Machine Learning-Guided Protein Engineering
+Find inspiration for using machine learning in protein engineering in the perspective article below. The authors provide an overview of ongoing trends in this domain, highlight recent case studies, and examine the current limitations of machine learning-based methods [https://doi.org/10.1021/acscatal.3c02743](https://doi.org/10.1021/acscatal.3c02743). They present their opinions on the fundamental problems and outline the potential directions for future research.
+
+```{image} ../images/ml_protein.jpeg
+:alt: ML and proteins
+:class: bg-primary mb-1
+:width: 400px
+:align: center
+```
+
+### A new era of artificial intelligence in neuroradiology
+Find inspiration in this review on the use of AI-based techniques in neuroradiology, focusing on conditions such as vascular diseases, epilepsy, and demyelinating and neurodegenerative conditions [https://dx.doi.org/10.1055/s-0044-1779486](https://dx.doi.org/10.1055/s-0044-1779486). Some of the algorithms behind the applications are introduced, briefly discussing a few of the challenges of generalization in the use of AI models in neuroradiology. If well designed, AI algorithms have the potential to radically improve radiology, strengthening image analysis, enhancing the value of quantitative imaging techniques, and mitigating diagnostic errors.
+
+```{image} ../images/ml_models.jpg
+:alt: ML models
+:class: bg-primary mb-1
+:width: 400px
+:align: center
+```
+
+### Identification of risk factors for cardiovascular disease using data analysis and machine learning (CB1020 HT24)
+Cardiovascular disease (CVD) is the leading cause of death in Sweden, with over 2 million affected and approximately 30,000 annual deaths.<br>
+The aim of this project was to use data analysis combined with the machine learning algorithms `GradientBoosting`, `RandomForest`, and `SHAP` in sklearn to investigate which five factors contribute most to CVD, and to use machine learning to predict whether a person has CVD or not.<br>
+The project analyzed a file with patient data from 70,000 people in twelve different categories: age, height, weight, gender, systolic blood pressure, diastolic blood pressure, cholesterol level, glucose level, smoking, alcohol intake, physical activity and presence or absence of cardiovascular disease.
+
+The five most important risk factors for CVD were identified as systolic and diastolic blood pressure, BMI, age, and cholesterol. The results showed that older people and individuals with higher BMI had an increased risk of CVD, which is consistent with previous research.<br>
+The machine learning algorithms `GradientBoosting` and `RandomForest` demonstrated a test accuracy of 73.6%, with a better ability to identify CVD cases than non-CVD cases. Data analysis also indicated that there were shortcomings in the representation of different age groups and gender, which may have influenced the results.

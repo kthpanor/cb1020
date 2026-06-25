@@ -16,21 +16,36 @@ project:
       output: exports/book.pdf
   toc:
     - file: docs/intro.ipynb
+    - file: docs/project-inspiration.md
     - file: docs/software.ipynb
       children:
         - file: docs/installation.md
         - file: docs/python.ipynb
+        - file: docs/ode.ipynb
         - file: docs/pandas.ipynb
         - file: docs/mesa.ipynb
         - file: docs/pytorch.ipynb
         - file: docs/scikit.ipynb
-    - file: docs/math.ipynb
+    - file: docs/agent.ipynb
+    - file: docs/neural-networks.ipynb
       children:
-        - file: docs/agent.ipynb
-        - file: docs/machine_learning.ipynb
-          children:
-            - file: docs/ml_pytorch.ipynb
-            - file: docs/ml_sklearn.ipynb
+        - file: docs/cnn.ipynb
+        - file: docs/gnn.ipynb
+    - file: docs/regression.ipynb
+      children:
+        - file: docs/gp.ipynb
+    - file: docs/classification.ipynb
+      children:
+        - file: docs/svm.ipynb
+    - file: docs/decision-trees.ipynb
+      children:
+        - file: docs/random-forest.ipynb
+        - file: docs/gradient-boost.ipynb
+    - file: docs/unsupervised-learning.ipynb
+      children:
+        - file: docs/k-means.ipynb
+        - file: docs/autoencoders.ipynb
+        - file: docs/pca.ipynb
 site:
   options:
     logo: logo.png
