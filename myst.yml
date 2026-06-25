@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: Project in Mathematical Modeling (CB1020)
+  title: Mathematical Modeling in Biotechnology
   authors:
     - name: Patrick Norman
     - name: Marco Bauer
@@ -35,7 +35,6 @@ project:
           children:
             - file: docs/ml_pytorch.ipynb
             - file: docs/ml_sklearn.ipynb
-    - file: docs/references.md
 site:
   options:
     logo: logo.png
