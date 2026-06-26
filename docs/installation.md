@@ -42,12 +42,8 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
-  - mesa
   - pandas
-  - pyarrow
-  - openpyxl
-  - pytorch
-  - torchvision
+  - mesa
   - scikit-learn
 ```
 
@@ -101,7 +97,7 @@ You should now be ready to start JupyterLab with the commands
 
 ```
 (base) % conda activate cb1020
-(cb1020) % jupyter-lab
+(cb1020) % jupyter lab
 ```
 
 which should open in the web browser interface.
