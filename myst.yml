@@ -44,8 +44,8 @@ project:
     - file: docs/unsupervised-learning.ipynb
       children:
         - file: docs/k-means.ipynb
-        - file: docs/autoencoders.ipynb
         - file: docs/pca.ipynb
+        - file: docs/autoencoders.ipynb
 site:
   options:
     logo: logo.png
