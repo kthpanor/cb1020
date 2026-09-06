@@ -45,6 +45,7 @@ dependencies:
   - pandas
   - mesa
   - scikit-learn
+  - llama-cpp-python
 ```
 
 Some additional features are then made available in your notebooks such as a spell checker and a Python code formatter.

@@ -26,11 +26,13 @@ project:
         - file: docs/mesa.ipynb
         - file: docs/pytorch.ipynb
         - file: docs/scikit.ipynb
+        - file: docs/llama.ipynb
     - file: docs/agent.ipynb
     - file: docs/neural-networks.ipynb
       children:
         - file: docs/cnn.ipynb
         - file: docs/gnn.ipynb
+        - file: docs/llm.ipynb
     - file: docs/regression.ipynb
       children:
         - file: docs/gp.ipynb

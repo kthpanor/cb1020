@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python
+  - git
   - jupyter-book
   - ghp-import
   - jupyterlab
@@ -16,8 +17,5 @@ dependencies:
   - matplotlib
   - mesa
   - pandas
-  - pyarrow
-  - openpyxl
-  - pytorch
-  - torchvision
   - scikit-learn
+  - llama-cpp-python
